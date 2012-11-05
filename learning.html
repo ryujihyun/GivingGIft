@@ -6,11 +6,11 @@
 	<link href="stylesheets/learning.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-	<header id="main_header">
+	<header id="learning_header">
 		<hgroup id="title">
 			<h1> GivingGift</h1>
 		</hgroup>
-		<nar id="main_mb">
+		<nar id="learning_mb">
 			<ul>
 				<li><a href="#"> Board </a></li>
 				<li><a href="#"> My Page </a></li>
@@ -19,10 +19,10 @@
 			</ul>
 	</header>
 
-	<div id="content">
-		<section id="main_section">
 
-			<article class="main_article">
+	<div id="content">
+		<section id="learning_section">
+			<article class="learning_article">
 				<div id ="left">
 					<img src="./images/piano.png"></img>
 				</div>
@@ -33,11 +33,9 @@
 					date: 2012.11.22 ~ 2012.12.25<br>
 					week: Mon, Wen, Fri<br>
 					Number: 5<br>
-					detail: I need just beginner. and Please click this class just 20~30.
 				</p>
 			</article>
-
-			<article class="main_article">
+			<article class="learning_article">
 				<div id="left">
 					<img src="./images/book.png"></img>
 				</div>
@@ -50,8 +48,7 @@
 					Number: 3<br>
 				</p>
 			</article>
-
-			<article class="main_article">
+			<article class="learning_article">
 				<div id="left">
 					<img src="./images/science.png"></img>
 				</div>
@@ -64,9 +61,152 @@
 					Number: 8<br>
 				</p>
 			</article>
+			<article class="learning_article">
+				<div id="left">
+					<img src="./images/language.png"></img>
+				</div>
+				<h1> Giving Gift Language Gift </h1>
+				<p>
+					name: youbin<br>
+					address : 경기도 용인시 처인구 명지대학교 <br>
+					date: 2012.11.22 ~ 2012.12.25<br>
+					week: Wen, Sat, Sun<br>
+					Number: 8<br>
+				</p>
+			</article>
+			<article class="learning_article">
+				<div id="left">
+					<img src="./images/math.png"></img>
+				</div>
+				<h1> Giving Gift Math Gift </h1>
+				<p>
+					name: youbin<br>
+					address : 경기도 용인시 처인구 명지대학교 <br>
+					date: 2012.11.22 ~ 2012.12.25<br>
+					week: Wen, Sat, Sun<br>
+					Number: 8<br>
+				</p>
+			</article>
 		</section>
 
+		<aside id="category">
+			<div id='cssmenu'>
+				<ul>
+				   <li class='active '><a href='#'><span>인문</span></a></li>
+				   <li class='has-sub '><a href='#'><span>사회</span></a>
+<!--				      <ul>
+				         <li class='has-sub '><a href='#'><span>Product 1</span></a>
+				            <ul>
+				               <li><a href='#'><span>Sub Item</span></a></li>
+				               <li><a href='#'><span>Sub Item</span></a></li>
+				            </ul>
+				         </li>
+				         <li class='has-sub '><a href='#'><span>Product 2</span></a>
+				            <ul>
+				               <li><a href='#'><span>Sub Item</span></a></li>
+				               <li><a href='#'><span>Sub Item</span></a></li>
+				            </ul>
+				         </li>
+				      </ul>
+-->				      
+				   </li>
+				   <li><a href='#'><span>과학</span></a></li>
+				   <li><a href='#'><span>기술</span></a></li>
+				   <li><a href='#'><span>예체능</span></a></li>
+				</ul>
+			</di>
+		</aside>
+
+		<aside id ="learning_aside">
+			<input id="first" type="radio" name="tab" />
+			<input id="second" type="radio" name="tab"checked="checked"/>
+			<section class="buttons">
+				<label for="first">Learning</label>
+				<label for="second">Teaching</label>
+			</section>
+			<div class="tab_item">
+				<ul>
+					<li class="item"><a href="#">
+						<div class="thumbnail">
+							<img src = "./images/piano.png"/>
+						</div>
+						<div class="description">
+							<strong> piano Gift </strong>
+							<p> 2012-11-05</p>
+						</div>
+					</a></li>
+					<li class="item"><a href="#">
+						<div class="thumbnail">
+							<img src = "./images/book.png"/>
+						</div>
+						<div class="description">
+							<strong> Book Gift </strong>
+							<p> 2012-11-06</p>
+						</div>
+					</a></li>
+					<li class="item"><a href="#">
+						<div class="thumbnail">
+							<img src = "./images/science.png"/>
+						</div>
+						<div class="description">
+							<strong> Science Gift </strong>
+							<p> 2012-11-07</p>
+						</div>
+					</a></li>
+				</ul>
+			</div>
+			<div class="tab_item">
+				<ul>
+					<li class="item"><a href="#">
+						<div class="thumbnail">
+							<img src = "./images/book.png"/>
+						</div>
+						<div class="description">
+							<strong> book Gift </strong>
+							<p> 2012-11-05</p>
+						</div>
+					</a></li>
+					<li class="item"><a href="#">
+						<div class="thumbnail">
+							<img src = "./images/science.png"/>
+						</div>
+						<div class="description">
+							<strong> science Gift </strong>
+							<p> 2012-11-06</p>
+						</div>
+					</a></li>
+					<li class="item"><a href="#">
+						<div class="thumbnail">
+							<img src = "./images/piano.png"/>
+						</div>
+						<div class="description">
+							<strong> piano Gift </strong>
+							<p> 2012-11-07</p>
+						</div>
+					</a></li>
+				</ul>
+			</div>
+		</aside>
+		<aside id ="volunteer">
+			<table>
+				<tr>
+					<th> 인기 봉사자</th>
+				</tr>
+				<tr>
+					<td> 홍길동<br>
+						예체능 분야<br>
+					</td>
+				</tr>
+				<tr>
+					<td> 홍길동<br>
+						과학 분야<br>
+					</td>
+				</tr>
+			</table>
+		</aside>
 	</div>
-	<footer>
+	<footer id="learning_footer">
+		<h3> 사이트맵 | 고객센터</h3>
+		<address> CopyWrite c GivingGift All rights reserved | 2012.11.06 | club.cyworld.com/givinggift</address>
 	</footer>
 </body>
