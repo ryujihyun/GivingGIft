@@ -58,11 +58,29 @@ a {text-decoration:none;}
 #header {text-align:center; margin:20px 0;}
 #header h1 {
 	display:inline-block; font-size:50px;
-	height:55px; padding:0 0 0 0;
+	height:55px; padding:5px 10px;
 	background-color:rgba(12, 20, 28, .3);
+	color:white;
 }
+#header h1 span {display:inline-block;}
 
+#content {width:960px; margin:0 auto; text-align:center;}
+#content ul .main_nav {
+	display:inline-block; margin:20px 20px 60px 20px;
+	width:300px;
+}
+#content ul li #log_in {
+	background-color: rgba(226, 231, 234, .8);
+	display:inline-block; padding-top:100px;
+	font-size:60px; height:140px; width:260px;
+	border-radius: 25px 25px 25px 25px;
+}
+#content ul li #join {
+	background-color: rgba(226, 231, 234, .8);
+	display:inline-block; padding-top:100px;
+	font-size:60px; height:140px; width:260px;
+	border-radius: 25px 25px 25px 25px
+}
+#content ul li span {display:inline-block; }
 
-#content ul li {float:left;}
-
-/*#footer {float:both;}*/
+#footer {clear:both; color:#888; text-align:center; padding: 20px;}
