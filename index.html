@@ -15,8 +15,8 @@
 				</div>
 				<div id="top_nav">
 					<ul>
-						<li><a href="#" id="loginclick">Log In</a></li>
-						<li><a href="#">Join</a></li>
+						<li><a href="#" id="login_click">Log In</a></li>
+						<li><a href="#" id="join_click">Join</a></li>
 						<li><a href="#">help</a></li>
 					</ul>
 				</div>
@@ -33,29 +33,42 @@
 		</div>
 		<div id="content">
 			<ul>
-				<a href="#" id="loginclick"><li class="main_nav"><span id="log_in">Log In</span></li></a>
-				<a href="#" id="cjoin"><li class="main_nav"><span id="join">Join</span></li></a>
+				<a href="#" id="login_click"><li class="main_nav"><span id="login">Log In</span></li></a>
+				<a href="#" id="join_click"><li class="main_nav"><span id="join">Join</span></li></a>
 			</ul>
 		</div>
 		<div id="footer">
 			<p>사이트맵 | 고객센터</p>
 			<p>Copyright © GivingGift. All rights reserved.</p>
 		</div>
-		<div id="log_in_page">
+		<div id="login_page">
 			<div class="window_logo">GivingGift</div>
 			<form action="">
-				<div class="log_in_class"><div>E-Mail</div><input type="text" name="ID"></div>
-				<div class="log_in_class"><div>Password</div><input type="password" name="password"></div>
-				<div id="loginbutton"><input type="submit" name="submit" value="log in"></div>
+				<div class="login_class"><div>E-Mail</div><input type="text" name="ID"></div>
+				<div class="login_class"><div>Password</div><input type="password" name="password"></div>
+				<div id="login_button"><input type="submit" name="submit" value="log in"></div>
 			</form>
 		</div>
 		<div id="join_page">
 			<div class="window_logo">GivingGift</div>
 			<form action="">
-				<div class="join_class"><div>이름</div></div>
-				<div class="join_class_value"><input type="text" name="name"></div>
-
-			
+				<div class="join_class"><div>이름</div><input type="text" name="name"></div>
+				<div class="join_class"><div>E-Mail</div><input type="text" name="ID"></div>
+				<div class="join_class"><div>Password</div><input type="password" name="password"></div>
+				<div class="join_class"><div>Password 확인</div><input type="password" name="password"></div>
+				<div class="join_class"><div>전화번호</div><input type="text" name="phone"></div>
+				<div class="join_class"><div>관심분야</div>
+					<div id="checkbox">
+						<input type="checkbox" name="like" value="music"><div>음악</div>
+						<input type="checkbox" name="like" value="soccer"><div>체육</div>
+						<input type="checkbox" name="like" value="art"><div>미술</div>
+						<input type="checkbox" name="like" value="science"><div>과학</div>
+						<input type="checkbox" name="like" value="sleep"><div>낮잠</div>
+						<input type="checkbox" name="like" value="hungry"><div>야식</div>
+					</div>
+				</div>
+				<div id="join_button"><input type="submit" name="submit" value="join"></div>
+			</form>
 		</div>
 	</div>
 </body>
@@ -63,14 +76,22 @@
 
 <script type="text/javascript">
 
-$("#log_in_page").hide();
+$("#login_page").hide();
+$("#join_page").hide();
 
 $(function() {
-	$("#wrap").find("#loginclick").click(function() {
-		$("#log_in_page").show();
+	$("#wrap").find("#login_click").click(function() {
+		$("#login_page").show();
 	});
-	$("#content>ul").find("#loginclick").click(function() {
-		$("#log_in_page").show();
+	$("#content>ul").find("#login_click").click(function() {
+		$("#login_page").show();
+	});
+
+	$("#wrap").find("#join_click").click(function() {
+		$("#join_page").show();
+	});
+	$("#content>ul").find("#join_click").click(function() {
+		$("#join_page").show();
 	});
 });
 </script>

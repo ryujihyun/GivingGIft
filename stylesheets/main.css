@@ -70,7 +70,7 @@ a {text-decoration:none;}
 	display:inline-block; margin:20px 20px 60px 20px;
 	width:300px;
 }
-#content ul li #log_in {
+#content ul li #login {
 	background-color: rgba(226, 231, 234, .8);
 	display:inline-block; padding-top:100px;
 	font-size:60px; height:140px; width:260px;
@@ -87,7 +87,7 @@ a {text-decoration:none;}
 #footer {clear:both; color:#fff; text-align:center; padding: 20px;}
 
 
-#log_in_page {
+#login_page {
 	/*visibility:hidden;*/
 	position:absolute; top:170px; left:230px;
 	display:inline-block; width:500px; height:350px;
@@ -95,27 +95,34 @@ a {text-decoration:none;}
 	border-radius: 25px 25px 25px 25px;
 	border:3px solid #000;	
 }
-.window_logo {
-	font-size:50px; padding:50px 0 80px 0; text-align:center;
-	font-family:impact;  font-style:italic; color:white;
-}
-#log_in_page form .log_in_class {
-	float:left; padding:0 0 30px 20px;
-	font-size:25px; font-weight:bold;
-
-}
-#log_in_page form .log_in_class div {float:left;}
-#log_in_page form .log_in_class div {width:150px; text-align:left;}
-#log_in_page form .log_in_class input {font-size:18px; width:250px; border:1px solid #000;}
-#loginbutton {float:right; padding:20px 30px 0 0;}
-#loginbutton input {width:100px; height:40px; font-size:25px; font-weight:bold;}
-
-
-
 #join_page {
-	position:absolute; top:120px; left:180px;
-	display:inline-block; width:500px; height:350px;
+	position:absolute; top:80px; left:205px;
+	display:inline-block; width:550px; height:500px;
 	background-color:rgba(128, 0, 255, .8);
 	border-radius: 25px 25px 25px 25px;
 	border:3px solid #000;
 }
+.window_logo {
+	font-size:50px; padding:50px 0 80px 0; text-align:center;
+	font-family:impact;  font-style:italic; color:white;
+}
+
+#login_page form .login_class div {float:left;}
+#login_page form .login_class input {float:left;}
+#login_page form .login_class {padding:0 0 60px 20px; font-size:25px; font-weight:bold;}
+#login_page form .login_class div {width:150px; text-align:left;}
+#login_page form .login_class input {font-size:18px; width:250px; border:1px solid #000;}
+#login_button {float:right; padding:10px 25px 0 0;}
+#login_button input {width:100px; height:40px; font-size:25px; font-weight:bold;}
+
+#join_page form .join_class div {float:left;}
+#join_page form .join_class input {float:left;}
+#join_page form .join_class {padding:0 0 40px 40px; font-size:25px; font-weight:bold;}
+#join_page form .join_class div {width:200px; text-align:left;}
+#join_page form .join_class input {font-size:18px; width:250px; border:1px solid #000;}
+#join_page form #checkbox {width:250px;}
+#join_page form #checkbox div {width:50px; font-size:18px;}
+#join_page form #checkbox input {width:25px; height:25px}
+
+#join_button {float:right; padding:10px 25px 0 0;}
+#join_button input {width:100px; height:40px; font-size:25px; font-weight:bold;}
