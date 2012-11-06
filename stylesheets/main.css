@@ -90,25 +90,32 @@ a {text-decoration:none;}
 #log_in_page {
 	/*visibility:hidden;*/
 	position:absolute; top:170px; left:230px;
-	display:inline-block;
-	width:500px; height:350px;
+	display:inline-block; width:500px; height:350px;
 	background-color:rgba(128, 0, 255, .8);
 	border-radius: 25px 25px 25px 25px;
 	border:3px solid #000;	
 }
-#log_in_name {
+.window_logo {
 	font-size:50px; padding:50px 0 80px 0; text-align:center;
 	font-family:impact;  font-style:italic; color:white;
 }
-#log_in_page form .log_in_value {
+#log_in_page form .log_in_class {
 	float:left; padding:0 0 30px 20px;
 	font-size:25px; font-weight:bold;
 
 }
-#log_in_page form .log_in_value div {float:left;}
-#log_in_page form .log_in_value div {width:150px; text-align:left;}
-#log_in_page form .log_in_value input {font-size:18px; width:250px; border:1px solid #000;}
+#log_in_page form .log_in_class div {float:left;}
+#log_in_page form .log_in_class div {width:150px; text-align:left;}
+#log_in_page form .log_in_class input {font-size:18px; width:250px; border:1px solid #000;}
 #loginbutton {float:right; padding:20px 30px 0 0;}
 #loginbutton input {width:100px; height:40px; font-size:25px; font-weight:bold;}
 
-#join_page {position:absolute; top:10px;}
+
+
+#join_page {
+	position:absolute; top:120px; left:180px;
+	display:inline-block; width:500px; height:350px;
+	background-color:rgba(128, 0, 255, .8);
+	border-radius: 25px 25px 25px 25px;
+	border:3px solid #000;
+}
