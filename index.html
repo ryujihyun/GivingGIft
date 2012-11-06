@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<title>Giving Gift</title>
 	<link href="stylesheets/main.css" rel="stylesheet" type="text/css">
+	<script src='jquery-1.8.2.min.js'></script>
 </head>
 <body>
 	<div id="wrap">
@@ -14,9 +15,9 @@
 				</div>
 				<div id="top_nav">
 					<ul>
-						<li><a href="">Log In</a></li>
-						<li><a href="">Join</a></li>
-						<li><a href="">help</a></li>
+						<li><a href="#" id="loginclick">Log In</a></li>
+						<li><a href="#">Join</a></li>
+						<li><a href="#">help</a></li>
 					</ul>
 				</div>
 			</div>
@@ -32,14 +33,39 @@
 		</div>
 		<div id="content">
 			<ul>
-				<a href=""><li class="main_nav"><span id="log_in">Log In</span></li></a>
-				<a href=""><li class="main_nav"><span id="join">Join</span></li></a>
+				<a href="#" id="loginclick"><li class="main_nav"><span id="log_in">Log In</span></li></a>
+				<a href="#" id="cjoin"><li class="main_nav"><span id="join">Join</span></li></a>
 			</ul>
 		</div>
 		<div id="footer">
 			<p>사이트맵 | 고객센터</p>
 			<p>Copyright © GivingGift. All rights reserved.</p>
 		</div>
+		<div id="log_in_page">
+			<div id="log_in_name"><span>GivingGift</span></div>
+			<form action="">
+				<div class="log_in_value"><div>E-Mail</div><input type="text" name="ID"></div>
+				<div class="log_in_value"><div>Password</div><input type="password" name="password"></div>
+				<div id="loginbutton"><input type="submit" name="submit" value="log in"></div>
+			</form>
+		</div>
+		<!--<div id="join_page">
+			<span>Join</span>
+		</div>-->
 	</div>
 </body>
 </html>
+
+<script type="text/javascript">
+
+$("#log_in_page").hide();
+
+$(function() {
+	$("#wrap").find("#loginclick").click(function() {
+		$("#log_in_page").show();
+	});
+	$("#content>ul").find("#loginclick").click(function() {
+		$("#log_in_page").show();
+	});
+});
+</script>

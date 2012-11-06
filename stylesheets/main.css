@@ -22,7 +22,7 @@ input,button,textarea,select{font-size:100%;}
 a {text-decoration:none;}
 
 /*	-- latout --  */
-#wrap {width:960px; margin:0 auto; /*border:1px solid #000;*/}
+#wrap {width:960px; margin:0 auto; position:relative; /*border:1px solid #000;*/}
 
 /*  -- top --  */
 #top {
@@ -36,7 +36,7 @@ a {text-decoration:none;}
 	display:block; color:#98F5FF; float:left;
 	padding:27px 0 0 10px;
 }
-#top_logo {font-family:impact; font-size:50px; float:left;}
+#top_logo {font-family:impact; font-size:50px; float:left; font-style:italic;}
 #top_logo a {color:#fff;}
 #top_nav {float:left; display:block; margin:5px 0 0 50px;}
 #top_nav li {
@@ -60,9 +60,10 @@ a {text-decoration:none;}
 	display:inline-block; font-size:50px;
 	height:55px; padding:5px 10px;
 	background-color:rgba(12, 20, 28, .3);
-	color:white;
+	color:white; border-radius: 10px 10px 10px 10px;
 }
 #header h1 span {display:inline-block;}
+
 
 #content {width:960px; margin:0 auto; text-align:center;}
 #content ul .main_nav {
@@ -83,4 +84,31 @@ a {text-decoration:none;}
 }
 #content ul li span {display:inline-block; }
 
-#footer {clear:both; color:#888; text-align:center; padding: 20px;}
+#footer {clear:both; color:#fff; text-align:center; padding: 20px;}
+
+
+#log_in_page {
+	/*visibility:hidden;*/
+	position:absolute; top:170px; left:230px;
+	display:inline-block;
+	width:500px; height:350px;
+	background-color:rgba(128, 0, 255, .8);
+	border-radius: 25px 25px 25px 25px;
+	border:3px solid #000;	
+}
+#log_in_name {
+	font-size:50px; padding:50px 0 80px 0; text-align:center;
+	font-family:impact;  font-style:italic; color:white;
+}
+#log_in_page form .log_in_value {
+	float:left; padding:0 0 30px 20px;
+	font-size:25px; font-weight:bold;
+
+}
+#log_in_page form .log_in_value div {float:left;}
+#log_in_page form .log_in_value div {width:150px; text-align:left;}
+#log_in_page form .log_in_value input {font-size:18px; width:250px; border:1px solid #000;}
+#loginbutton {float:right; padding:20px 30px 0 0;}
+#loginbutton input {width:100px; height:40px; font-size:25px; font-weight:bold;}
+
+#join_page {position:absolute; top:10px;}
