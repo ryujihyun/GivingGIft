@@ -1,6 +1,7 @@
 /* Reset CSS: from YUI2: Reset CSS */
 html{color:#000;
-	background:#fff url("../images/background_ex1.jpg") no-repeat; padding:20px 0;
+	/*background:#fff url("../images/background_ex1.jpg") no-repeat; padding:20px 0;*/
+	background:#fff url("../images/background_ex2.jpg") no-repeat center; background-size:100%;
 	font: 12px/18px "맑은 고딕", "Malgun Gothic", "굴림", "Gulim", Verdana, Arial, Tahoma;
 }
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}
