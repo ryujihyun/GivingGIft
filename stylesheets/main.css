@@ -115,17 +115,22 @@ a {text-decoration:none;}
 #login_page form .login_class {padding:0 0 60px 20px; font-size:25px; font-weight:bold;}
 #login_page form .login_class div {width:150px; text-align:left;}
 #login_page form .login_class input {font-size:18px; width:250px; border:1px solid #000;}
-#login_button {float:right; padding:10px 25px 0 0;}
+#login_button {position:absolute; bottom:25px; right:25px;}
 #login_button input {width:100px; height:40px; font-size:25px; font-weight:bold;}
 
-#join_page form .join_class div {float:left;}
+
+.join_class_tr div {float:left;}
+.join_class_tr {clear:both;}
+.join_class_tr .tr_name {padding:0 30px 20px 20px; width:160px; font-size:20px; font-weight:bold; text-align:right;}
+
+/*#join_page form .join_class div {float:left;}
 #join_page form .join_class input {float:left;}
 #join_page form .join_class {padding:0 0 40px 40px; font-size:25px; font-weight:bold;}
 #join_page form .join_class div {width:200px; text-align:left;}
 #join_page form .join_class input {font-size:18px; width:250px; border:1px solid #000;}
 #join_page form #checkbox {width:250px;}
 #join_page form #checkbox div {width:50px; font-size:18px;}
-#join_page form #checkbox input {width:25px; height:25px}
+#join_page form #checkbox input {width:25px; height:25px}*/
 
-#join_button {float:right; padding:10px 25px 0 0;}
+#join_button {position:absolute; bottom:25px; right:25px;}
 #join_button input {width:100px; height:40px; font-size:25px; font-weight:bold;}
