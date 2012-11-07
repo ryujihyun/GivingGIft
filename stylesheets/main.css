@@ -66,7 +66,7 @@ a {text-decoration:none;}
 #header h1 span {display:inline-block;}
 
 
-#content {width:960px; margin:0 auto; text-align:center;}
+#content {width:960px; margin:0 auto; text-align:center; position:relative;}
 #content ul .main_nav {
 	display:inline-block; margin:20px 20px 60px 20px;
 	width:300px;
@@ -84,6 +84,10 @@ a {text-decoration:none;}
 	border-radius: 25px 25px 25px 25px
 }
 #content ul li span {display:inline-block; }
+
+#content #facebook_login {display:inline-block; padding:10px; position:absolute; bottom:5px; left:190px;}
+#content #facebook_login img {width:30px; height:30px;}
+#content #facebook_login a {color:white; font-size:15px; padding-bottom:5px;}
 
 #footer {clear:both; color:#fff; text-align:center; padding: 20px;}
 
