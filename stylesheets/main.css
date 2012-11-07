@@ -97,8 +97,8 @@ a {text-decoration:none;}
 	border:3px solid #000;	
 }
 #join_page {
-	position:absolute; top:80px; left:205px;
-	display:inline-block; width:550px; height:500px;
+	position:absolute; top:20px; left:205px;
+	display:inline-block; width:550px; height:580px;
 	background-color:rgba(128, 0, 255, .8);
 	border-radius: 25px 25px 25px 25px;
 	border:3px solid #000;
@@ -106,7 +106,9 @@ a {text-decoration:none;}
 .window_logo {
 	font-size:50px; padding:50px 0 80px 0; text-align:center;
 	font-family:impact;  font-style:italic; color:white;
+	position:relative;
 }
+.closebutton {position:absolute; top:15px; right:15px; width:40px; height:40px;}
 
 #login_page form .login_class div {float:left;}
 #login_page form .login_class input {float:left;}

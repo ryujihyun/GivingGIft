@@ -43,6 +43,7 @@
 		</div>
 		<div id="login_page">
 			<div class="window_logo">GivingGift</div>
+			<a href="#"><img class="closebutton" src="images/fileclose.png"></a>
 			<form action="">
 				<div class="login_class"><div>E-Mail</div><input type="text" name="ID"></div>
 				<div class="login_class"><div>Password</div><input type="password" name="password"></div>
@@ -51,6 +52,7 @@
 		</div>
 		<div id="join_page">
 			<div class="window_logo">GivingGift</div>
+			<a href="#"><img class="closebutton" src="images/fileclose.png"></a>
 			<form action="">
 				<div class="join_class"><div>이름</div><input type="text" name="name"></div>
 				<div class="join_class"><div>E-Mail</div><input type="text" name="ID"></div>
@@ -92,6 +94,10 @@ $(function() {
 	});
 	$("#content>ul").find("#join_click").click(function() {
 		$("#join_page").show();
+	});
+
+	$(".closebutton").click(function() {
+		$(this).parent().parent().hide();
 	});
 });
 </script>
