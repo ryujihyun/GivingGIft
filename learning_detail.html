@@ -9,7 +9,7 @@
 <body>
 	<header id="learning_header">
 		<hgroup id="title">
-			<a href="index.html"><h1> GivingGift</h1></a>
+			<a href="learning.html"><h1> GivingGift</h1></a>
 		</hgroup>
 		<nar id="learning_mb">
 			<ul>
@@ -18,6 +18,13 @@
 				<li><a href="#"> Need Help? </a></li>
 				<li><a href="#"> Log out </a></li>
 			</ul>
+		</nar>
+		<div id="top_right">
+			<form action="">
+				<input type="text" name="search" id="search">
+				<input type="submit" value="| Search" id="search_button">
+			</form>
+		</div>
 	</header>
 	<div id="content">
 		<div id ="aside">
@@ -67,11 +74,8 @@
 			</aside>
 
 			<aside id ="learning_aside">
-				<input id="first" type="radio" name="tab" />
-				<input id="second" type="radio" name="tab"checked="checked"/>
 				<section class="buttons">
-					<label for="first">Learning</label>
-					<label for="second">Teaching</label>
+					<label for="first">추천강좌</label>
 				</section>
 				<div class="tab_item">
 					<ul>
@@ -104,15 +108,29 @@
 						</a></li>
 					</ul>
 				</div>
+			</aside>
+			<aside id ="volunteer">
+				<section class="buttons">
+					<label for="first">추천 봉사자</label>
+				</section>
 				<div class="tab_item">
 					<ul>
+						<li class="item"><a href="#">
+							<div class="thumbnail">
+								<img src = "./images/piano.png"/>
+							</div>
+							<div class="description">
+								<strong> piano Gift </strong>
+								<p> 2012-11-05</p>
+							</div>
+						</a></li>
 						<li class="item"><a href="#">
 							<div class="thumbnail">
 								<img src = "./images/book.png"/>
 							</div>
 							<div class="description">
-								<strong> book Gift </strong>
-								<p> 2012-11-05</p>
+								<strong> Book Gift </strong>
+								<p> 2012-11-06</p>
 							</div>
 						</a></li>
 						<li class="item"><a href="#">
@@ -120,16 +138,7 @@
 								<img src = "./images/science.png"/>
 							</div>
 							<div class="description">
-								<strong> science Gift </strong>
-								<p> 2012-11-06</p>
-							</div>
-						</a></li>
-						<li class="item"><a href="#">
-							<div class="thumbnail">
-								<img src = "./images/piano.png"/>
-							</div>
-							<div class="description">
-								<strong> piano Gift </strong>
+								<strong> Science Gift </strong>
 								<p> 2012-11-07</p>
 							</div>
 						</a></li>
