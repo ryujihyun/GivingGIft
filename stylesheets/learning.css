@@ -21,7 +21,7 @@ input,button,textarea,select{font-size:100%;}
 
 * { margin: 0; padding: 0; }
 img {border: 0;}
-body{background-image: url('../images/dot.gif'); margin:0 auto;
+body{background-image: url(); margin:0 auto;
 	 font-family: 휴먼편지체, Candara; width:960px;}
 
 
@@ -33,7 +33,7 @@ body{background-image: url('../images/dot.gif'); margin:0 auto;
 
 #title{color: #b70000; font-family: ComicSansMS, Segoe Print, 휴먼편지체, Candara;}
 
-#learning_mb >ul {overflow: hidden; margin-top: 10px;}
+#learning_mb >ul {overflow: hidden; margin-top: 10px; list-style: none;}
 #learning_mb >ul >li {float: left;}
 #learning_mb >ul >li > a{display: block; padding: 10px 20px; border: 1px solid #b70000;}
 #learning_mb >ul >li >a:link {text-decoration: none; color: #b70000;}
@@ -41,6 +41,14 @@ body{background-image: url('../images/dot.gif'); margin:0 auto;
 #learning_mb >ul >li >a:hover {background: #b70000; color: white;}
 #learning_mb >ul >li:first-child >a {border-radius: 10px 0 0 10px;}
 #learning_mb >ul >li:last-child >a {border-radius: 0 10px 10px 0;}
+
+#search {width:180px; height:30px; border:none;}
+#search_button {padding:0; width:60px; height:30px; font-family:impact; font-size:15px; color: white; background-color:#b70000; border:none;}
+#top_right {
+	display:inline-block; float:right; margin:100px 5px 0 0;
+	padding:3px 3px;
+	background-color: #b70000;
+}
 
 #content { width: 960px; margin: 0 auto; overflow: hidden;}
 #content > #aside {float: left; width:200px; }
