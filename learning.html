@@ -3,6 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title> Giving Gift learning </title>
+	<script src='jquery-1.8.2.min.js'></script>
 	<link href="stylesheets/learning.css" rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -17,6 +18,13 @@
 				<li><a href="#"> Need Help? </a></li>
 				<li><a href="#"> Log out </a></li>
 			</ul>
+		</nar>
+		<div id="top_right">
+				<form action="">
+					<input type="text" name="search" id="search">
+					<input type="submit" value="| Search" id="search_button">
+				</form>
+			</div>
 	</header>
 
 	<div id="content">
@@ -212,3 +220,31 @@
 	</footer>
 </body>
 </html>
+
+<script type="text/javascript">
+
+$(function(){
+	$(document).ready(function() {
+		$(window).scroll(function() {
+			var scrollHeight=$(window).scrollTop()+ $(window).height();
+			var documentHeight = $(document).height();
+
+			if(scrollHeight + 200 >= documentHeight){
+				for(var i=0; i<10; i++){
+					$('<h1>Infinity Scroll<h1>').appendTo('body');
+				}
+			}
+		});
+	});
+
+	//mouse event
+	$("article.learning_article").mouseover(function() {
+		$(this).css("background", "#C4DEFF");
+		$(this).css("color", "#ffffff");
+	});
+
+	$("article.learning_article").mouseout(function() {
+		$(this).css("background", "#ffffff");
+	});
+});
+</script>
