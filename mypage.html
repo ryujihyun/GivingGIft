@@ -25,13 +25,11 @@
 				<li><a href="#"> Log out </a></li>
 			</ul>
 		</nar>
-			<div id="top">
-				<form action="">
+			<div id="top_right">
+			<form action="">
 				<input type="text" name="search" id="search">
 				<input type="submit" value="| Search" id="search_button">
 			</form>
-		
-		
 		</div>
 				
 		
@@ -161,6 +159,11 @@
 
 		<section id="teaching_section1">
 			<article class="teaching_article1">
+				<div id ="left"><a href="learning_detail.html">
+
+					<img src="./images/human.png"></img>
+
+				</div>
 				<h1>학생 정보</h1>
 				이름:홍택민</br>
 				나이:22살</br>
@@ -169,7 +172,7 @@
 				사는지역:서울</br>
 				취미:수학</br>
 				etc:...</br>
-				
+				</a>
 			</article>
 			
 		</section>
@@ -284,13 +287,20 @@ $(function(){
 	});
 
 	//mouse event
-	$("article.learning_article").mouseover(function() {
+	$("article.teaching_article1").mouseover(function() {
 		$(this).css("background", "#C4DEFF");
 		$(this).css("color", "#ffffff");
 	});
 
-	$("article.learning_article").mouseout(function() {
+	$("article.teaching_article1").mouseout(function() {
 		$(this).css("background", "#ffffff");
 	});
+	$("article.teaching_article2").mouseover(function() {
+		$(this).css("background", "#ffffff");
+	});
+	$("article.teaching_article3").mouseout(function() {
+		$(this).css("background", "#ffffff");
+	});
+
 });
 </script>

@@ -1,4 +1,3 @@
-
 html{color:#000;
 	background:#fff no-repeat; padding:20px 0;
 	margin:0 auto;
@@ -21,22 +20,34 @@ input,button,textarea,select{font-size:100%;}
 
 * { margin: 0; padding: 0; }
 img {border: 0;}
-body{background-image: url('../images/dot.gif'); margin:0 auto;
+body{background-image: url(''); margin:0 auto;
 	 font-family: 휴먼편지체, Candara; width:960px;}
 
 
-#learning_header{ width: 960px; margin: 0 auto; height: 160px; position: absolute;}
-#learning_header > #title {position: absolute; left: 20px; top: 20px; font-size: 40px;}
-#learning_header > #learning_mb { position: absolute; right: 0; top: 70px;}
+#teaching_header{ width: 960px; margin: 0 auto; height: 160px; position: absolute;}
+#teaching_header > #title {position: absolute; left: 20px; top: 0px; font-size: 40px;}
+#teaching_header > #title > a:link {text-decoration: none; color: #b70000;}
+#teaching_header > #title > a:visited {text-decoration: none; color: #b70000;}
+#teaching_header > #teaching_mb { position: absolute; right: 0; top: 0px;}
 
 #title{color: #b70000; font-family: ComicSansMS, Segoe Print, 휴먼편지체, Candara;}
 
-#learning_mb >ul {overflow: hidden; margin-top: 10px;}
-#learning_mb >ul >li {float: left;}
-#learning_mb >ul >li > a{display: block; padding: 10px 20px; border: 1px solid #b70000; }
-#learning_mb >ul >li >a:hover {background: #b70000; color: white;}
-#learning_mb >ul >li:first-child >a {border-radius: 10px 0 0 10px;}
-#learning_mb >ul >li:last-child >a {border-radius: 0 10px 10px 0;}
+#teaching_mb >ul {overflow: hidden; margin-top: 10px;list-style: none;}
+#teaching_mb >ul >li {float: left;}
+#teaching_mb >ul >li > a{display: block; padding: 10px 20px; border: 1px solid #b70000; }
+#teaching_mb >ul >li >a:link {text-decoration: none; color: #b70000;}
+#teaching_mb >ul >li >a:visited {text-decoration: none; color: #b70000;}
+#teaching_mb >ul >li >a:hover {background: #b70000; color: white;}
+#teaching_mb >ul >li:first-child >a {border-radius: 10px 0 0 10px;}
+#teaching_mb >ul >li:last-child >a {border-radius: 0 10px 10px 0;}
+
+#search {width:180px; height:30px; border:none; }
+#search_button {padding:0; width:60px; height:30px; font-family:impact; font-size:15px; color: white; background-color:#b70000; border:none;}
+#top{
+	display:inline-block; float:right; margin:60px 5px 0 0;
+	padding:3px 3px;
+	background-color: #b70000;
+}
 
 #content { width: 960px; margin: 0 auto; overflow: hidden;}
 #content > #aside {float: left; width:200px;}
@@ -46,11 +57,13 @@ body{background-image: url('../images/dot.gif'); margin:0 auto;
 #content > #board_section3 { padding-left: 10px; width: 370px; margin-top: 10px; float: left;}
 #content > #board_section4 { padding-left: 800px; width: 160px; margin-top: 810px;}
 
-#content > #teaching_section1 { width:750px;  margin-top: 150px; float: right;}
+#content > #teaching_section1 { width:750px;  margin-top:150px; float: right;}
 #content > #teaching_section2 {padding-left: 10px; width: 242px; margin-top:10px; float: left;}
 
-#teaching_section > article.teaching_article {margin-bottom: 10px; padding: 20px; border: 1px solid #b70000;}
-#board_section > article.board_article {margin-bottom: 10px; padding: 20px; border: 1px solid #b70000;}
+#teaching_section1 > article.teaching_article1 {margin-bottom: 10px; padding: 20px; border: 1px solid #b70000;}
+#board_section > article.board_article1 {margin-bottom: 10px; padding: 20px; border: 1px solid #b70000;}
+#teaching_section1 > article.teaching_article1 > a:link {text-decoration: none; color: black;}
+#teaching_section1 > article.teaching_article1> a:visited {text-decoration: none; color: black;}
 #board_section2 > article.board_article2 {margin-bottom: 10px; padding: 20px; border: 1px solid #b70000;}
 #board_section3 > article.board_article3 {margin-bottom: 10px; padding: 20px; border: 1px solid #b70000;}
 #board_section4 > article.board_article4 {margin-bottom: 10px; padding: 20px; border: 1px solid #b70000;}
@@ -73,7 +86,7 @@ section.buttons{ overflow: hidden; margin-top: 20px;}
 section.buttons>label {
 	display: block; float: left;
 
-	width: 100px; height: 30px;
+	width: 200px; height: 30px;
 	line-height: 30px;
 	text-align: center;
 
@@ -90,7 +103,7 @@ input:nth-of-type(2):checked ~ section.buttons > label:nth-of-type(2){ backgroun
 .item{ overflow: hidden; padding: 10px; border: 1px solid #b70000; border-top: none;}
 .thumbnail{float: left;}
 .thumbnail>img{width: 30px;}
-.description {float: left; margin-left: 10px;}
+.description {float: left; margin-left:10px;}
 .description >strong {display: #b70000; width: 120px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
 
 #content > #volunteer { display: block; width:160px; margin-top: 20px;}
