@@ -28,7 +28,7 @@ body{background-image: url('../images/dot.gif'); margin:0 auto;
 #content > #aside {float: left; width:200px;}
 #content > #learning_detail {width: 750px; margin-top: 150px; float: right;}
 
-#learning_detail > article.learning_person {margin-bottom: 10px; padding: 20px;
+#learning_detail > article.learning_person {margin-bottom: 10px; padding: 10px;
 							 border: 1px solid #b70000;}
 #learning_detail > #class_number {margin-bottom: 10px; padding: 20px;
 							 border: 1px solid #b70000;}
