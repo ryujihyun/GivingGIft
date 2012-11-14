@@ -13,221 +13,280 @@
 	<script src="js/bootstrap.min.js"></script>
 </head>
 <body>
-	<header id="learning_header">
-		<hgroup id="title">
-			<a href="index.html"><h1> GivingGift</h1></a>
-		</hgroup>
-		<nar id="learning_mb">
-			<ul>
-				<li><a href="board.html"> Board </a></li>
-				<li><a href="mypage.html"> My Page </a></li>
-				<li><a href="#"> Need Help? </a></li>
-				<li><a href="#"> Log out </a></li>
-			</ul>
-		</nar>
-		<div id="top_right">
-			<form action="">
-				<input type="text" name="search" id="search">
-				<input type="submit" value="| Search" id="search_button">
+	<div id="wrap">
+		<header id="learning_header">
+			<div id="header_left">
+			<hgroup id="title">
+				<a href="index.html"><h1> GivingGift</h1></a>
+			</hgroup>
+			</div>
+			<div id="header_right">
+				<nar id="learning_mb">
+					<ul>
+						<li><a href="board.html"> Board </a></li>
+						<li><a href="mypage.html"> My Page </a></li>
+						<li><a href="#"> Need Help? </a></li>
+						<li><a href="#"> Log out </a></li>
+					</ul>
+				</nar>
+				<div id="top_right">
+					<form action="">
+						<input type="text" name="search" id="search">
+						<input type="submit" value="| Search" id="search_button">
+					</form>
+				</div>
+			</div>
+		</header>
+
+		<div id="content">
+			<div id ="aside">
+				<aside id="category">
+					<div id='cssmenu'>
+						<ul>
+						   <li class='has-sub'><a href='#'><span>인문</span></a>
+						   		<ul>
+						   			<li><a href="#"><span> 한국어 </span></a></li>
+						   			<li><a href="#"><span> 영어 </span></a></li>
+						   			<li><a href="#"><span> 불어 </span></a></li>
+						   			<li><a href="#"><span> 프랑스어 </span></a></li>
+						   			<li><a href="#"><span> 기타 </span></a></li>
+						   		</ul>
+						   </li>
+						  </li>
+						   <li class='has-sub'><a href='#'><span>사회</span></a>
+								<ul>
+						   			<li><a href="#"><span> 경제 </span></a></li>
+						   			<li><a href="#"><span> 역사 </span></a></li>
+						   			<li><a href="#"><span> 정치 </span></a></li>
+						   		</ul>
+						   </li>
+						   <li class='has-sub'><a href='#'><span>과학</span></a>
+						   		<ul>
+						   			<li><a href="#"><span> 물리 </span></a></li>
+						   			<li><a href="#"><span> 화학 </span></a></li>
+						   			<li><a href="#"><span> 생물 </span></a></li>
+						   			<li><a href="#"><span> 지구과학 </span></a></li>
+						   		</ul>
+						   	</li>
+						   <li class='has-sub'><a href='#'><span>기술</span></a>
+						   		<ul>
+						   			<li><a href="#"><span> 프로그래밍 </span></a></li>
+						   			<li><a href="#"><span> 공학 </span></a></li>
+						   		</ul>
+						   </li>
+						   <li class='has-sub'><a href='#'><span>예체능</span></a>
+						   		<ul>
+						   			<li><a href="#"><span> 음악 </span></a></li>
+						   			<li><a href="#"><span> 예술</span></a></li>
+						   			<li><a href="#"><span> 체육 </span></a></li>
+						   		</ul>
+						   </li>
+						</ul>
+					</di>
+				</aside>
+				<aside id ="learning_aside">
+					<section class="buttons">
+						<label for="first">추천강좌</label>
+					</section>
+					<div class="tab_item">
+						<ul>
+							<li class="item"><a href="#">
+								<div class="thumbnail">
+									<img src = "./images/piano.png"/>
+								</div>
+								<div class="description">
+									<strong> piano Gift </strong>
+									<p> 2012-11-05</p>
+								</div>
+							</a></li>
+							<li class="item"><a href="#">
+								<div class="thumbnail">
+									<img src = "./images/book.png"/>
+								</div>
+								<div class="description">
+									<strong> Book Gift </strong>
+									<p> 2012-11-06</p>
+								</div>
+							</a></li>
+							<li class="item"><a href="#">
+								<div class="thumbnail">
+									<img src = "./images/science.png"/>
+								</div>
+								<div class="description">
+									<strong> Science Gift </strong>
+									<p> 2012-11-07</p>
+								</div>
+							</a></li>
+						</ul>
+					</div>
+				</aside>
+				<aside id ="volunteer">
+					<section class="buttons">
+						<label for="first">추천 봉사자</label>
+					</section>
+					<div class="tab_item">
+						<ul>
+							<li class="item"><a href="#">
+								<div class="thumbnail">
+									<img src = "./images/piano.png"/>
+								</div>
+								<div class="description">
+									<strong> piano Gift </strong>
+									<p> 2012-11-05</p>
+								</div>
+							</a></li>
+							<li class="item"><a href="#">
+								<div class="thumbnail">
+									<img src = "./images/book.png"/>
+								</div>
+								<div class="description">
+									<strong> Book Gift </strong>
+									<p> 2012-11-06</p>
+								</div>
+							</a></li>
+							<li class="item"><a href="#">
+								<div class="thumbnail">
+									<img src = "./images/science.png"/>
+								</div>
+								<div class="description">
+									<strong> Science Gift </strong>
+									<p> 2012-11-07</p>
+								</div>
+							</a></li>
+						</ul>
+					</div>
+				</aside>
+			</div>
+			<section id="learning_section">
+
+				<div id="create_class"><a href="#" id="create_click">강좌 개설</a></div>
+
+				<article class="learning_article">
+					<div id ="left"><a href="learning_detail.html">
+						<img src="./images/piano.png"></img>
+					</div>
+					<h1> Giving Gift Piano Gift </h1>
+					<p>
+						name: youbin<br>
+						address : 경기도 용인시 처인구 명지대학교 <br>
+						date: 2012.11.22 ~ 2012.12.25<br>
+						week: Mon, Wen, Fri<br>
+						Number: 5<br>
+					</p></a>
+				</article>
+				<article class="learning_article">
+					<div id="left"><a href="#">
+						<img src="./images/book.png"></img>
+					</div>
+					<h1> Giving Gift Book Gift </h1>
+					<p>
+						name: youbin<br>
+						address : 경기도 용인시 처인구 명지대학교 <br>
+						date: 2012.11.22 ~ 2012.12.25<br>
+						week: Mon, Thu<br>
+						Number: 3<br>
+					</p></a>
+				</article>
+				<article class="learning_article">
+					<div id="left"><a href="#">
+						<img src="./images/science.png"></img>
+					</div>
+					<h1> Giving Gift Science Gift </h1>
+					<p>
+						name: youbin<br>
+						address : 경기도 용인시 처인구 명지대학교 <br>
+						date: 2012.11.22 ~ 2012.12.25<br>
+						week: Wen, Sat, Sun<br>
+						Number: 8<br>
+					</p></a>
+				</article>
+				<article class="learning_article">
+					<div id="left"><a href="#">
+						<img src="./images/language.png"></img>
+					</div>
+					<h1> Giving Gift Language Gift </h1>
+					<p>
+						name: youbin<br>
+						address : 경기도 용인시 처인구 명지대학교 <br>
+						date: 2012.11.22 ~ 2012.12.25<br>
+						week: Wen, Sat, Sun<br>
+						Number: 8<br>
+					</p></a>
+				</article>
+				<article class="learning_article">
+					<div id="left"><a href="#">
+						<img src="./images/math.png"></img>
+					</div>
+					<h1> Giving Gift Math Gift </h1>
+					<p>
+						name: youbin<br>
+						address : 경기도 용인시 처인구 명지대학교 <br>
+						date: 2012.11.22 ~ 2012.12.25<br>
+						week: Wen, Sat, Sun<br>
+						Number: 8<br>
+					</p></a>
+				</article>
+			</section>
+		</div>
+		<footer id="learning_footer">
+			<h3> 사이트맵 | 고객센터</h3>
+			<address> CopyWrite c GivingGift All rights reserved | 2012.11.06 | club.cyworld.com/givinggift</address>
+		</footer>
+
+		<div class="new_window" id="create_page">
+
+			<div class="window_logo">GivingGift</div>
+			<a href="#"><img class="closebutton" src="images/fileclose.png"></a>
+			<form action="#">
+				<div>
+					<div class="join_class">
+						<div class="class_name">강좌명</div><div><input class="input_text" type="text" name="name"></div>
+					</div>
+					<div class="join_class">
+						<div class="class_name">E-Mail</div><div><input class="input_text" type="text" name="ID"></div>
+					</div>
+					<div class="join_class">
+						<div class="class_name">Password</div><div><input class="input_text" type="password" name="password"></div>
+					</div>
+					<div class="join_class">
+						<div class="class_name">Password 확인</div><div><input class="input_text" type="password" name="password"></div>
+					</div>
+					<div class="join_class">
+						<div class="class_name">전화번호</div><div><input class="input_text" type="text" name="phone"></div>
+					</div>
+					<div class="join_class">
+						<div class="class_name">성별</div>
+						<div>
+							<input type="radio" name="gender" value="male">남
+							<input type="radio" name="gender" value="female">여
+						</div>
+					</div>
+					<div class="join_class">
+						<div class="class_name">주소</div><div><input class="input_text" type="text" name="address"></div>
+					</div>
+					<div class="join_class">
+						<div class="class_name">관심분야</div>
+						<div id="checkbox">
+							<input type="checkbox" name="like" value="music">음악
+							<input type="checkbox" name="like" value="soccer">체육
+							<input type="checkbox" name="like" value="art">미술
+							<input type="checkbox" name="like" value="science">과학
+							<input type="checkbox" name="like" value="sleep">낮잠
+							<input type="checkbox" name="like" value="hungry">야식
+						</div>
+					</div>
+				</div>
+				<div class="window_button"><input type="submit" name="submit" value="join"></div>
 			</form>
 		</div>
-	</header>
 
-	<div id="content">
-		<div id ="aside">
-			<aside id="category">
-				<div id='cssmenu'>
-					<ul>
-					   <li class='has-sub'><a href='#'><span>인문</span></a>
-					   		<ul>
-					   			<li><a href="#"><span> 한국어 </span></a></li>
-					   			<li><a href="#"><span> 영어 </span></a></li>
-					   			<li><a href="#"><span> 불어 </span></a></li>
-					   			<li><a href="#"><span> 프랑스어 </span></a></li>
-					   			<li><a href="#"><span> 기타 </span></a></li>
-					   		</ul>
-					   </li>
-					  </li>
-					   <li class='has-sub'><a href='#'><span>사회</span></a>
-							<ul>
-					   			<li><a href="#"><span> 경제 </span></a></li>
-					   			<li><a href="#"><span> 역사 </span></a></li>
-					   			<li><a href="#"><span> 정치 </span></a></li>
-					   		</ul>
-					   </li>
-					   <li class='has-sub'><a href='#'><span>과학</span></a>
-					   		<ul>
-					   			<li><a href="#"><span> 물리 </span></a></li>
-					   			<li><a href="#"><span> 화학 </span></a></li>
-					   			<li><a href="#"><span> 생물 </span></a></li>
-					   			<li><a href="#"><span> 지구과학 </span></a></li>
-					   		</ul>
-					   	</li>
-					   <li class='has-sub'><a href='#'><span>기술</span></a>
-					   		<ul>
-					   			<li><a href="#"><span> 프로그래밍 </span></a></li>
-					   			<li><a href="#"><span> 공학 </span></a></li>
-					   		</ul>
-					   </li>
-					   <li class='has-sub'><a href='#'><span>예체능</span></a>
-					   		<ul>
-					   			<li><a href="#"><span> 음악 </span></a></li>
-					   			<li><a href="#"><span> 예술</span></a></li>
-					   			<li><a href="#"><span> 체육 </span></a></li>
-					   		</ul>
-					   </li>
-					</ul>
-				</di>
-			</aside>
-			<aside id ="learning_aside">
-				<section class="buttons">
-					<label for="first">추천강좌</label>
-				</section>
-				<div class="tab_item">
-					<ul>
-						<li class="item"><a href="#">
-							<div class="thumbnail">
-								<img src = "./images/piano.png"/>
-							</div>
-							<div class="description">
-								<strong> piano Gift </strong>
-								<p> 2012-11-05</p>
-							</div>
-						</a></li>
-						<li class="item"><a href="#">
-							<div class="thumbnail">
-								<img src = "./images/book.png"/>
-							</div>
-							<div class="description">
-								<strong> Book Gift </strong>
-								<p> 2012-11-06</p>
-							</div>
-						</a></li>
-						<li class="item"><a href="#">
-							<div class="thumbnail">
-								<img src = "./images/science.png"/>
-							</div>
-							<div class="description">
-								<strong> Science Gift </strong>
-								<p> 2012-11-07</p>
-							</div>
-						</a></li>
-					</ul>
-				</div>
-			</aside>
-			<aside id ="volunteer">
-				<section class="buttons">
-					<label for="first">추천 봉사자</label>
-				</section>
-				<div class="tab_item">
-					<ul>
-						<li class="item"><a href="#">
-							<div class="thumbnail">
-								<img src = "./images/piano.png"/>
-							</div>
-							<div class="description">
-								<strong> piano Gift </strong>
-								<p> 2012-11-05</p>
-							</div>
-						</a></li>
-						<li class="item"><a href="#">
-							<div class="thumbnail">
-								<img src = "./images/book.png"/>
-							</div>
-							<div class="description">
-								<strong> Book Gift </strong>
-								<p> 2012-11-06</p>
-							</div>
-						</a></li>
-						<li class="item"><a href="#">
-							<div class="thumbnail">
-								<img src = "./images/science.png"/>
-							</div>
-							<div class="description">
-								<strong> Science Gift </strong>
-								<p> 2012-11-07</p>
-							</div>
-						</a></li>
-					</ul>
-				</div>
-			</aside>
-		</div>
-		<section id="learning_section">
-			<article class="learning_article">
-				<div id ="left"><a href="learning_detail.html">
-					<img src="./images/piano.png"></img>
-				</div>
-				<h1> Giving Gift Piano Gift </h1>
-				<p>
-					name: youbin<br>
-					address : 경기도 용인시 처인구 명지대학교 <br>
-					date: 2012.11.22 ~ 2012.12.25<br>
-					week: Mon, Wen, Fri<br>
-					Number: 5<br>
-				</p></a>
-			</article>
-			<article class="learning_article">
-				<div id="left"><a href="#">
-					<img src="./images/book.png"></img>
-				</div>
-				<h1> Giving Gift Book Gift </h1>
-				<p>
-					name: youbin<br>
-					address : 경기도 용인시 처인구 명지대학교 <br>
-					date: 2012.11.22 ~ 2012.12.25<br>
-					week: Mon, Thu<br>
-					Number: 3<br>
-				</p></a>
-			</article>
-			<article class="learning_article">
-				<div id="left"><a href="#">
-					<img src="./images/science.png"></img>
-				</div>
-				<h1> Giving Gift Science Gift </h1>
-				<p>
-					name: youbin<br>
-					address : 경기도 용인시 처인구 명지대학교 <br>
-					date: 2012.11.22 ~ 2012.12.25<br>
-					week: Wen, Sat, Sun<br>
-					Number: 8<br>
-				</p></a>
-			</article>
-			<article class="learning_article">
-				<div id="left"><a href="#">
-					<img src="./images/language.png"></img>
-				</div>
-				<h1> Giving Gift Language Gift </h1>
-				<p>
-					name: youbin<br>
-					address : 경기도 용인시 처인구 명지대학교 <br>
-					date: 2012.11.22 ~ 2012.12.25<br>
-					week: Wen, Sat, Sun<br>
-					Number: 8<br>
-				</p></a>
-			</article>
-			<article class="learning_article">
-				<div id="left"><a href="#">
-					<img src="./images/math.png"></img>
-				</div>
-				<h1> Giving Gift Math Gift </h1>
-				<p>
-					name: youbin<br>
-					address : 경기도 용인시 처인구 명지대학교 <br>
-					date: 2012.11.22 ~ 2012.12.25<br>
-					week: Wen, Sat, Sun<br>
-					Number: 8<br>
-				</p></a>
-			</article>
-		</section>
 	</div>
-	<footer id="learning_footer">
-		<h3> 사이트맵 | 고객센터</h3>
-		<address> CopyWrite c GivingGift All rights reserved | 2012.11.06 | club.cyworld.com/givinggift</address>
-	</footer>
 </body>
 </html>
 
 <script type="text/javascript">
+
+$("#create_page").hide();
 
 $(function(){
 	$(document).ready(function() {
@@ -241,6 +300,14 @@ $(function(){
 				}
 			}
 		});
+	});
+
+	//create window
+	$("#learning_section").find("#create_click").click(function() {
+		$("#create_page").show();
+	});
+	$(".closebutton").click(function() {
+		$(this).parent().parent().hide();
 	});
 
 	//mouse event
