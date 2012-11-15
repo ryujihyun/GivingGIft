@@ -30,7 +30,7 @@ li {}
 #top_left {float:left; padding:0;}
 #top_left ul li {float:left;}
 #top_left ul li a {border-right:2px solid #ddd;}
-#top_logo {font-family:impact; font-size:30px; font-style:italic;}
+#top_logo {font-family:impact; font-size:30px; font-style:italic; color:#FF4040;}
 #top_right {float:right; padding:0;}
 #top_right ul li {float:left;}
 #top_right ul li a {border-left:2px solid #ddd;}
@@ -41,24 +41,11 @@ li {}
 	background-image: url(); font-family: 휴먼편지체, Candara;
 }
 
-/*  --  Header  --  */
-#header {text-align:center; padding:60px;}
-#header span {font-family:impact; font-size:80px;}
-
-#header_search {
-	display:inline-block; width:800px; margin-left:80px; margin-bottom:30px; padding:20px;
-	background-color:#FEEECD;
-	border-radius: 10px 10px 10px 10px;
-}
-#search {width:700px; height:50px; border:1px solid #FF4040; font-size:20px;}
-#search_button {
-	padding:0; width:90px; height:50px; font-family:impact; font-size:15px; color: white; background-color:#FF4040; border:none;
-}
-
+/*  --  Content  --  */
 #content { width: 960px; margin: 0 auto; overflow: hidden;}
 #content > #aside {float: left; width:200px;}
-#content > #teaching_section {  width: 750px; margin-top: 150px; float: right;}
-#content > #board_section {  width: 750px; margin-top: 150px; float: right;}
+#content > #teaching_section {  width: 750px; float: right;}
+#content > #board_section {  width: 750px; float: right;}
 #content > #board_section2 {  width: 750px; margin-top: 10px; float: right;}
 #content > #board_section3 { padding-left: 10px; width: 370px; margin-top: 10px; float: left;}
 #content > #board_section4 { padding-left: 800px; width: 160px; margin-top: 810px;}
