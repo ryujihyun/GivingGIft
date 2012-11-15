@@ -41,6 +41,13 @@ li {}
 	background-image: url(); font-family: 휴먼편지체, Candara;
 }
 
+/*  --  header  --  */
+#header {margin-top:30px;}
+
+#header_p {display:block;}
+#header_p h1 {margin-bottom:30px; font-size:40px; color:#EE6A50;}
+#header_p p {margin-bottom:30px; font-size:30px; color:#FEE0C6;}
+
 /*  --  Content  --  */
 #content { width: 960px; margin: 0 auto; overflow: hidden;}
 #content > #aside {float: left; width:200px;}
