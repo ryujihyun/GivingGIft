@@ -30,10 +30,9 @@ li {}
 #top_left {float:left; padding:0;}
 #top_left ul li {float:left;}
 #top_left ul li a {border-right:2px solid #ddd;}
-#top_logo {font-family:impact; font-size:30px; font-style:italic;}
+#top_logo {font-family:impact; font-size:30px; font-style:italic; color:#FF4040;}
 #top_right {float:right; padding:0;}
 #top_right ul li {float:left;}
-#top_right ul li a {border-left:2px solid #ddd;}
 
 /*  --  body  --  */
 #wrap {
