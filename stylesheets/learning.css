@@ -1,5 +1,5 @@
 
-html{color:#000; background:#fff no-repeat; margin:0 auto;}
+html{color:#000; background:#fff no-repeat; margin:0 auto; font-family: 휴먼편지체, Candara;}
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}
 table{border-collapse:collapse;border-spacing:0;}
 fieldset,img{border:0;}
@@ -22,7 +22,7 @@ a {text-decoration:none;}
 li {}
 
 /* -- Top  --  */
-#top {height:45px; border-bottom:2px solid #ddd; line-height:45px;}
+#top {height:45px; border-bottom:2px solid #ddd; line-height:45px; margin-bottom: 0px;}
 #top_container {width:960px; margin:0 auto;}
 
 #top ul li {display:block; font-size:15px;}
@@ -40,10 +40,25 @@ li {}
 	width:960px; margin:0 auto; position:relative;
 	background-image: url(); font-family: 휴먼편지체, Candara;
 }
+.animation_canvas  { margin-top:0px; overflow:hidden; position:relative; width:900px; height:370px;}
+
+/* Slider Panel */
+.slider_panel { width:4500px; position:relative; }
+.slider_image { float:left; width:900px; height:300px; }
+    
+/* Slider Text Panel */
+.slider_text_panel { position:absolute; top:110px; left:50px; }
+.slider_text { position:absolute; width:330px; height:150px; font-size: 30px;}
+    
+/* Control Panel */
+.control_panel  {position:absolute; top:300px; left:400px; height:13px; overflow:hidden; }
+.control_button {width:12px; height:46px; position:relative; float:left; cursor:pointer; background:url('../images/point_button.png');}
+.control_button:hover { top:-16px; }
+.control_button.active { top:-31px; }
 
 /*  --  Header  --  */
 #header {text-align:center; padding:60px;}
-#header span {font-family:impact; font-size:80px;}
+#header span {font-family:휴먼편지체, Candara;; font-size:80px;}
 
 #header_search {
 	display:inline-block; width:800px; margin-left:80px; margin-bottom:30px; padding:20px;
