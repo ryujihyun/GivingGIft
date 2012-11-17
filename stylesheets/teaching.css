@@ -33,6 +33,7 @@ li {}
 #top_logo {font-family:impact; font-size:30px; font-style:italic; color:#FF4040;}
 #top_right {float:right; padding:0;}
 #top_right ul li {float:left;}
+#top_right ul li a {border-left:2px solid #ddd;}
 
 /*  --  body  --  */
 #wrap {
