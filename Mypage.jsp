@@ -2,10 +2,74 @@
 <%@page import="java.sql.Connection"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+    
+<%
+String code=request.getParameter("code");
+Connection conn=null;
+Statement stmt=null;
+try{
+	Class.forName("com.mysql.jdbc.Driver");
+	Connection conn = DriverManager.getConnection(
+		"jdbc:mysql://localhost:3306/givinggift","root","tiger");
+	
+	if (conn==null)
+	{
+		throw new Exception("데이터베이스에 연결할 수 없습니다.");
+		stmt=conn.createStatement();
+		ResultSet rs=stmt.executeQuery(
+				"select*from member where email = ' "+email+"';");
+		if(!rs-next())
+			throw new Exception(
+					"(해당맴버("+email+")에 해당하는 데이터가 없습니다.");
+					String password=rs.getString("password");
+					String name=rs.getString("name");
+					String address=rs.getString("address");
+					String phone=rs.getString("phone");
+					String birthdate=rs.getString("birthdate");
+					String gender=rs.getString("gender");
+					int type=rs.getInt("type");
+					
+					request.setAttribute("Password",password);
+					request.setAttribute("Email",email);
+					request.setAttribute("Address",address);
+					request.setAttribute("Phone",phone);
+					request.setAttribute("Birthdate",birthdate);
+					request.setAttribute("Gender",gender);
+					request.setAttribute("Type",type);
+	
+	ResultSet rs=stmt.executeQuery(
+			"select*from class where id = ' "+id+"';");
+	if(!rs-next())
+		throw new Exception(
+				"(해당맴버("+id+")에 해당하는 데이터가 없습니다.");
+				String name=rs.getString("name");
+				String content=rs.getString("content");
+				String address=rs.getString("address");
+				String phone=rs.getString("phone");
+				String birthdate=rs.getString("birthdate");
+				String gender=rs.getString("gender");
+				int type=rs.getInt("type");
+				
+				request.setAttribute("Password",password);
+				request.setAttribute("Email",email);
+				request.setAttribute("Address",address);
+				request.setAttribute("Phone",phone);
+				request.setAttribute("Birthdate",birthdate);
+				request.setAttribute("Gender",gender);
+				request.setAttribute("Type",type);
+}
+
+
+
+%> 
+    
+    
+    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta http-equiv="page-exit" content="BlendTans(Duration=3.0)">
 	<meta http-equiv="page-Enter" content="BlendTans(Duration=3.0)">rdr
 	<title> Giving Gift learning </title>
