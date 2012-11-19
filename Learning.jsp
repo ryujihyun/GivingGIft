@@ -1,5 +1,11 @@
+<%@page import="java.sql.SQLException"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.Connection"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -12,6 +18,15 @@
 	<script src="js/bootstrap.min.js"></script>
 </head>
 <body>
+<% 
+Connection conn = null;
+Statement stmt = null;
+ResultSet rs = null;
+
+String dbUrl = "jdbc:mysql://localhost:3306/GivingGift";
+String dbUser = "root";
+String dbPassword = "tiger";
+%>
 	<jsp:include page="share/header.jsp"></jsp:include>
 	<div id="wrap">
 		<div id="header">
@@ -50,6 +65,16 @@
 		</div>
 	</div>
 	<div id="content">
+		<%
+	try{
+		Class.forName("com.mysql.jdbc.Driver");
+		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/GivingGift", "root", "tiger");
+
+		stmt = conn.createStatement();
+		rs = stmt.executeQuery("SElECT * FROM member");
+		
+		if(rs.next()){
+	%>
 	<jsp:include page="share/side.jsp"></jsp:include>
 			<section id="learning_section">
 				<article class="learning_article">
@@ -58,67 +83,29 @@
 					</div>
 					<h1> Giving Gift Piano Gift </h1>
 					<p>
-						name: youbin<br>
-						address : 경기도 용인시 처인구 명지대학교 <br>
+						name: <%=request.getParameter("name")%><br>
+						address : <%=request.getParameter("address")%> <br>
+						phone: <%=request.getParameter("phone")%> <br>
 						date: 2012.11.22 ~ 2012.12.25<br>
 						week: Mon, Wen, Fri<br>
 						Number: 5<br>
 					</p></a>
 				</article>
-				<article class="learning_article">
-					<div id="left"><a href="#">
-						<img src="./images/book.png"></img>
-					</div>
-					<h1> Giving Gift Book Gift </h1>
-					<p>
-						name: youbin<br>
-						address : 경기도 용인시 처인구 명지대학교 <br>
-						date: 2012.11.22 ~ 2012.12.25<br>
-						week: Mon, Thu<br>
-						Number: 3<br>
-					</p></a>
-				</article>
-				<article class="learning_article">
-					<div id="left"><a href="#">
-						<img src="./images/science.png"></img>
-					</div>
-					<h1> Giving Gift Science Gift </h1>
-					<p>
-						name: youbin<br>
-						address : 경기도 용인시 처인구 명지대학교 <br>
-						date: 2012.11.22 ~ 2012.12.25<br>
-						week: Wen, Sat, Sun<br>
-						Number: 8<br>
-					</p></a>
-				</article>
-				<article class="learning_article">
-					<div id="left"><a href="#">
-						<img src="./images/language.png"></img>
-					</div>
-					<h1> Giving Gift Language Gift </h1>
-					<p>
-						name: youbin<br>
-						address : 경기도 용인시 처인구 명지대학교 <br>
-						date: 2012.11.22 ~ 2012.12.25<br>
-						week: Wen, Sat, Sun<br>
-						Number: 8<br>
-					</p></a>
-				</article>
-				<article class="learning_article">
-					<div id="left"><a href="#">
-						<img src="./images/math.png"></img>
-					</div>
-					<h1> Giving Gift Math Gift </h1>
-					<p>
-						name: youbin<br>
-						address : 경기도 용인시 처인구 명지대학교 <br>
-						date: 2012.11.22 ~ 2012.12.25<br>
-						week: Wen, Sat, Sun<br>
-						Number: 8<br>
-					</p></a>
-				</article>
 			</section>
 		</div>
+		<%} else {
+		%>
+		<%=request.getParameter("name") %>에 해당하는 정보가 없습니다.
+		<%
+		}
+		} catch(SQLException ex) {
+			%>
+			에러발생
+			<% }finally {
+				if(rs != null) try {rs.close();} catch(SQLException ex){}
+				if(conn != null) try {rs.close();} catch(SQLException ex){}
+				if(stmt != null) try {rs.close();} catch(SQLException ex){}
+			}%>
 <jsp:include page="share/footer.jsp"></jsp:include>
 		<div class="new_window" id="create_page">
 			<div class="window_logo">GivingGift</div>
