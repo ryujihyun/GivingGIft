@@ -22,7 +22,7 @@ a {text-decoration:none;}
 li {}
 
 /* -- Top  --  */
-#top {height:45px; border-bottom:2px solid #ddd; line-height:45px;}
+#top {height:45px; border-bottom:2px solid #ddd; line-height:45px;margin-bottom: 0px;}
 #top_container {width:960px; margin:0 auto;}
 
 #top ul li {display:block; font-size:15px;}
