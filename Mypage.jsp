@@ -46,18 +46,22 @@ try{
 				String name=rs.getString("name");
 				String content=rs.getString("content");
 				String address=rs.getString("address");
-				String phone=rs.getString("phone");
-				String birthdate=rs.getString("birthdate");
-				String gender=rs.getString("gender");
-				int type=rs.getInt("type");
+				String interest=rs.getString("interest");
+				String latitute=rs.getString("latitute");
+				String longtitude=rs.getString("longtude");
+				String teacher_id=rs.getString("teacher_id");
+				int type=rs.getInt("number");
 				
-				request.setAttribute("Password",password);
-				request.setAttribute("Email",email);
+				request.setAttribute("Name",name);
+				request.setAttribute("Content",content);
 				request.setAttribute("Address",address);
-				request.setAttribute("Phone",phone);
-				request.setAttribute("Birthdate",birthdate);
-				request.setAttribute("Gender",gender);
-				request.setAttribute("Type",type);
+				request.setAttribute("Interest",interest);
+				request.setAttribute("Latitute",latitute);
+				request.setAttribute("Longtitude",longtitude);
+				request.setAttribute("Teacher_id",Teacher_id);
+				request.setAttribute("Number",number);
+
+	}
 }
 
 
