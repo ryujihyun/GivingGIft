@@ -1,35 +1,18 @@
-<!DOCTYPE html>
-<html lang="ko">
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
-	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta http-equiv="page-exit" content="BlendTans(Duration=3.0)">
 	<meta http-equiv="page-Enter" content="BlendTans(Duration=3.0)">
 	<title> Giving Gift learning </title>
 	<link href="stylesheets/learning.css" rel="stylesheet" type="text/css">
-<!--	<link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.min.css"/>
-	<link rel="stylesheet" type="text/css" href="stylesheets/bootstrap-responsive.min.css"/> -->
-	<script src='jquery-1.8.2.min.js'></script>
+	<script src='js/jquery-1.8.2.min.js'></script>
 	<script src="js/bootstrap.min.js"></script>
 </head>
 <body>
-	<div id="top">
-		<div id="top_container">
-			<div id="top_left">
-				<ul>
-					<li><a href="index.html" id="top_logo">GivingGift</a></li>
-					<li><a href="learning.html">Learn</a></li>
-					<li><div id="create_class"><a href="#" id="create_click">Teach</a></div></li>
-				</ul>
-			</div>
-			<div id="top_right">
-				<ul>
-					<li><a href="mypage.html"> My Page </a></li>
-					<li><a href="board.html"> Help </a></li>
-					<li><a href="#"> Log out </a></li>
-				</ul>			
-			</div>
-		</div>
-	</div>
+	<jsp:include page="share/header.jsp"></jsp:include>
 	<div id="wrap">
 		<div id="header">
 			<div class="animation_canvas">
@@ -44,7 +27,7 @@
             		    <p>한번의 클릭으로 당신이 원하는 강좌를 들을 수 있습니다</p>
             		</div>
            		<div class="slider_text">
-            		    <h1>내 재능을 나누고 싶으신가요?</h1>
+            		    <h1>재능을 나누고 싶으신가요?</h1>
             		    <p>Teach를 통한 자신의 재능을 기부하세요!</p>
            		 </div>
             		<div class="slider_text">
@@ -58,7 +41,7 @@
             	<div class="control_button"></div>
         		</div>
     		</div>
-   		</div>
+    		</div>
 		<div id="header_search">
 			<form action="">
 				<input type="text" name="search" id="search">
@@ -66,92 +49,8 @@
 			</form>
 		</div>
 	</div>
-		<div id="content">
-			<div id ="aside">
-				<aside id="category">
-					<div id='cssmenu'>
-						<ul>
-						   <li><a href='#'><span>인문</span></a></li>
-						   <li><a href='#'><span>사회</span></a></li>
-						   <li><a href='#'><span>과학</span></a></li>
-						   <li><a href='#'><span>기술</span></a></li>
-						   <li><a href='#'><span>예체능</span></a></li>
-						</ul>
-					</di>
-				</aside>
-				<aside id ="learning_aside">
-					<section class="buttons">
-						<label for="first">추천강좌</label>
-					</section>
-					<div class="tab_item">
-						<ul>
-							<li class="item"><a href="#">
-								<div class="thumbnail">
-									<img src = "./images/piano.png"/>
-								</div>
-								<div class="description">
-									<strong> piano Gift </strong>
-									<p> 2012-11-05</p>
-								</div>
-							</a></li>
-							<li class="item"><a href="#">
-								<div class="thumbnail">
-									<img src = "./images/book.png"/>
-								</div>
-								<div class="description">
-									<strong> Book Gift </strong>
-									<p> 2012-11-06</p>
-								</div>
-							</a></li>
-							<li class="item"><a href="#">
-								<div class="thumbnail">
-									<img src = "./images/science.png"/>
-								</div>
-								<div class="description">
-									<strong> Science Gift </strong>
-									<p> 2012-11-07</p>
-								</div>
-							</a></li>
-						</ul>
-					</div>
-				</aside>
-				<aside id ="volunteer">
-					<section class="buttons">
-						<label for="first">추천 봉사자</label>
-					</section>
-					<div class="tab_item">
-						<ul>
-							<li class="item"><a href="#">
-								<div class="thumbnail">
-									<img src = "./images/piano.png"/>
-								</div>
-								<div class="description">
-									<strong> piano Gift </strong>
-									<p> 2012-11-05</p>
-								</div>
-							</a></li>
-							<li class="item"><a href="#">
-								<div class="thumbnail">
-									<img src = "./images/book.png"/>
-								</div>
-								<div class="description">
-									<strong> Book Gift </strong>
-									<p> 2012-11-06</p>
-								</div>
-							</a></li>
-							<li class="item"><a href="#">
-								<div class="thumbnail">
-									<img src = "./images/science.png"/>
-								</div>
-								<div class="description">
-									<strong> Science Gift </strong>
-									<p> 2012-11-07</p>
-								</div>
-							</a></li>
-						</ul>
-					</div>
-				</aside>
-			</div>
+	<div id="content">
+	<jsp:include page="share/side.jsp"></jsp:include>
 			<section id="learning_section">
 				<article class="learning_article">
 					<div id ="left"><a href="learning_detail.html">
@@ -220,13 +119,8 @@
 				</article>
 			</section>
 		</div>
-		<footer id="learning_footer">
-			<h3> 사이트맵 | 고객센터</h3>
-			<address> CopyWrite c GivingGift All rights reserved | 2012.11.06 | club.cyworld.com/givinggift</address>
-		</footer>
-
+<jsp:include page="share/footer.jsp"></jsp:include>
 		<div class="new_window" id="create_page">
-
 			<div class="window_logo">GivingGift</div>
 			<a href="#"><img class="closebutton" src="images/fileclose.png"></a>
 			<form action="#">
