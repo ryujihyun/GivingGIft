@@ -79,6 +79,8 @@ li {}
 #content_left #notice {position:absolute; top:60px; left:10px; width:600px; height:350px; border:1px solid #000;}
 #content_left #qna {position:absolute; top:60px; left:10px; width:600px; height:350px; border:1px solid #00f;}
 
+.board_content ul li {clear:both; background-color:blue;}
+
 #content_right {float:right; width:300px; border:1px solid #987662; border:none;}
 #content_right li {display:inline-block; padding:5px 5px; background-color:#FEEECD;}
 #content_right div {font-size:30px; margin:15px 0 20px 15px;}
