@@ -90,9 +90,9 @@
 		var tab=$("#content_left");
 		tab.find('li>a').click(function() {
 			$("#content_left>ul>li").removeClass('selected');
-			//$("#content_left>ul>li>div").hide();
+			$("#content_left>ul>li>div").hide();
 			$(this).parent().addClass('selected')
-			//$(this).parent().find("div").show();
+			$(this).parent().find("div").show();
 		});
 		$("#content_left li>a:first").click();
 	});
