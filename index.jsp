@@ -1,7 +1,9 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" import="java.sql.*"%>
 <!DOCTYPE html>
-<html lang="ko"> 
+<html>
 <head>
-	<meta charset="utf-8">
+	<meta charset="UTF-8">
 	<title>Giving Gift</title>
 	<link href="css/index.css" rel="stylesheet" type="text/css">
 	<script src='js/jquery-1.8.2.min.js'></script>
@@ -31,34 +33,6 @@
 		</div>
 		<div id="header">
 			<h1><span>Show your gift to ungifted people!</span></h1>
-		<!--
-			<div class="animation_canvas" id="animation_canvas">
-        		<div class="slider_panel">
-        			<img src="images/volonteer.jpg" class="slider_image"/>
-           			<img src="images/bell.png" class="slider_image"/>
-            		<img src="images/russia_vol.jpg" class="slider_image"/>
-		        </div>
-		        <div class="slider_text_panel">
-        		    <div class="slider_text">
-            		    <h1>당신의 재능을 기부하세요!</h1>
-            		    <p>한번의 클릭으로 당신이 원하는 강좌를 들을 수 있습니다</p>
-            		</div>
-           			<div class="slider_text">
-            		    <h1>내 재능을 나누고 싶으신가요?</h1>
-            		    <p>Teach를 통한 자신의 재능을 기부하세요!</p>
-           		 	</div>
-            		<div class="slider_text">
-            		    <h1>Quisque eleifend</h1>
-            		    <p>Quisque eleifend augue nec lacus lobortis porta.</p>
-            		</div>
-        		</div>
-        	<div class="control_panel">
-            	<div class="control_button"></div>
-           		<div class="control_button"></div>
-            	<div class="control_button"></div>
-        		</div>
-    		</div>
-    	-->
 		</div>
 		<div id="content">
 			<ul>
@@ -91,7 +65,7 @@
 		<div class="new_window" id="join_page">
 			<div class="window_logo">GivingGift</div>
 			<a href="#"><img class="closebutton" src="images/fileclose.png"></a>
-			<form action="#">
+			<form>
 				<div>
 					<div class="join_class">
 						<div class="class_name">이름</div><div><input class="input_text" type="text" name="name"></div>
@@ -102,9 +76,7 @@
 					<div class="join_class">
 						<div class="class_name">Password</div><div><input class="input_text" type="password" name="password"></div>
 					</div>
-					<div class="join_class">
-						<div class="class_name">Password 확인</div><div><input class="input_text" type="password" name="password"></div>
-					</div>
+					
 					<div class="join_class">
 						<div class="class_name">전화번호</div><div><input class="input_text" type="text" name="phone"></div>
 					</div>
@@ -130,8 +102,53 @@
 			</form>
 		</div>
 	</div>
+	<%
+		String name = request.getParameter("name");
+		String email = request.getParameter("ID");
+		String password = request.getParameter("password");
+		
+//		if(name == null || email == null || password == null)
+//			throw new Exception("데이터를 입력하세요");
+		
+		Connection conn = null;
+		Statement stmt = null;
+		
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			conn = DriverManager.getConnection(
+					"jdbc:mysql://localhost:3306/givinggift", "root", "tiger");
+			if(conn == null)
+				throw new Exception("데이터베이스 연결 실패");
+			
+			stmt = conn.createStatement();
+			
+			String command = String.format("insert into member " + 
+				"(email, password, name) values ('%s', '%s', '%s');",
+				email, password, name);
+			
+		//	int rowNum = stmt.executeUpdate(command);
+			//if(rowNum < 1)
+	//			throw new Exception("데이터을 DB에 입렵못해");
+		}
+		
+		finally {
+			try {
+				stmt.close();
+			}
+			catch (Exception ignored) {
+			
+			}
+			try {
+				conn.close();
+			}
+			catch (Exception ignored) {
+				
+			}
+		}
+	%>
 </body>
 </html>
+
 
 <script type="text/javascript">
 
