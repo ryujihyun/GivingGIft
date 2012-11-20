@@ -64,21 +64,25 @@ li {}
 #header_search p {padding-top:10px; padding-right:30px;}
 
 /*  --  Content  --  */
-#content {display:block; height:400px; border:1px solid #FF4040; border-radius:10px;}
+#content {display:block; height:450px; border:1px solid #FF4040; border-radius:10px;}
 
-#content_left {float:left; width:650px; height:300px; position:relative; border:1px solid #000;}
+#content_left {float:left; width:650px; position:relative; border:1px solid #000;}
 #content_left ul {padding:10px 0 0 10px;}
 #content_left ul li {
 	float:left; display:block; background-color:#FF4040; margin-right:10px;
 	font-size:25px; padding:10px;
 	border-radius:5px 5px 0 0;
 }
+#content_left ul li a {color:#fff;}
 #content_left ul li.selected {background-color:#000;}
 
-#content_left #notice {position:absolute; top:50px; left:10px; width:100px; height:100px; border:1px solid #000;}
+#content_left #notice {position:absolute; top:60px; left:10px; width:600px; height:350px; border:1px solid #000;}
 #content_left #qna {}
 
-#content_right {float:right; width:300px; height:300px; border:1px solid #987662;}
+#content_right {float:right; width:300px; border:1px solid #987662;}
+#content_right li {display:inline-block; padding:5px 5px; background-color:#FEEECD;}
+#content_right div {font-size:30px; margin:15px 0 20px 15px;}
+#content_right div img {width:80px; height:80px;}
 
 /*  --  Footer  --  */
 #learning_footer{ width: 960px; margin: 0 auto; margin-bottom: 10px; padding: 10px; text-align: center;}
