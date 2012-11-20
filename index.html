@@ -31,6 +31,34 @@
 		</div>
 		<div id="header">
 			<h1><span>Show your gift to ungifted people!</span></h1>
+		<!--
+			<div class="animation_canvas" id="animation_canvas">
+        		<div class="slider_panel">
+        			<img src="images/volonteer.jpg" class="slider_image"/>
+           			<img src="images/bell.png" class="slider_image"/>
+            		<img src="images/russia_vol.jpg" class="slider_image"/>
+		        </div>
+		        <div class="slider_text_panel">
+        		    <div class="slider_text">
+            		    <h1>당신의 재능을 기부하세요!</h1>
+            		    <p>한번의 클릭으로 당신이 원하는 강좌를 들을 수 있습니다</p>
+            		</div>
+           			<div class="slider_text">
+            		    <h1>내 재능을 나누고 싶으신가요?</h1>
+            		    <p>Teach를 통한 자신의 재능을 기부하세요!</p>
+           		 	</div>
+            		<div class="slider_text">
+            		    <h1>Quisque eleifend</h1>
+            		    <p>Quisque eleifend augue nec lacus lobortis porta.</p>
+            		</div>
+        		</div>
+        	<div class="control_panel">
+            	<div class="control_button"></div>
+           		<div class="control_button"></div>
+            	<div class="control_button"></div>
+        		</div>
+    		</div>
+    	-->
 		</div>
 		<div id="content">
 			<ul>
@@ -128,5 +156,42 @@ $(function() {
 	$(".closebutton").click(function() {
 		$(this).parent().parent().hide();
 	});
+});
+
+$(document).ready(function () {
+// 슬라이더를 움직여주는 함수
+	function moveSlider(index) {
+	// 슬라이더를 이동합니다.
+        var willMoveLeft = -(index * 900);
+        $('.slider_panel').animate({ left: willMoveLeft }, 'slow');
+
+        // control_button에 active클래스를 부여/제거합니다.
+        $('.control_button[data-index=' + index + ']').addClass('active');
+        $('.control_button[data-index!=' + index + ']').removeClass('active');
+
+        // 글자를 이동합니다.
+        $('.slider_text[data-index=' + index + ']').show().animate({
+            left: 0
+        }, 'slow');
+        $('.slider_text[data-index!=' + index + ']').hide('slow', function () {
+            $(this).css('left', -300);
+        });
+    }
+
+    // 초기 텍스트 위치 지정 및 data-index 할당
+    $('.slider_text').css('left', -300).each(function (index) {
+        $(this).attr('data-index', index);
+    });
+    // 컨트롤 버튼의 클릭 핸들러 지정 및 data-index 할당
+    $('.control_button').each(function (index) {
+        $(this).attr('data-index', index);
+    }).click(function () {
+        var index = $(this).attr('data-index');
+        moveSlider(index);
+    });
+
+    // 초기 슬라이더 위치 지정
+    var randomNumber = Math.round(Math.random() * 5);
+    moveSlider(randomNumber);
 });
 </script>
