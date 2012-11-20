@@ -19,13 +19,13 @@
 </head>
 <body>
 <% 
-Connection conn = null;
-Statement stmt = null;
-ResultSet rs = null;
-
-String dbUrl = "jdbc:mysql://localhost:3306/GivingGift";
-String dbUser = "root";
-String dbPassword = "tiger";
+	Connection conn = null;
+	Statement stmt = null;
+	ResultSet rs = null;
+	
+	String dbUrl = "jdbc:mysql://localhost:3306/GivingGift";
+	String dbUser = "root";
+	String dbPassword = "tiger";
 %>
 	<jsp:include page="share/header.jsp"></jsp:include>
 	<div id="wrap">
@@ -73,31 +73,35 @@ String dbPassword = "tiger";
 		stmt = conn.createStatement();
 		rs = stmt.executeQuery("SElECT * FROM member");
 		
-		if(rs.next()){
+		
 	%>
 	<jsp:include page="share/side.jsp"></jsp:include>
 			<section id="learning_section">
+			<% for(int i=0; i<2; i++){
+			if(rs.next()){%>
 				<article class="learning_article">
 					<div id ="left"><a href="learning_detail.html">
 						<img src="./images/piano.png"></img>
 					</div>
 					<h1> Giving Gift Piano Gift </h1>
 					<p>
-						name: <%=request.getParameter("name")%><br>
-						address : <%=request.getParameter("address")%> <br>
-						phone: <%=request.getParameter("phone")%> <br>
+					
+						name: <% out.print(rs.getString("name"));%><br>
+						address : <% out.print(rs.getString("address"));%> <br>
+						phone: <% out.print(rs.getString("phone"));%> <br>
 						date: 2012.11.22 ~ 2012.12.25<br>
 						week: Mon, Wen, Fri<br>
 						Number: 5<br>
 					</p></a>
 				</article>
+				
 			</section>
 		</div>
-		<%} else {
+		<% }else {
 		%>
 		<%=request.getParameter("name") %>에 해당하는 정보가 없습니다.
 		<%
-		}
+		}}
 		} catch(SQLException ex) {
 			%>
 			에러발생
