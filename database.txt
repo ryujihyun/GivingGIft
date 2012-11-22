@@ -1,0 +1,95 @@
+// delete table
+delete from member;
+delete from class;
+delete from interest;
+delete from register_class;
+delete from estimation;
+delete from post;
+
+// drop table
+drop table member;
+drop table class;
+drop table interest;
+drop table register_class;
+drop table estimation;
+drop table post; 
+
+// create table
+create table member (
+	email varchar(100) not null,
+	password varchar(100),
+	name varchar(100),
+	address varchar(100),
+	phone varchar(100),
+	birthdate date,
+	gender varchar(20),
+	type int,
+	language varchar(100),
+	sociology varchar(100),
+	science varchar(100),
+	skill varchar(100),
+	art varchar(100),
+	music varchar(100),
+	created_at timestamp DEFAULT CURRENT_TIMESTAMP,
+	primary key(email)
+);
+
+create table class (
+	id varchar(100) not null,
+	name varchar(100),
+	content varchar(300),
+	address varchar(100),
+	interest varchar(100),	
+	start_date date,
+	end_date date,
+	number int,
+	latitude varchar(100),
+	longtutude varchar(100),
+	teacher_id varchar(100) not null,
+	created_at timestamp DEFAULT CURRENT_TIMESTAMP,
+	primary key(id),
+	foreign key(teacher_id) references member(email)
+);
+
+create table interest (
+	member varchar(100) not null,
+	interest varchar(100) not null,
+	created_at timestamp DEFAULT CURRENT_TIMESTAMP,
+	primary key(member, interest),
+	foreign key(member) references member(email)
+);
+
+create table register_class (
+	member varchar(100) not null,
+	class varchar(100) not null,
+	created_at timestamp DEFAULT CURRENT_TIMESTAMP,
+	primary key(member, class),
+	foreign key(member) references member(email)
+);
+
+create table estimation (
+	id varchar(100) not null,
+	member varchar(100) not null,
+	class varchar(100) not null,
+	grade varchar(100),
+	content varchar(500),
+	created_at timestamp DEFAULT CURRENT_TIMESTAMP,
+	primary key(id),
+	foreign key(member) references member(email),
+	foreign key(class) references class(id)
+);
+
+create table post (
+	id varchar(100) not null,
+	name varchar(100),
+	content varchar(500),
+	writer varchar(100),
+	parent_id varchar(100),
+	created_at timestamp DEFAULT CURRENT_TIMESTAMP,
+	primary key(id),	
+	foreign key(writer) references member(email)
+);
+
+// insert table
+insert into user (email, password, name, address, phone, gender, type) values ('jihye@gmail.com', 'jihye', 'choijh', 'mju', '010-5551-7432', 'womam', '2');
+
