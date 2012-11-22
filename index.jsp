@@ -65,7 +65,7 @@
 		<div class="new_window" id="join_page">
 			<div class="window_logo">GivingGift</div>
 			<a href="#"><img class="closebutton" src="images/fileclose.png"></a>
-			<form>
+			<form action="index_join.jsp" method="post">
 				<div>
 					<div class="join_class">
 						<div class="class_name">이름</div><div><input class="input_text" type="text" name="name"></div>
@@ -81,71 +81,35 @@
 						<div class="class_name">전화번호</div><div><input class="input_text" type="text" name="phone"></div>
 					</div>
 					<div class="join_class">
-						<div class="class_name">성별</div><div>
+						<div class="class_name">생년월일</div><div><input class="input_text" type="text" name="date"></div>
+					</div>
+					<div class="join_class">
+						<div class="class_name">성별</div>
+						<div>
 							<input type="radio" name="gender" value="male">남
 							<input type="radio" name="gender" value="female">여
 						</div>
+					</div>
 					<div class="join_class">
-						<div class="class_name">주소</div><div><input class="input_text" type="text" name="address"></div>
+						<div class="class_name">주소</div>
+						<div><input class="input_text" type="text" name="address"></div>
+					</div>
 					<div class="join_class">
-						<div class="class_name">관심분야</div><div id="checkbox">
-							<input type="checkbox" name="like" value="music">음악
-							<input type="checkbox" name="like" value="soccer">체육
-							<input type="checkbox" name="like" value="art">미술
-							<input type="checkbox" name="like" value="science">과학
-							<input type="checkbox" name="like" value="sleep">낮잠
-							<input type="checkbox" name="like" value="hungry">야식
+						<div class="class_name">관심분야</div>
+						<div id="checkbox">
+							<input type="checkbox" name="language" value="language">엄어
+							<input type="checkbox" name="sociology" value="sociology">사회
+							<input type="checkbox" name="science" value="science">과학
+							<input type="checkbox" name="skill" value="skill">기술
+							<input type="checkbox" name="art" value="art">예술
+							<input type="checkbox" name="music" value="music">음악
 						</div>
 					</div>
 				</div>
-				<div class="window_button"><input type="submit" name="submit" value="join"></div>
+				<div class="window_button"><input id="join_button" type="submit" name="submit" value="join"></div>
 			</form>
 		</div>
 	</div>
-	<%
-		String name = request.getParameter("name");
-		String email = request.getParameter("ID");
-		String password = request.getParameter("password");
-		
-//		if(name == null || email == null || password == null)
-//			throw new Exception("데이터를 입력하세요");
-		
-		Connection conn = null;
-		Statement stmt = null;
-		
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			conn = DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/givinggift", "root", "tiger");
-			if(conn == null)
-				throw new Exception("데이터베이스 연결 실패");
-			
-			stmt = conn.createStatement();
-			
-			String command = String.format("insert into member " + 
-				"(email, password, name) values ('%s', '%s', '%s');",
-				email, password, name);
-			
-		//	int rowNum = stmt.executeUpdate(command);
-			//if(rowNum < 1)
-	//			throw new Exception("데이터을 DB에 입렵못해");
-		}
-		
-		finally {
-			try {
-				stmt.close();
-			}
-			catch (Exception ignored) {
-			
-			}
-			try {
-				conn.close();
-			}
-			catch (Exception ignored) {
-				
-			}
-		}
-	%>
 </body>
 </html>
 
@@ -211,4 +175,10 @@ $(document).ready(function () {
     var randomNumber = Math.round(Math.random() * 5);
     moveSlider(randomNumber);
 });
+
+/*$(function () {
+	$("#join_button").click(function() {
+		alert("회원 강비 되어써");
+	});
+});*/
 </script>
