@@ -65,44 +65,36 @@
 		</div>
 	</div>
 	<div id="content">
-		<%
-	try{
-		Class.forName("com.mysql.jdbc.Driver");
-		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/GivingGift", "root", "tiger");
-
-		stmt = conn.createStatement();
-		rs = stmt.executeQuery("SElECT * FROM member");
-		
-		
-	%>
 	<jsp:include page="share/side.jsp"></jsp:include>
 			<section id="learning_section">
-			<% for(int i=0; i<2; i++){
-			if(rs.next()){%>
+					<%try{
+						Class.forName("com.mysql.jdbc.Driver");
+						conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/GivingGift", "root", "tiger");
+
+						stmt = conn.createStatement();
+						rs = stmt.executeQuery("SElECT * FROM member");
+		
+						while(rs.next()){
+					%>
+			
 				<article class="learning_article">
 					<div id ="left"><a href="learning_detail.html">
 						<img src="./images/piano.png"></img>
 					</div>
 					<h1> Giving Gift Piano Gift </h1>
 					<p>
-					
 						name: <% out.print(rs.getString("name"));%><br>
 						address : <% out.print(rs.getString("address"));%> <br>
 						phone: <% out.print(rs.getString("phone"));%> <br>
-						date: 2012.11.22 ~ 2012.12.25<br>
+						date: <%out.print(rs.getDate("birthdate")); %><br>
 						week: Mon, Wen, Fri<br>
 						Number: 5<br>
 					</p></a>
 				</article>
-				
+				<%} %>
 			</section>
 		</div>
-		<% }else {
-		%>
-		<%=request.getParameter("name") %>에 해당하는 정보가 없습니다.
-		<%
-		}}
-		} catch(SQLException ex) {
+<%		} catch(SQLException ex) {
 			%>
 			에러발생
 			<% }finally {
@@ -111,52 +103,7 @@
 				if(stmt != null) try {rs.close();} catch(SQLException ex){}
 			}%>
 <jsp:include page="share/footer.jsp"></jsp:include>
-		<div class="new_window" id="create_page">
-			<div class="window_logo">GivingGift</div>
-			<a href="#"><img class="closebutton" src="images/fileclose.png"></a>
-			<form action="#">
-				<div>
-					<div class="join_class">
-						<div class="class_name">강좌명</div><div><input class="input_text" type="text" name="name"></div>
-					</div>
-					<div class="join_class">
-						<div class="class_name">E-Mail</div><div><input class="input_text" type="text" name="ID"></div>
-					</div>
-					<div class="join_class">
-						<div class="class_name">Password</div><div><input class="input_text" type="password" name="password"></div>
-					</div>
-					<div class="join_class">
-						<div class="class_name">Password 확인</div><div><input class="input_text" type="password" name="password"></div>
-					</div>
-					<div class="join_class">
-						<div class="class_name">전화번호</div><div><input class="input_text" type="text" name="phone"></div>
-					</div>
-					<div class="join_class">
-						<div class="class_name">성별</div>
-						<div>
-							<input type="radio" name="gender" value="male">남
-							<input type="radio" name="gender" value="female">여
-						</div>
-					</div>
-					<div class="join_class">
-						<div class="class_name">주소</div><div><input class="input_text" type="text" name="address"></div>
-					</div>
-					<div class="join_class">
-						<div class="class_name">관심분야</div>
-						<div id="checkbox">
-							<input type="checkbox" name="like" value="music">음악
-							<input type="checkbox" name="like" value="soccer">체육
-							<input type="checkbox" name="like" value="art">미술
-							<input type="checkbox" name="like" value="science">과학
-							<input type="checkbox" name="like" value="sleep">낮잠
-							<input type="checkbox" name="like" value="hungry">야식
-						</div>
-					</div>
-				</div>
-				<div class="window_button"><input type="submit" name="submit" value="join"></div>
-			</form>
-		</div>
-	</div>
+<jsp:include page="share/teaching.jsp"></jsp:include>
 </body>
 </html>
 
