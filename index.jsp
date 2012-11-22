@@ -65,7 +65,7 @@
 		<div class="new_window" id="join_page">
 			<div class="window_logo">GivingGift</div>
 			<a href="#"><img class="closebutton" src="images/fileclose.png"></a>
-			<form>
+			<form action="index_join.jsp" method="post">
 				<div>
 					<div class="join_class">
 						<div class="class_name">이름</div><div><input class="input_text" type="text" name="name"></div>
@@ -102,50 +102,6 @@
 			</form>
 		</div>
 	</div>
-	<%
-		String name = request.getParameter("name");
-		String email = request.getParameter("ID");
-		String password = request.getParameter("password");
-		
-//		if(name == null || email == null || password == null)
-//			throw new Exception("데이터를 입력하세요");
-		
-		Connection conn = null;
-		Statement stmt = null;
-		
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			conn = DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/givinggift", "root", "tiger");
-			if(conn == null)
-				throw new Exception("데이터베이스 연결 실패");
-			
-			stmt = conn.createStatement();
-			
-			String command = String.format("insert into member " + 
-				"(email, password, name) values ('%s', '%s', '%s');",
-				email, password, name);
-			
-		//	int rowNum = stmt.executeUpdate(command);
-			//if(rowNum < 1)
-	//			throw new Exception("데이터을 DB에 입렵못해");
-		}
-		
-		finally {
-			try {
-				stmt.close();
-			}
-			catch (Exception ignored) {
-			
-			}
-			try {
-				conn.close();
-			}
-			catch (Exception ignored) {
-				
-			}
-		}
-	%>
 </body>
 </html>
 
