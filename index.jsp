@@ -81,24 +81,32 @@
 						<div class="class_name">전화번호</div><div><input class="input_text" type="text" name="phone"></div>
 					</div>
 					<div class="join_class">
-						<div class="class_name">성별</div><div>
+						<div class="class_name">생년월일</div><div><input class="input_text" type="text" name="date"></div>
+					</div>
+					<div class="join_class">
+						<div class="class_name">성별</div>
+						<div>
 							<input type="radio" name="gender" value="male">남
 							<input type="radio" name="gender" value="female">여
 						</div>
+					</div>
 					<div class="join_class">
-						<div class="class_name">주소</div><div><input class="input_text" type="text" name="address"></div>
+						<div class="class_name">주소</div>
+						<div><input class="input_text" type="text" name="address"></div>
+					</div>
 					<div class="join_class">
-						<div class="class_name">관심분야</div><div id="checkbox">
-							<input type="checkbox" name="like" value="music">음악
-							<input type="checkbox" name="like" value="soccer">체육
-							<input type="checkbox" name="like" value="art">미술
-							<input type="checkbox" name="like" value="science">과학
-							<input type="checkbox" name="like" value="sleep">낮잠
-							<input type="checkbox" name="like" value="hungry">야식
+						<div class="class_name">관심분야</div>
+						<div id="checkbox">
+							<input type="checkbox" name="language" value="language">엄어
+							<input type="checkbox" name="sociology" value="sociology">사회
+							<input type="checkbox" name="science" value="science">과학
+							<input type="checkbox" name="skill" value="skill">기술
+							<input type="checkbox" name="art" value="art">예술
+							<input type="checkbox" name="music" value="music">음악
 						</div>
 					</div>
 				</div>
-				<div class="window_button"><input type="submit" name="submit" value="join"></div>
+				<div class="window_button"><input id="join_button" type="submit" name="submit" value="join"></div>
 			</form>
 		</div>
 	</div>
@@ -167,4 +175,10 @@ $(document).ready(function () {
     var randomNumber = Math.round(Math.random() * 5);
     moveSlider(randomNumber);
 });
+
+/*$(function () {
+	$("#join_button").click(function() {
+		alert("회원 강비 되어써");
+	});
+});*/
 </script>

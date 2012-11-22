@@ -7,6 +7,15 @@
 	String password = request.getParameter("password");
 	String address = request.getParameter("address");
 	String phone =  request.getParameter("phone");
+	String birthdate =  request.getParameter("date");
+	String gender =  request.getParameter("gender");
+	Integer type = 2;
+	String language = request.getParameter("language");
+	String sociology = request.getParameter("sociology");
+	String science = request.getParameter("science");
+	String skill = request.getParameter("skill");
+	String art = request.getParameter("art");
+	String music = request.getParameter("music");
 	
 		if(name == null || email == null || password == null)
 			throw new Exception("데이터를 입력하세요");
@@ -23,9 +32,9 @@
 		
 		stmt = conn.createStatement();
 		
-		String command = String.format("INSERT INTO member" + 
-			"(email, password, name, address, phone) VALUES ('%s', '%s', '%s', '%s', '%s');",
-			email, password, name, address, phone);
+		String command = String.format("INSERT INTO member" +
+		"(email, password, name, address, phone, birthdate, gender, type, language, sociology, science, skill, art, music) VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%d', '%s', '%s', '%s', '%s', '%s', '%s');",
+			email, password, name, address, phone, birthdate, gender, type, language, sociology, science, skill, art, music);
 		
 		int rowNum = stmt.executeUpdate(command);
 		if(rowNum < 1)
