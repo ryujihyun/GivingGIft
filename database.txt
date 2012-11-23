@@ -44,12 +44,7 @@ create table class (
 	latitude varchar(100),
 	longtutude varchar(100),
 	teacher_id varchar(100) not null,
-	language varchar(100),
-	sociology varchar(100),
-	science varchar(100),
-	skill varchar(100),
-	art varchar(100),
-	music varchar(100),
+	interest varchar(100),
 	created_at timestamp DEFAULT CURRENT_TIMESTAMP,
 	primary key(id),
 	foreign key(teacher_id) references member(email)
