@@ -3,42 +3,38 @@
 		<div class="new_window" id="create_page">
 			<div class="window_logo">GivingGift</div>
 			<a href="#"><img class="closebutton" src="images/fileclose.png"></a>
-			<form action="#">
+			<form action="teaching_page.jsp">
 				<div>
 					<div class="join_class">
 						<div class="class_name">강좌명</div><div><input class="input_text" type="text" name="name"></div>
 					</div>
 					<div class="join_class">
-						<div class="class_name">E-Mail</div><div><input class="input_text" type="text" name="ID"></div>
+						<div class="class_name">강좌 내용</div><div><input class="input_text" type="text" name="content"></div>
 					</div>
 					<div class="join_class">
-						<div class="class_name">Password</div><div><input class="input_text" type="password" name="password"></div>
+						<div class="class_name">시작날짜</div><div><input class="input_text" type="text" name="start_date"></div>
 					</div>
 					<div class="join_class">
-						<div class="class_name">Password 확인</div><div><input class="input_text" type="password" name="password"></div>
+						<div class="class_name">종료날짜</div><div><input class="input_text" type="text" name="end_date"></div>
 					</div>
 					<div class="join_class">
-						<div class="class_name">전화번호</div><div><input class="input_text" type="text" name="phone"></div>
+						<div class="class_name">수강인원</div><div><input class="input_text" type="text" name="number"></div>
 					</div>
 					<div class="join_class">
-						<div class="class_name">성별</div>
-						<div>
-							<input type="radio" name="gender" value="male">남
-							<input type="radio" name="gender" value="female">여
-						</div>
+						<div class="class_name">수강장소(위도)</div><div><input class="input_text" type="text" name="latitude"></div>
 					</div>
 					<div class="join_class">
-						<div class="class_name">주소</div><div><input class="input_text" type="text" name="address"></div>
+						<div class="class_name">수강장소(경도)</div><div><input class="input_text" type="text" name="longtutude"></div>
 					</div>
 					<div class="join_class">
 						<div class="class_name">관심분야</div>
 						<div id="checkbox">
-							<input type="checkbox" name="like" value="music">음악
-							<input type="checkbox" name="like" value="soccer">체육
-							<input type="checkbox" name="like" value="art">미술
-							<input type="checkbox" name="like" value="science">과학
-							<input type="checkbox" name="like" value="sleep">낮잠
-							<input type="checkbox" name="like" value="hungry">야식
+							<input type="radio" name="interest" value="language">엄어
+							<input type="radio" name="interest" value="sociology">사회
+							<input type="radio" name="interest" value="science">과학
+							<input type="radio" name="interest" value="skill">기술
+							<input type="radio" name="interest" value="art">예술
+							<input type="radio" name="interest" value="music">음악
 						</div>
 					</div>
 				</div>

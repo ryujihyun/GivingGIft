@@ -149,5 +149,5 @@ a {text-decoration:none;}
 
 .join_class div {float:left;}
 .join_class {clear:both;}
-.join_class .class_name {padding:0 30px 20px 20px; width:160px; font-size:60px; font-weight:bold; text-align:right;}
-.join_class .input_text {font-size:40px; width:200px;  border:1px solid #000;}
+.join_class .class_name {padding:0 30px 20px 20px; width:160px; font-size:20px; font-weight:bold; text-align:right;}
+.join_class .input_text {width:200px;  border:1px solid #000;}
