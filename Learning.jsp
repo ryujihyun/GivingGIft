@@ -72,7 +72,7 @@
 						conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/GivingGift", "root", "tiger");
 
 						stmt = conn.createStatement();
-						rs = stmt.executeQuery("SElECT * FROM member");
+						rs = stmt.executeQuery("SElECT * FROM member ORDER BY created_at DESC");
 		
 						while(rs.next()){
 					%>
