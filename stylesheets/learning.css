@@ -81,7 +81,7 @@ li {}
 }
 #learning_section #create_class a {text-decoration:none; color:#fff;}
 
-#learning_section > article.learning_article {margin-bottom: 10px; padding: 20px; border: 1px solid #b70000;}
+#learning_section > article.learning_article {margin-bottom: 10px; padding: 20px; border: 1px solid #dbdbdb; border-radius: 10px 10px 10px 10px;}
 #learning_section > article.learning_article > a:link {text-decoration: none; color: black;}
 #learning_section > article.learning_article > a:visited {text-decoration: none; color: black;}
 
@@ -117,11 +117,7 @@ section.buttons>label {
 #content > #volunteer h1{font-size: 35px; font-weight: bold; color: #B70000;
 	margin: 0 auto; text-align: center; margin-top: 20px; margin-bottom: 20px; }
 
-
-
-#learning_footer{ width: 960px; margin: 0 auto; margin-bottom: 10px; box-sizing; border-box; padding: 10px; border: 1px solid #b70000; text-align: center;}
-
-
+#learning_footer{ width: 960px; margin: 0 auto; margin-bottom: 10px; box-sizing; border-box; padding: 10px; border: 1px solid #dbdbdb; text-align: center;}
 
 /* Some stylesheet reset */
 #cssmenu > ul {
