@@ -38,12 +38,13 @@
 
 		stmt = conn.prepareStatement("SElECT * FROM member");
 		rs = stmt.executeQuery();
-		if(!rs.next())
+		if(!rs.next()){
 			email=rs.getString("email");
 			phone=rs.getString("phone");
 			address=rs.getString("address");
 			name=rs.getString("name");
-	}
+		}
+	} catch(SQLException e){}
 	finally {
 		try{stmt.close();}catch (Exception ignored){}
 		try{conn.close();}catch (Exception ignored){}
@@ -104,13 +105,17 @@
 									<p style="font-size: 9pt; color: red;">이메일꼭입력해주세요</p></td>
 								</tr>
 								<tr>
-									<th class="button" colspan="2">
-									<input type="submit" value="수정"onclick="history.back()">
-									<input class="" type="submit" name="email">
-								</th>
+									<th class="button" colspan="2"></th>
+									<td><input type="submit" value="수정"onclick="history.back()"/></td>
+								</tr>
 							</form>
 						</tbody>
 					</table>
+					<form action="delete.jsp" method="post">
+					<tr>
+									<th class="button" colspan="2"></th>
+									<td><input type="submit" value="회원탈퇴"onclick="history.back()"/></td>
+								</tr>
 				</article>
 			</section>
 		</div>
