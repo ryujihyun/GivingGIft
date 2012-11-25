@@ -5,7 +5,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Giving Gift</title>
-	<link href="css/index.css" rel="stylesheet" type="text/css">
+	<link href="stylesheets/index.css" rel="stylesheet" type="text/css">
 	<script src='js/jquery-1.8.2.min.js'></script>
 </head>
 <body>
@@ -20,7 +20,7 @@
 						<li><a href="#" id="login_click">Log In</a></li>
 						<li><a href="#" id="join_click">Join</a></li>
 						<li><a href="#">help</a></li>
-						<li><a href="learning.html">둘러보기</a></li>
+						<li><a href="Learning.jsp">둘러보기</a></li>
 					</ul>
 				</div>
 			</div>
@@ -50,7 +50,7 @@
 		<div class="new_window" id="login_page">
 			<div class="window_logo">GivingGift</div>
 			<a href="#"><img class="closebutton" src="images/fileclose.png"></a>
-			<form action="">
+			<form action="login_page.jsp" method="post">
 				<div>
 					<div class="login_class">
 						<div class="class_name">E-Mail</div><div><input class="input_text" type="text" name="ID"></div>
@@ -81,7 +81,7 @@
 						<div class="class_name">전화번호</div><div><input class="input_text" type="text" name="phone"></div>
 					</div>
 					<div class="join_class">
-						<div class="class_name">생년월일</div><div><input class="input_text" type="text" name="date"></div>
+						<div class="class_name">생년월일</div><div><input class="input_text" type="text" name="date" placeholder="주민번호앞자리"></div>
 					</div>
 					<div class="join_class">
 						<div class="class_name">성별</div>
