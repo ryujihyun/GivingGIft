@@ -14,6 +14,8 @@
 	<meta http-equiv="page-Enter" content="BlendTans(Duration=3.0)">
 	<title> Giving Gift learning </title>
 	<link href="stylesheets/learning.css" rel="stylesheet" type="text/css">
+<!--	<link href="stylesheets/datepicker.css" rel="stylesheet" type="text/css">
+  -->
 	<script src='js/jquery-1.8.2.min.js'></script>
 	<script src="js/bootstrap.min.js"></script>
 </head>
@@ -180,4 +182,7 @@ $(document).ready(function () {
     var randomNumber = Math.round(Math.random() * 5);
     moveSlider(randomNumber);
 });
+
+//$('.datepicker').datepicker()
+
 </script>

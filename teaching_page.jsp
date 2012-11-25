@@ -10,15 +10,16 @@
 	String content = request.getParameter("content");
 	String start_date = request.getParameter("start_date");
 	String end_date =  request.getParameter("end_date");
-	String number =  request.getParameter("number");
+	String Gnumber = request.getParameter("number");
+	int number = Integer.parseInt(Gnumber);
 	String latitude =  request.getParameter("latitude");
 	String longtutude = request.getParameter("longtutude");
 	String interest = request.getParameter("interest");
 	
 //	Integer type = 2;
 		
-		if(name == null || start_date == null || end_date == null)
-			throw new Exception("데이터를 입력하세요");
+//		if(name == null || start_date == null || end_date == null)
+//			throw new Exception("데이터를 입력하세요");
 	
 	Connection conn = null;
 	Statement stmt = null;
@@ -33,8 +34,9 @@
 		stmt = conn.createStatement();
 		
 		String command = String.format("INSERT INTO class" +
-		"(id, name, content, start_date, end_date, latitude, longtutude, interest, teacher_id) VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s');",
-			email, name, content, start_date, end_date, latitude, longtutude, interest, teacher_id);
+		"(id, teacher_id, name, content, start_date, end_date, number, latitude, longtutude, interest) VALUES" +
+		"('%s', '%s', '%s', '%s', '%s', '%s', '%d', '%s', '%s', '%s');",
+			email, teacher_id, name, content, start_date, end_date, number, latitude, longtutude, interest);
 		
 		int rowNum = stmt.executeUpdate(command);
 		if(rowNum < 1)
