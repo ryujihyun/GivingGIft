@@ -4,52 +4,55 @@
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.Connection"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%
-	Class.forName("com.mysql.jdbc.Driver");
-	Connection conn = null;
-	Statement stmt=null;
-	ResultSet rs = null;
-	String dbUrl = "jdbc:mysql://localhost:3306/givinggift";
-	String dbUser = "root";
-	String dbPassword = "tiger";
-
-	
-
-	try {
+    pageEncoding="UTF-8"%>
+    <% 
+	String errorMsg=null;
+	String actionUrl;
 		Class.forName("com.mysql.jdbc.Driver");
-		conn = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
-		stmt = conn.createStatement();
-		rs=stmt.executeQuery(
-				"secelt * from member");
-	
-		if (!rs.next()) {
-			
+		Connection conn = null;
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
 
-			String email = request.getParameter("email");
-			String name = request.getParameter("name");
-			String phone = request.getParameter("phone");
-			String address = request.getParameter("address");
-		}
-	
-		finally {
-	try {
-		stmt.close();
-	}
-	catch (Exception ignored) {
-	
-	}
-	try {
-		conn.close();
-	}
-	catch (Exception ignored) {
+		String dbUrl = "jdbc:mysql://localhost:3306/givinggift";
+		String dbUser = "root";
+		String dbPassword = "tiger";
 		
-	}
+		String email="";
+		String phone="";
+		String address="";
+		String name="";
+				try{
+				Class.forName("com.mysql.jdbc.Driver");
+				conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/GivingGift", "root", "tiger");
 
-		%>
-	
-	
+				stmt = conn.prepareStatement("SElECT * FROM member");
+				
+				rs = stmt.executeQuery();
+				if(!rs.next())
+
+					email=rs.getString("email");
+					phone=rs.getString("phone");
+					address=rs.getString("address");
+					name=rs.getString("name");
+				
+			}
+		finally {
+			try{
+				stmt.close();
+			}
+			catch (Exception ignored){
+			}
+			try{
+				conn.close();
+				
+			}
+			catch (Exception ignored){
+		}
+		
+		}
 %>
+	
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
@@ -64,7 +67,7 @@
 </head>
 <body>
 
-	<jsp:include page="share/header.jsp"></jsp:include>
+	
 	<div id="wrap">
 		<div id="content">
 			<jsp:include page="share/side.jsp"></jsp:include>
@@ -78,6 +81,7 @@
 				<li>아이디 :<%=name%></li>
 				<li>폰번호 :<%=phone%></li>
 				<li>주소 :<%=address%></li>
+				<li>이메일:<%=email%></li>
 				<br> date: 2012.11.22 ~ 2012.12.25
 				<br> week: Mon, Wen, Fri
 				<br> Number: 5
@@ -91,49 +95,48 @@
 			<section id="teaching_section2"> <article
 				class="teaching_article2">
 			<h1>상품 수정정보를 입력하세요</h1>
+			<Form ACTION=updater.jsp METHOD=post>
 			<table>
 				<tbody>
 					<tr>
 						<th colspan="2" class="title"><div>
-								<label>기본 정보</label>
+								<label>기본 정보/변경 내용</label>
 							</div></th>
 					</tr>
 
 					<tr>
 						<th><label for="h">이름</label></th>
-						<td><input type="text" id="name" name="name" value="" /></td>
+						<td><input type="text" id="name" NAME=name value="<%=name%>" /></td>
 					</tr>
 					<tr>
 						<th><label for="h">폰번호</label></th>
-						<td><input type="text" name="phones" value="" />
-							<p style="font-size: 9pt; color: red;">*닉네임은 2~20자 이내여야 합니다.</p>
+						<td><input type="text" NAME=phone value="<%=phone%>" />
+							<p style="font-size: 9pt; color: red;">*번호는 2~20자 이내여야 합니다.</p>
 						</td>
 					</tr>
 
 
 					<tr>
 						<th><label for="h">주소</label></th>
-						<td><input type="text" name="address" value="" />
+						<td><input type="text" NAME=address value="<%=address%>" />
 							<p style="font-size: 9pt; color: red;">주소를 입략해주세여.</p></td>
 					</tr>
 					<tr>
 						<th><label for="h">이메일</label></th>
-						<td><input type="text" name="email" value="" />
+						<td><input type="text" NAME=email value="<%=email%>" />
 							<p style="font-size: 9pt; color: red;">이메일꼭입력해주세요</p></td>
 					</tr>
 					<tr>
-						<FORM ACTION=update.jsp METHOD=POST>
+					
 							<th class="button" colspan="2">
-								<input type="submit" value="가입">
-								<input type="submit" value="수정">
-								<input type="button" value="취소" onclick="history.back()">
+								
+								<input type="submit" value="수정"onclick="history.back()">
+							
 							</th>
 					</tr>
-					</FORM>
+					</Form>
 				</tbody>
 			</table>
-
-
 			</br>
 			<p></p>
 			</a> </article> </section>
