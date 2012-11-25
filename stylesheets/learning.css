@@ -81,14 +81,14 @@ li {}
 }
 #learning_section #create_class a {text-decoration:none; color:#fff;}
 
-#learning_section > article.learning_article {margin-bottom: 10px; padding: 20px; border: 1px solid #b70000;}
+#learning_section > article.learning_article {margin-bottom: 10px; padding: 20px; border: 1px solid #dbdbdb; border-radius: 10px 10px 10px 10px;}
 #learning_section > article.learning_article > a:link {text-decoration: none; color: black;}
 #learning_section > article.learning_article > a:visited {text-decoration: none; color: black;}
 
 
 #left {float: left; margin-right: 20px;}
 
-section.buttons{ overflow: hidden; margin-top: 20px; border-radius: 10px 10px 10px 10px;}
+section.buttons{ overflow: hidden; margin-top: 30px; border-radius: 10px 10px 10px 10px;}
 section.buttons>label {
 	display: block; float: left;
 
@@ -109,7 +109,7 @@ section.buttons>label {
 .description {float: left; margin-left: 10px;}
 .description >strong {display: #b70000; width: 120px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
 
-#content > #volunteer { display: block; width:160px; margin-top: 20px;}
+#content > #volunteer { display: block; width:160px; margin-top: 30px;}
 #content > #volunteer { margin-bottom: 10px; padding: 20px; border: 1px solid #b70000;}
 #content > #volunteer table, tr, td{font-size: 15px; margin: 0 auto; text-align: center;
 	width: 160px; height: 20px; }
@@ -117,11 +117,7 @@ section.buttons>label {
 #content > #volunteer h1{font-size: 35px; font-weight: bold; color: #B70000;
 	margin: 0 auto; text-align: center; margin-top: 20px; margin-bottom: 20px; }
 
-
-
-#learning_footer{ width: 960px; margin: 0 auto; margin-bottom: 10px; box-sizing; border-box; padding: 10px; border: 1px solid #b70000; text-align: center;}
-
-
+#learning_footer{ width: 960px; margin: 0 auto; margin-bottom: 10px; box-sizing; border-box; padding: 10px; border: 1px solid #dbdbdb; text-align: center;}
 
 /* Some stylesheet reset */
 #cssmenu > ul {
@@ -259,7 +255,7 @@ section.buttons>label {
 
 
 /* Some stylesheet reset */
-#cssmenu > ul {list-style: none; margin: 0; padding: 0; vertical-align: baseline; line-height: 1; margin-top: 150px; }
+#cssmenu > ul {list-style: none; margin: 0; padding: 0; vertical-align: baseline; line-height: 1; margin-top: 10px; }
 /* The container */
 #cssmenu > ul{ display: block; position: relative; width: 150px;}
 /* The list elements which contain the links */

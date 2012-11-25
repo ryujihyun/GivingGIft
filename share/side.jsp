@@ -1,16 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+		<div id="content">
 			<div id ="aside">
 				<aside id="category">
 					<div id='cssmenu'>
 						<ul>
-						   <li class='has-sub'><a href='#'><span>인문</span></a></li>
-						   <li class='has-sub'><a href='#'><span>사회</span></a></li>
-						   <li class='has-sub'><a href='#'><span>과학</span></a></li>
-						   <li class='has-sub'><a href='#'><span>기술</span></a></li>
-						   <li class='has-sub'><a href='#'><span>예체능</span></a></li>
+						   <li><a href='#'><span>인문</span></a></li>
+						  </li>
+						   <li><a href='#'><span>사회</span></a></li>
+						   <li><a href='#'><span>과학</span></a></li>
+						   <li><a href='#'><span>기술</span></a></li>
+						   <li><a href='#'><span>예체능</span></a></li>
 						</ul>
-					</div>
+					</di>
 				</aside>
 				<aside id ="learning_aside">
 					<section class="buttons">

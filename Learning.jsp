@@ -74,13 +74,13 @@
 						conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/GivingGift", "root", "tiger");
 
 						stmt = conn.createStatement();
-						rs = stmt.executeQuery("SElECT * FROM member");
+						rs = stmt.executeQuery("SElECT * FROM member ORDER BY created_at DESC");
 		
 						while(rs.next()){
 					%>
 			
 				<article class="learning_article">
-					<div id ="left"><a href="learning_detail.html">
+					<div id ="left"><a href="Learning_detail.jsp">
 						<img src="./images/piano.png"></img>
 					</div>
 					<h1> Giving Gift Piano Gift </h1>
@@ -110,7 +110,6 @@
 </html>
 
 <script type="text/javascript">
-
 $("#create_page").hide();
 
 $(function(){
@@ -179,7 +178,7 @@ $(document).ready(function () {
     });
 
     // 초기 슬라이더 위치 지정
-    var randomNumber = Math.round(Math.random() * 5);
+    var randomNumber = Math.round(Math.random() * 3);
     moveSlider(randomNumber);
 });
 
