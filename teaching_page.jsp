@@ -2,9 +2,8 @@
     pageEncoding="UTF-8" import="java.sql.*"%>
 <!DOCTYPE html>
 <%
-//	String email = request.getParameter("ID");
-	String email = "mallangpeach";
-	String teacher_id = "Era";
+
+	String teacher_id = (String) session.getAttribute("SID");
 
 	String name = request.getParameter("name");	
 	String content = request.getParameter("content");
@@ -35,9 +34,9 @@
 		stmt = conn.createStatement();
 		
 		String command = String.format("INSERT INTO class" +
-		"(id, teacher_id, name, content, number, latitude, longtutude, interest) VALUES" +
-		"('%s', '%s', '%s', '%s', '%d', '%s', '%s', '%s');",
-			email, teacher_id, name, content, number, latitude, longtutude, interest);
+		"(teacher_id, name, content, number, latitude, longtutude, interest) VALUES" +
+		"('%s', '%s', '%s', '%d', '%s', '%s', '%s');",
+			teacher_id, name, content, number, latitude, longtutude, interest);
 		
 		int rowNum = stmt.executeUpdate(command);
 		if(rowNum < 1)

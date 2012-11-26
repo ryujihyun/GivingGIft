@@ -20,18 +20,13 @@
 		while(rs.next()) {
 			if(email.equals(rs.getString("email")) && password.equals(rs.getString("password")))
 			{
+				String DBemail = rs.getString("email");
 				String DBname = rs.getString("name");
-				out.println(DBname);
+				
+				session.setAttribute("SID", DBemail);
+				session.setAttribute("Sname", DBname);
 			}
-/*			String DBemail = rs.getString("email");
-			String DBpassword = rs.getString("password");	
-			out.println(DBpassword);
-			if(DBpassword == password) {
-				String DBname = rs.getString("name");
-				out.println(DBname);
-			*/}
-			
-		
+		}
 		
 	}
 	finally {
@@ -45,5 +40,5 @@
 		}
 		catch (Exception ignored) {}
 	}
-	
+	response.sendRedirect("index.jsp");
 %>
