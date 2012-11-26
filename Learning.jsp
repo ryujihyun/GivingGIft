@@ -14,10 +14,10 @@
 	<meta http-equiv="page-Enter" content="BlendTans(Duration=3.0)">
 	<title> Giving Gift learning </title>
 	<link href="stylesheets/learning.css" rel="stylesheet" type="text/css">
-<!--	<link href="stylesheets/datepicker.css" rel="stylesheet" type="text/css">
-  -->
+	<link href="stylesheets/jquery-ui-1.9.2.custom.min.css" rel="stylesheet" type="text/css">
 	<script src='js/jquery-1.8.2.min.js'></script>
 	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery-ui-1.9.2.custom.min.js"></script>
 </head>
 <body>
 <% 
@@ -74,13 +74,13 @@
 						conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/GivingGift", "root", "tiger");
 
 						stmt = conn.createStatement();
-						rs = stmt.executeQuery("SElECT * FROM member ORDER BY created_at DESC");
+						rs = stmt.executeQuery("SElECT * FROM member");
 		
 						while(rs.next()){
 					%>
 			
 				<article class="learning_article">
-					<div id ="left"><a href="Learning_detail.jsp">
+					<div id ="left"><a href="learning_detail.html">
 						<img src="./images/piano.png"></img>
 					</div>
 					<h1> Giving Gift Piano Gift </h1>
@@ -110,6 +110,7 @@
 </html>
 
 <script type="text/javascript">
+
 $("#create_page").hide();
 
 $(function(){
@@ -178,10 +179,27 @@ $(document).ready(function () {
     });
 
     // 초기 슬라이더 위치 지정
-    var randomNumber = Math.round(Math.random() * 3);
+    var randomNumber = Math.round(Math.random() * 5);
     moveSlider(randomNumber);
 });
 
-//$('.datepicker').datepicker()
+$(function() {
+    $( "#from" ).datepicker({
+        defaultDate: "+1w",
+        changeMonth: true,
+        numberOfMonths: 3,
+        onClose: function( selectedDate ) {
+            $( "#to" ).datepicker( "option", "minDate", selectedDate );
+        }
+    });
+    $( "#to" ).datepicker({
+        defaultDate: "+1w",
+        changeMonth: true,
+        numberOfMonths: 3,
+        onClose: function( selectedDate ) {
+            $( "#from" ).datepicker( "option", "maxDate", selectedDate );
+        }
+    });
+});
 
 </script>
