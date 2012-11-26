@@ -13,10 +13,10 @@
 				<div class="class_name">강좌 내용</div><div><input class="input_text" type="text" name="content"></div>
 			</div>
 			<div class="join_class">
-				<div class="class_name">시작날짜</div><div><input class="input_text" type="text" name="start_date"></div>
+				<div class="class_name">시작날짜</div><div><input id="from" class="input_text" type="text" name="start_date"></div>
 			</div>
 			<div class="join_class">
-				<div class="class_name">종료날짜</div><div><input class="input_text" type="text" name="end_date"></div>
+				<div class="class_name">종료날짜</div><div><input id="to" class="input_text" type="text" name="end_date"></div>
 			</div>
 			<div class="join_class">
 				<div class="class_name">수강인원</div><div><input class="input_text" type="text" name="number"></div>
