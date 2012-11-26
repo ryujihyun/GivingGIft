@@ -16,40 +16,51 @@
 	<script src="js/bootstrap.min.js"></script>
 </head>
 <body>
-<% 
+ <%
 	String errorMsg=null;
-	String actionUrl;
-	Class.forName("com.mysql.jdbc.Driver");
+ 	String actionUrl;
 	Connection conn = null;
 	PreparedStatement stmt = null;
 	ResultSet rs = null;
-
-	String dbUrl = "jdbc:mysql://localhost:3306/givinggift";
+	
+	String dbUrl = "jdbc:mysql://localhost:3306/GivingGIft";
 	String dbUser = "root";
 	String dbPassword = "tiger";
-		
-	String email="";
-	String phone="";
-	String address="";
-	String name="";
-	try{
-		Class.forName("com.mysql.jdbc.Driver");
-		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/GivingGift", "root", "tiger");
 
-		stmt = conn.prepareStatement("SElECT * FROM member");
-		rs = stmt.executeQuery();
-		if(!rs.next()){
-			email=rs.getString("email");
-			phone=rs.getString("phone");
-			address=rs.getString("address");
-			name=rs.getString("name");
+	
+	String email	 = "";
+	String phone = "";
+	String name = "";
+	String address = "";
+	
+		try{
+			Class.forName("com.mysql.jdbc.Driver");
+			conn = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
+
+	 		// 질의 준비
+			stmt = conn.prepareStatement("SELECT * FROM MEMBER");
+
+			
+			// 수행
+	 		rs = stmt.executeQuery();
+			
+			if (rs.next()) {
+				name=rs.getString("name");
+				email=rs.getString("email");
+				phone=rs.getString("phone");
+				address=rs.getString("address");
+				}
+		}catch (SQLException e) {
+			errorMsg = "SQL 에러: " + e.getMessage();
+			System.out.println(errorMsg);
+		} finally {
+			// 무슨 일이 있어도 리소스를 제대로 종료
+			if (rs != null) try{rs.close();} catch(SQLException e) {}
+			if (stmt != null) try{stmt.close();} catch(SQLException e) {}
+			if (conn != null) try{conn.close();} catch(SQLException e) {}
 		}
-	} catch(SQLException e){}
-	finally {
-		try{stmt.close();}catch (Exception ignored){}
-		try{conn.close();}catch (Exception ignored){}
-	}
-%>
+
+%>   
 	<div id="wrap">
 		<div id="content">
 			<jsp:include page="share/header.jsp"></jsp:include>
@@ -77,7 +88,7 @@
 			<section id="teaching_section2">
 				<article class="teaching_article2">
 					<h1>상품 수정정보를 입력하세요</h1>
-					<form action="updater.jsp" method="post">
+					<form action="Updater.jsp" method="post">
 						<table>
 							<tbody>
 								<tr>
@@ -85,9 +96,8 @@
 										<label>기본 정보/변경 내용</label>
 									</th>
 								</tr>
-								<tr>
-									<th>이름</th>
-									<td><input type="text" name="name"/></td>
+								<th><label for="h">이름</label></th>
+									<td><input type="text" NAME=name value="<%=name%>">
 								</tr>
 								<tr>
 									<th><label for="h">폰번호</label></th>
@@ -116,6 +126,7 @@
 									<th class="button" colspan="2"></th>
 									<td><input type="submit" value="회원탈퇴"onclick="history.back()"/></td>
 								</tr>
+								</form>
 				</article>
 			</section>
 		</div>
