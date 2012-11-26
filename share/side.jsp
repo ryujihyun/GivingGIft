@@ -1,22 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-		<div id="content">
 			<div id ="aside">
 				<aside id="category">
 					<div id='cssmenu'>
 						<ul>
-						   <li><a href='#'><span>인문</span></a></li>
+						   <li><a href='#'><span>Language</span></a></li>
 						  </li>
-						   <li><a href='#'><span>사회</span></a></li>
-						   <li><a href='#'><span>과학</span></a></li>
-						   <li><a href='#'><span>기술</span></a></li>
-						   <li><a href='#'><span>예체능</span></a></li>
+						   <li><a href='#'><span>Society</span></a></li>
+						   <li><a href='#'><span>Science</span></a></li>
+						   <li><a href='#'><span>Technology</span></a></li>
+						   <li><a href='#'><span>Art</span></a></li>
+						   <li><a href='#'><span>Music</span></a></li>
 						</ul>
 					</di>
 				</aside>
 				<aside id ="learning_aside">
 					<section class="buttons">
-						<label for="first">추천강좌</label>
+						<label for="first">Best Class</label>
 					</section>
 					<div class="tab_item">
 						<ul>
@@ -52,7 +52,7 @@
 				</aside>
 				<aside id ="volunteer">
 					<section class="buttons">
-						<label for="first">추천 봉사자</label>
+						<label for="first"> Best Volunteer</label>
 					</section>
 					<div class="tab_item">
 						<ul>
@@ -86,4 +86,4 @@
 						</ul>
 					</div>
 				</aside>
-			</div>
+</div>
