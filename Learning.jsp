@@ -40,8 +40,8 @@
 		        </div>
 		        <div class="slider_text_panel">
         		    <div class="slider_text">
-            		    <h1>당신의 재능을 기부하세요!</h1>
-            		    <p>한번의 클릭으로 당신이 원하는 강좌를 들을 수 있습니다</p>
+            		    <h1>Devote your GivingGift!</h1>
+            		    <p>Just one click!</p>
             		</div>
            		<div class="slider_text">
             		    <h1>재능을 나누고 싶으신가요?</h1>
@@ -58,7 +58,7 @@
             	<div class="control_button"></div>
         		</div>
     		</div>
-    		</div>
+    	</div>
 		<div id="header_search">
 			<form action="">
 				<input type="text" name="search" id="search">
@@ -67,30 +67,34 @@
 		</div>
 	</div>
 	<div id="content">
-	<jsp:include page="share/side.jsp"></jsp:include>
+	<div id="introduction">
+		<img src="./images/learning_givinggift.png"></img>
+	</div>
+		<jsp:include page="share/side.jsp"></jsp:include>
 			<section id="learning_section">
 					<%try{
 						Class.forName("com.mysql.jdbc.Driver");
 						conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/GivingGift", "root", "tiger");
 
 						stmt = conn.createStatement();
-						rs = stmt.executeQuery("SElECT * FROM member");
+						rs = stmt.executeQuery("SElECT * FROM member ORDER BY created_at desc");
 		
 						while(rs.next()){
 					%>
 			
 				<article class="learning_article">
-					<div id ="left"><a href="learning_detail.html">
+					<div id ="left"><a href="Learning_detail.jsp">
 						<img src="./images/piano.png"></img>
 					</div>
-					<h1> Giving Gift Piano Gift </h1>
+					<div id="title">
+						<h1> Giving Gift Piano Gift </h1><br>
+					</div>
 					<p>
 						name: <% out.print(rs.getString("name"));%><br>
 						address : <% out.print(rs.getString("address"));%> <br>
 						phone: <% out.print(rs.getString("phone"));%> <br>
 						date: <%out.print(rs.getDate("birthdate")); %><br>
 						week: Mon, Wen, Fri<br>
-						Number: 5<br>
 					</p></a>
 				</article>
 				<%} %>
@@ -101,11 +105,11 @@
 			에러발생
 			<% }finally {
 				if(rs != null) try {rs.close();} catch(SQLException ex){}
-				if(conn != null) try {rs.close();} catch(SQLException ex){}
-				if(stmt != null) try {rs.close();} catch(SQLException ex){}
+				if(conn != null) try {conn.close();} catch(SQLException ex){}
+				if(stmt != null) try {stmt.close();} catch(SQLException ex){}
 			}%>
-<jsp:include page="share/footer.jsp"></jsp:include>
-<jsp:include page="share/teaching.jsp"></jsp:include>
+			<jsp:include page="share/footer.jsp"></jsp:include>
+			<jsp:include page="share/teaching.jsp"></jsp:include>
 </body>
 </html>
 
@@ -179,7 +183,7 @@ $(document).ready(function () {
     });
 
     // 초기 슬라이더 위치 지정
-    var randomNumber = Math.round(Math.random() * 5);
+    var randomNumber = Math.round(Math.random()*3);
     moveSlider(randomNumber);
 });
 
