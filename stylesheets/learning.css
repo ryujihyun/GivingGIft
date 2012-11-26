@@ -1,5 +1,5 @@
 
-html{color:#000; background:#fff no-repeat; margin:0 auto; font-family: "맑은 고딕", 휴먼편지체, Candara;}
+html{color:#000; background:#fff no-repeat; margin:0 auto; font-family: "留묒� 怨좊뵓", �대㉫�몄�泥� Candara;}
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}
 table{border-collapse:collapse;border-spacing:0;}
 fieldset,img{border:0;}
@@ -22,7 +22,7 @@ a {text-decoration:none;}
 li {}
 
 /* -- Top  --  */
-#top {height:45px; border-bottom:2px solid #ddd; line-height:45px; margin-bottom: 0px;}
+#top {height:45px; border-bottom:2px solid #ddd; line-height:45px; margin-bottom: -50px;}
 #top_container {width:960px; margin:0 auto;}
 
 #top ul li {display:block; font-size:15px;}
@@ -38,7 +38,7 @@ li {}
 /*  --  body  --  */
 #wrap {
 	width:960px; margin:0 auto; position:relative;
-	background-image: url(); font-family: "맑은 고딕", 휴먼편지체, Candara;
+	background-image: url(); font-family: "留묒� 怨좊뵓", �대㉫�몄�泥� Candara;
 }
 .animation_canvas  { margin-top:0px; overflow:hidden; position:relative; width:900px; height:370px;}
 
@@ -58,12 +58,13 @@ li {}
 
 /*  --  Header  --  */
 #header {text-align:center; padding:60px;}
-#header span {font-family:"맑은 고딕",휴먼편지체, Candara;; font-size:80px;}
+#header span {font-family:"留묒� 怨좊뵓",�대㉫�몄�泥� Candara;; font-size:80px;}
 
 #header_search {
 	display:inline-block; width:800px; margin-left:80px; margin-bottom:30px; padding:20px;
 	background-color:#FEEECD;
 	border-radius: 10px 10px 10px 10px;
+	margin-top: -100px;
 }
 #search {width:700px; height:50px; border:1px solid #FF4040; font-size:20px;}
 #search_button {
