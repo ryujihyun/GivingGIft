@@ -34,6 +34,15 @@ li {}
 #top_right {float:right; padding:0;}
 #top_right ul li {float:left;}
 #top_right ul li a {border-left:2px solid #ddd;}
+#search {
+	width:180px; height:30px; border:none; background-color:#FEEECD;
+}
+#search_button {
+	padding:0; width:60px; height:30px;
+	font-family:impact; font-size:15px; color:#FF7256;
+	background-color:#FEEECD; border:none;
+}
+
 
 /*  --  body  --  */
 #wrap {
