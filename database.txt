@@ -51,7 +51,7 @@ create table class (	<-- 이거 말고
 );
 
 create table class (
-	id varchar(100) not null,
+	id int not null auto_increment,
 	name varchar(100),
 	content varchar(300),	
 	start_date date,
