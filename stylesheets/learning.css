@@ -22,7 +22,7 @@ a {text-decoration:none;}
 li {}
 
 /* -- Top  --  */
-#top {height:45px; border-bottom:2px solid #ddd; line-height:45px; margin-bottom: -50px;}
+#top {height:45px; border-bottom:2px solid #ddd; line-height:45px;}
 #top_container {width:960px; margin:0 auto;}
 
 #top ul li {display:block; font-size:15px;}
@@ -57,14 +57,13 @@ li {}
 .control_button.active { top:-31px; }
 
 /*  --  Header  --  */
-#header {text-align:center; padding:60px;}
+#header {text-align:center; padding: 10px 50px 15px 50px;}
 #header span {font-family:"筌띾쵐占��⑥쥓逾�,占쎈��ワ옙紐꾬옙筌ｏ옙 Candara; font-size:80px;}
 
 #header_search {
 	display:inline-block; width:800px; margin-left:80px; margin-bottom:30px; padding:20px;
 	background-color:#FEEECD;
 	border-radius: 10px 10px 10px 10px;
-	margin-top: -50px;
 }
 #search {width:700px; height:40px; border:1px solid silver; font-size:20px; }
 #search_button {
