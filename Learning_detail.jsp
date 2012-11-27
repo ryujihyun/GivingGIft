@@ -8,6 +8,7 @@
 <link href="stylesheets/learning.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+
 </head>
 <body>
 	<jsp:include page="share/header.jsp"></jsp:include>
@@ -15,18 +16,6 @@
 		<jsp:include page="share/side.jsp"></jsp:include>
 		<section id="learning_detail">
 		 <article	class="learning_person">
-		<div id="left">
-			<img src="./images/human.png"></img><br>
-			<div id="class_number">
-				수강인원<br> ★★☆☆☆<br>
-			</div>
-		</div>
-		<h1>Jeon You Bin</h1>
-		<p>
-			name: youbin<br> address : 경기도 용인시 처인구 명지대학교 <br> date:
-			2012.11.22 ~ 2012.12.25<br> week: Mon, Wen, Fri<br> Number:
-			5<br>
-		</p>
 			<table border="1">
 				<tr>
 					<td colspan="2"><div id="map_canvas"style="width: 460px; height: 380px;"></div></td>
