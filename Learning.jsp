@@ -77,7 +77,7 @@
 						conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/GivingGift", "root", "tiger");
 
 						stmt = conn.createStatement();
-						rs = stmt.executeQuery("SElECT * FROM member ORDER BY created_at desc");
+						rs = stmt.executeQuery("SElECT * FROM class ORDER BY created_at desc");
 		
 						while(rs.next()){
 					%>
@@ -91,10 +91,9 @@
 					</div>
 					<p>
 						name: <% out.print(rs.getString("name"));%><br>
-						address : <% out.print(rs.getString("address"));%> <br>
-						phone: <% out.print(rs.getString("phone"));%> <br>
-						date: <%out.print(rs.getDate("birthdate")); %><br>
-						week: Mon, Wen, Fri<br>
+						content : <% out.print(rs.getString("content"));%> <br>
+						teacher : <% out.print(rs.getString("teacher_id"));%> <br>
+						date: <% out.print(rs.getDate("start_date"));%>~ <%out.print(rs.getDate("end_date")); %> <br>
 					</p></a>
 				</article>
 				<%} %>
