@@ -84,7 +84,6 @@
 			
 				<article class="learning_article">
 					<div id ="left" class="art_f">
-						<a href="Learning_detail.jsp">
 					<% if(rs.getString("interest").equals("language")){%>
 						<img src="./images/language.png"></img>
 					<% } else if(rs.getString("interest").equals("sociology")) {%>
@@ -121,12 +120,12 @@
 							name: <% out.print(rs.getString("name"));%><br>
 							content : <% out.print(rs.getString("content"));%> <br>
 							teacher : <% out.print(rs.getString("teacher_id"));%> <br>
-							date: <% out.print(rs.getDate("start_date"));%> ~ <%out.print(rs.getDate("end_date")); %> <br>
+							date: <% out.print(rs.getDate("start_date"));%> ~ <%out.print(rs.getDate("end_date")); %> <br><br>
 							<a class="enroll_button" href="Learning_detail.jsp">
-								<span class="icon"></span>
+								<span class="icon"><img src="./images/enroll.png"></img></span>
 								<span class="lbl">Enroll</span>
 							</a>
-						</p></a>
+						</p>
 					</div>
 					<div id ="right"  class="art_f">
 						<p id="cal-lbl"> Total number</p>
