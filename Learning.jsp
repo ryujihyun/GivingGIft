@@ -14,8 +14,10 @@
 	<meta http-equiv="page-Enter" content="BlendTans(Duration=3.0)">
 	<title> Giving Gift learning </title>
 	<link href="stylesheets/learning.css" rel="stylesheet" type="text/css">
+	<link href="stylesheets/jquery-ui-1.9.2.custom.min.css" rel="stylesheet" type="text/css">
 	<script src='js/jquery-1.8.2.min.js'></script>
 	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery-ui-1.9.2.custom.min.js"></script>
 </head>
 <body>
 <% 
@@ -82,10 +84,36 @@
 			
 				<article class="learning_article">
 					<div id ="left"><a href="Learning_detail.jsp">
-						<img src="./images/piano.png"></img>
+					<% if(rs.getString("interest").equals("language")){%>
+						<img src="./images/language.png"></img>
+					<% } else if(rs.getString("interest").equals("sociology")) {%>
+						<img src="./images/sociology.png"></img>
+					<%} else if(rs.getString("interest").equals("science")) {%>
+						<img src="./images/science.png"></img>
+					<% } else if(rs.getString("interest").equals("skill")) {%>
+						<img src="./images/skill.png"></img>
+						<%} else if(rs.getString("interest").equals("art")) {%>
+						<img src="./images/art.png"></img>
+						<%} else if(rs.getString("interest").equals("music")) {%>
+						<img src="./images/music.png"></img>
+						<%} %>
 					</div>
 					<div id="title">
-						<h1> Giving Gift Piano Gift </h1><br>
+						<h1> Giving Gift
+						<% if(rs.getString("interest").equals("language")){%>
+							language
+						<% } else if(rs.getString("interest").equals("sociology")) {%>
+							sociology
+						<%} else if(rs.getString("interest").equals("science")) {%>
+							science
+						<% } else if(rs.getString("interest").equals("skill")) {%>
+							skill
+						<%} else if(rs.getString("interest").equals("art")) {%>
+							art
+						<%} else if(rs.getString("interest").equals("music")) {%>
+							music
+						<%} %>
+						 Gift </h1><br>
 					</div>
 					<p>
 						name: <% out.print(rs.getString("name"));%><br>
@@ -93,6 +121,9 @@
 						teacher : <% out.print(rs.getString("teacher_id"));%> <br>
 						date: <% out.print(rs.getDate("start_date"));%>~ <%out.print(rs.getDate("end_date")); %> <br>
 					</p></a>
+					<div id ="right">
+						
+					</div>
 				</article>
 				<%} %>
 			</section>
@@ -106,6 +137,7 @@
 				if(stmt != null) try {stmt.close();} catch(SQLException ex){}
 			}%>
 			<jsp:include page="share/footer.jsp"></jsp:include>
+			<jsp:include page="share/teaching.jsp"></jsp:include>
 </body>
 </html>
 
@@ -114,19 +146,6 @@
 $("#create_page").hide();
 
 $(function(){
-	$(document).ready(function() {
-		$(window).scroll(function() {
-			var scrollHeight=$(window).scrollTop()+ $(window).height();
-			var documentHeight = $(document).height();
-
-			if(scrollHeight + 200 >= documentHeight){
-				for(var i=0; i<10; i++){
-					$('<h1>Infinity Scroll<h1>').appendTo('body');
-				}
-			}
-		});
-	});
-
 	//create window
 	$("body").find("#create_click").click(function() {
 		$("#create_page").show();
@@ -182,4 +201,24 @@ $(document).ready(function () {
     var randomNumber = Math.round(Math.random()*3);
     moveSlider(randomNumber);
 });
+
+$(function() {
+    $( "#from" ).datepicker({
+        defaultDate: "+1w",
+        changeMonth: true,
+        numberOfMonths: 3,
+        onClose: function( selectedDate ) {
+            $( "#to" ).datepicker( "option", "minDate", selectedDate );
+        }
+    });
+    $( "#to" ).datepicker({
+        defaultDate: "+1w",
+        changeMonth: true,
+        numberOfMonths: 3,
+        onClose: function( selectedDate ) {
+            $( "#from" ).datepicker( "option", "maxDate", selectedDate );
+        }
+    });
+});
+
 </script>
