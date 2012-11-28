@@ -12,7 +12,7 @@
 	<meta http-equiv="page-exit" content="BlendTans(Duration=3.0)">
 	<meta http-equiv="page-Enter" content="BlendTans(Duration=3.0)">
 	<title>Giving Gift learning</title>
-	<link href="stylesheets/teaching.css" rel="stylesheet" type="text/css">	<script src='js/jquery-1.8.2.min.js'></script>
+	<link href="stylesheets/mypage.css" rel="stylesheet" type="text/css">	<script src='js/jquery-1.8.2.min.js'></script>
 	<script src="js/bootstrap.min.js"></script>
 </head>
 <body>

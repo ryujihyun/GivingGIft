@@ -14,10 +14,8 @@
 	<meta http-equiv="page-Enter" content="BlendTans(Duration=3.0)">
 	<title> Giving Gift learning </title>
 	<link href="stylesheets/learning.css" rel="stylesheet" type="text/css">
-	<link href="stylesheets/jquery-ui-1.9.2.custom.min.css" rel="stylesheet" type="text/css">
 	<script src='js/jquery-1.8.2.min.js'></script>
 	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery-ui-1.9.2.custom.min.js"></script>
 </head>
 <body>
 <% 
@@ -108,7 +106,6 @@
 				if(stmt != null) try {stmt.close();} catch(SQLException ex){}
 			}%>
 			<jsp:include page="share/footer.jsp"></jsp:include>
-			<jsp:include page="share/teaching.jsp"></jsp:include>
 </body>
 </html>
 
@@ -185,24 +182,4 @@ $(document).ready(function () {
     var randomNumber = Math.round(Math.random()*3);
     moveSlider(randomNumber);
 });
-
-$(function() {
-    $( "#from" ).datepicker({
-        defaultDate: "+1w",
-        changeMonth: true,
-        numberOfMonths: 3,
-        onClose: function( selectedDate ) {
-            $( "#to" ).datepicker( "option", "minDate", selectedDate );
-        }
-    });
-    $( "#to" ).datepicker({
-        defaultDate: "+1w",
-        changeMonth: true,
-        numberOfMonths: 3,
-        onClose: function( selectedDate ) {
-            $( "#from" ).datepicker( "option", "maxDate", selectedDate );
-        }
-    });
-});
-
 </script>

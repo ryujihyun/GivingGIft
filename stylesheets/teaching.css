@@ -22,7 +22,7 @@ a {text-decoration:none;}
 li {}
 
 /* -- Top  --  */
-#top {height:45px; border-bottom:2px solid #ddd; line-height:45px;margin-bottom: 0px;}
+#top {height:45px; border-bottom:2px solid #ddd; line-height:45px;}
 #top_container {width:960px; margin:0 auto;}
 
 #top ul li {display:block; font-size:15px;}
@@ -34,234 +34,49 @@ li {}
 #top_right {float:right; padding:0;}
 #top_right ul li {float:left;}
 #top_right ul li a {border-left:2px solid #ddd;}
-#search {
-	width:180px; height:30px; border:none; background-color:#FEEECD;
-}
-#search_button {
-	padding:0; width:60px; height:30px;
-	font-family:impact; font-size:15px; color:#FF7256;
-	background-color:#FEEECD; border:none;
-}
-
 
 /*  --  body  --  */
 #wrap {
 	width:960px; margin:0 auto; position:relative;
-	background-image: url(); font-family: �대㉫�몄�泥� Candara;
+	background-image: url(); font-family: 휴먼편지체, Candara;
 }
+
+/*  --  header  --  */
+#header {margin-top:30px;}
+
+#header_p {display:block;}
+#header_p h1 {margin-bottom:30px; font-size:40px; color:#EE6A50;}
+#header_p p {margin-bottom:30px; font-size:30px; color:#FEE0C6;}
+
 
 /*  --  Content  --  */
-#content { width: 960px; margin: 0 auto; overflow: hidden;}
-#content > #aside {float: left; width:200px;}
-
-#learning_section #create_class {
-	display:inline-block; background-color:#ff4040; padding:8px; margin:10px;
-	font-size:20px; border-radius: 8px;
-}
-#learning_section #create_class a {text-decoration:none; color:#fff;}
-
-#content > #board_section1 {  width: 750px; float: right;}
-#content > #board_section2 {  width: 750px; margin-top: 10px; float: right;}
-#content > #board_section3 { padding-left: 10px; width: 370px; margin-top: 10px; float: left;}
-#content > #board_section4 { padding-left: 800px; width: 160px; margin-top: 810px;}
-
-#content > #teaching_section1 { width:750px;  margin-top:150px; float: right;}
-#content > #teaching_section2 {padding-left: 10px; width: 242px; margin-top:10px; float: left;}
-
-#teaching_section1 > article.teaching_article1 {margin-bottom: 10px; padding: 20px; border: 1px solid #b70000;}
-#board_section > article.board_article1 {margin-bottom: 10px; padding: 20px; border: 1px solid #b70000;}
-#teaching_section1 > article.teaching_article1 > a:link {text-decoration: none; color: black;}
-#teaching_section1 > article.teaching_article1> a:visited {text-decoration: none; color: black;}
-#board_section2 > article.board_article2 {margin-bottom: 10px; padding: 20px; border: 1px solid #b70000;}
-#board_section3 > article.board_article3 {margin-bottom: 10px; padding: 20px; border: 1px solid #b70000;}
-#board_section4 > article.board_article4 {margin-bottom: 10px; padding: 20px; border: 1px solid #b70000;}
-#teaching_section1 > article.teaching_article1 {margin-bottom: 10px; padding: 10px; border: 1px solid #b70000;}
-#teaching_section2 > article.teaching_article2{margin-bottom: 10px; padding: 10px; border: 1px solid #b70000;}
-
-#left {float: left; margin-right: 20px;}
-
-section.buttons{ overflow: hidden; margin-top: 20px; border-radius: 10px 10px 10px 10px;}
-section.buttons>label {
-	display: block; float: left;
-
-	width: 200px; height: 30px;
-	line-height: 30px;
-	text-align: center;
-
-	box-sizing: border-box;
-	border: 1px solid white;
-
-	background: #b70000;
-	color: white;
+#content {
+	width:920px; height:700px; padding:20px;
+	display:block;  border:1px solid #eee; border-radius:20px; border:none;
+	background-color:#FEEECD;
 }
 
-.item{ overflow: hidden; padding: 10px; border: 1px solid #b70000; border-top: none;}
-.thumbnail{float: left;}
-.thumbnail>img{width: 30px;}
-.description {float: left; margin-left:10px;}
-.description >strong {display: #b70000; width: 120px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+#content_left {float:left; width:598px; height:700px; background-color:#fff; border:1px solid #FEE0C6; border-radius:20px 0 0 20px;}
+#content_right {float:right; width:260px; height:300px; background-color:#fff; padding:20px; border:1px solid #FEE0C6; border-radius:0 20px 20px 0;}
 
-#content > #volunteer { display: block; width:160px; margin-top: 20px;}
-#content > #volunteer { margin-bottom: 10px; padding: 20px; border: 1px solid #b70000;}
-#content > #volunteer table, tr, td{font-size: 15px; margin: 0 auto; text-align: center;
-	width: 160px; height: 20px; }
-#content > #volunteer tr, th{ font-size: 20px; font-weight: bold; text-align: center;}
-#content > #volunteer h1{font-size: 35px; font-weight: bold; color: #B70000;
-	margin: 0 auto; text-align: center; margin-top: 20px; margin-bottom: 20px; }
+#content_header {font-size:40px; border-bottom:1px solid #000; padding:10px 20px;}
+#content_form {padding:20px;}
 
-#learning_footer{ width: 960px; margin: 0 auto; margin-bottom: 10px; box-sizing; border-box; padding: 10px; border: 1px solid #b70000; text-align: center;}
+.join_class {margin-top:20px; clear:both;}
+.input_text {width:540px; height:30px;}
 
-/* Some stylesheet reset */
-#cssmenu > ul {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	vertical-align: baseline;
-	line-height: 1;
+#select_box {width:200px; height:30px; font-size:20px;}
+textarea {width:540px; height:80px;}
+
+#date .date_class {float:left; margin-right:20px;}
+.input_date {height:30px;}
+
+#content_button {float:right; margin:20px;}
+#content_button input {
+	width:90px; height:40px; font-size:25px; font-weight:bold;
+	background-color:#ff4040; border-radius:10px;
+	border-color:#ff4040; color:#fff;
 }
 
-/* The container */
-#cssmenu > ul{
-	display: block;
-	position: relative;
-	width: 150px;
-}
-
-	/* The list elements which contain the links */
-	#cssmenu > ul li {
-		display: block;
-		position: relative;
-		margin: 0;
-		padding: 0;
-		width: 150px;	
-	}
-
-		/* General link styling */
-		#cssmenu > ul li a {
-			/* Layout */
-			display: block;
-			position: relative;
-			margin: 0;
-			border-top: 1px dotted #fff;
-			border-bottom: 1px dotted #d9d9d9;
-			padding: 11px 20px;
-			width: 110px;
-
-			/* Typography */
-			font-family:  Helvetica, Arial, sans-serif;
-			color: #e4433c;
-			text-decoration: none;
-			text-transform: uppercase;
-			text-shadow: 0 1px 0 #fff;
-			font-size: 13px;
-			font-weight: 300;
-
-			/* Background & effects */
-			background: #eaeaea;
-		}
-
-		/* Rounded corners for the first link of the menu/submenus */
-		#cssmenu > ul li:first-child>a {
-			border-top-left-radius: 4px;
-			border-top-right-radius: 4px;
-			border-top: 0;
-		}
-
-		/* Rounded corners for the last link of the menu/submenus */
-		#cssmenu > ul li:last-child>a {
-			border-bottom-left-radius: 4px;
-			border-bottom-right-radius: 4px;
-			border-bottom: 0;
-		}
-
-
-		/* The hover state of the menu/submenu links */
-		#cssmenu > ul li a:hover, #cssmenu > ul li:hover>a {
-			color: #fff;
-			text-shadow: 0 1px 0 rgba(0, 0, 0, .25);
-			background: #f23f37;
-			background: -webkit-linear-gradient(bottom, #f23f37, #f45d57);
-			background: -ms-linear-gradient(bottom, #f23f37, #f45d57); 
-			background: -moz-linear-gradient(bottom, #f23f37, #f45d57);
-			background: -o-linear-gradient(bottom, #f23f37, #f45d57);
-			border-color: transparent;
-		}
-
-		/* The arrow indicating a submenu */
-		#cssmenu > ul .has-sub >a::after {
-			content: '';
-			position: absolute;
-			top: 16px;
-			right: 10px;
-			width: 0px;
-			height: 0px;
-
-			/* Creating the arrow using borders */
-			border: 4px solid transparent;
-			border-left: 4px solid #e4433c; 
-		}
-
-		/* The same arrow, but with a darker color, to create the shadow effect */
-		#cssmenu > ul .has-sub >a::before {
-			content: '';
-			position: absolute;
-			top: 17px;
-			right: 10px;
-			width: 0px;
-			height: 0px;
-
-			/* Creating the arrow using borders */
-			border: 4px solid transparent;
-			border-left: 4px solid #fff;
-		}
-
-		/* Changing the color of the arrow on hover */
-		#cssmenu > ul li>a:hover::after, #cssmenu > ul li:hover>a::after {
-			border-left: 4px solid #fff;
-		}
-
-		#cssmenu > ul li>a:hover::before, #cssmenu > ul li:hover>a::before {
-			border-left: 4px solid rgba(0, 0, 0, .25);
-		}
-
-	
-		/* THE SUBMENUS */
-		#cssmenu > ul ul {
-			position: absolute;
-			left: 150px;
-			top: -9999px;
-			padding-left: 5px;
-			opacity: 0;
-			/* The fade effect, created using an opacity transition */
-			-webkit-transition: opacity .3s ease-in;
-			-moz-transition: opacity .3s ease-in;
-			-o-transition: opacity .3s ease-in;
-			-ms-transition: opacity .3s ease-in;
-		}
-
-		/* Showing the submenu when the user is hovering the parent link */
-		#cssmenu > ul li:hover>ul {top: 0px;opacity: 1;
-		}
-
-
-/*	-- create_class_window -- 	*/
-.new_window {
-	background-color:rgba(128, 0, 255, .8);
-	border-radius: 25px 25px 25px 25px;
-	border:3px solid #000; display:inline-block;
-}
-#create_page {position:absolute; top:100px; left:230px; width:500px; height:600px;}
-
-.window_logo {
-	font-size:50px; padding:50px 0 80px 0; text-align:center;
-	font-family:impact;  font-style:italic; color:white;
-	position:relative;
-}
-.closebutton {position:absolute; top:15px; right:15px; width:40px; height:40px;}
-.window_button {position:absolute; bottom:25px; right:25px;}
-.window_button input {width:90px; height:40px; font-size:25px; font-weight:bold;}
-
-.join_class div {float:left;}
-.join_class {clear:both;}
-.join_class .class_name {padding:0 30px 20px 20px; width:160px; font-size:20px; font-weight:bold; text-align:right;}
-.join_class .input_text {width:200px;  border:1px solid #000;}
+/*  --  Footer  --  */
+#learning_footer{ width: 960px; margin: 0 auto; margin-bottom: 10px; padding: 10px; text-align: center;}
