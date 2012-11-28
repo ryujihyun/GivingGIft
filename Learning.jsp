@@ -83,7 +83,8 @@
 					%>
 			
 				<article class="learning_article">
-					<div id ="left"><a href="Learning_detail.jsp">
+					<div id ="left" class="art_f">
+						<a href="Learning_detail.jsp">
 					<% if(rs.getString("interest").equals("language")){%>
 						<img src="./images/language.png"></img>
 					<% } else if(rs.getString("interest").equals("sociology")) {%>
@@ -98,31 +99,42 @@
 						<img src="./images/music.png"></img>
 						<%} %>
 					</div>
-					<div id="title">
-						<h1> Giving Gift
-						<% if(rs.getString("interest").equals("language")){%>
-							language
-						<% } else if(rs.getString("interest").equals("sociology")) {%>
-							sociology
-						<%} else if(rs.getString("interest").equals("science")) {%>
-							science
-						<% } else if(rs.getString("interest").equals("skill")) {%>
-							skill
-						<%} else if(rs.getString("interest").equals("art")) {%>
-							art
-						<%} else if(rs.getString("interest").equals("music")) {%>
-							music
-						<%} %>
-						 Gift </h1><br>
+					<div id="center" class="art_f">
+						<div id="title">
+							<h1> Giving Gift
+							<% if(rs.getString("interest").equals("language")){%>
+								language
+							<% } else if(rs.getString("interest").equals("sociology")) {%>
+								sociology
+							<%} else if(rs.getString("interest").equals("science")) {%>
+								science
+							<% } else if(rs.getString("interest").equals("skill")) {%>
+								skill
+							<%} else if(rs.getString("interest").equals("art")) {%>
+								art
+							<%} else if(rs.getString("interest").equals("music")) {%>
+								music
+							<%} %>
+							 Gift </h1><br>
+						</div>
+						<p>
+							name: <% out.print(rs.getString("name"));%><br>
+							content : <% out.print(rs.getString("content"));%> <br>
+							teacher : <% out.print(rs.getString("teacher_id"));%> <br>
+							date: <% out.print(rs.getDate("start_date"));%> ~ <%out.print(rs.getDate("end_date")); %> <br>
+							<a class="enroll_button" href="Learning_detail.jsp">
+								<span class="icon"></span>
+								<span class="lbl">Enroll</span>
+							</a>
+						</p></a>
 					</div>
-					<p>
-						name: <% out.print(rs.getString("name"));%><br>
-						content : <% out.print(rs.getString("content"));%> <br>
-						teacher : <% out.print(rs.getString("teacher_id"));%> <br>
-						date: <% out.print(rs.getDate("start_date"));%>~ <%out.print(rs.getDate("end_date")); %> <br>
-					</p></a>
-					<div id ="right">
-						
+					<div id ="right"  class="art_f">
+						<p id="cal-lbl"> Total number</p>
+						<div id="total_people_number">
+							<div class="total_number"><% out.print(rs.getString("number"));%></div>
+							<div class="enroll_number">2</div>
+						</div>
+						<div class="enroll_people_number">Enroll people</div>
 					</div>
 				</article>
 				<%} %>
@@ -137,33 +149,29 @@
 				if(stmt != null) try {stmt.close();} catch(SQLException ex){}
 			}%>
 			<jsp:include page="share/footer.jsp"></jsp:include>
-			<jsp:include page="share/teaching.jsp"></jsp:include>
 </body>
 </html>
 
 <script type="text/javascript">
-
-$("#create_page").hide();
-
-$(function(){
+//$(function(){
 	//create window
-	$("body").find("#create_click").click(function() {
-		$("#create_page").show();
-	});
-	$(".closebutton").click(function() {
-		$(this).parent().parent().hide();
-	});
+//	$("body").find("#create_click").click(function() {
+//		$("#create_page").show();
+//	});
+//	$(".closebutton").click(function() {
+//		$(this).parent().parent().hide();
+//	});
 
 	//mouse event
-	$("article.learning_article").mouseover(function() {
-		$(this).css("background", "#C4DEFF");
-		$(this).css("color", "#ffffff");
-	});
+//	$("article.learning_article").mouseover(function() {
+//		$(this).css("background", "#C4DEFF");
+//		$(this).css("color", "#ffffff");
+//	});
 
-	$("article.learning_article").mouseout(function() {
-		$(this).css("background", "#ffffff");
-	});
-});
+//	$("article.learning_article").mouseout(function() {
+//		$(this).css("background", "#ffffff");
+//	});
+//});
 
 $(document).ready(function () {
 // 슬라이더를 움직여주는 함수
@@ -201,24 +209,4 @@ $(document).ready(function () {
     var randomNumber = Math.round(Math.random()*3);
     moveSlider(randomNumber);
 });
-
-$(function() {
-    $( "#from" ).datepicker({
-        defaultDate: "+1w",
-        changeMonth: true,
-        numberOfMonths: 3,
-        onClose: function( selectedDate ) {
-            $( "#to" ).datepicker( "option", "minDate", selectedDate );
-        }
-    });
-    $( "#to" ).datepicker({
-        defaultDate: "+1w",
-        changeMonth: true,
-        numberOfMonths: 3,
-        onClose: function( selectedDate ) {
-            $( "#from" ).datepicker( "option", "maxDate", selectedDate );
-        }
-    });
-});
-
 </script>
