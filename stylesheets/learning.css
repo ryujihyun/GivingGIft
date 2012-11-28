@@ -100,14 +100,14 @@ li {}
 .enroll_people_number {color:#777; font-size:11px; margin:6px 0 0; text-align: center; text-transform: uppercase;}
 
 .enroll_button {
-	vertical-align:baseline; cursor:auto; opacity: .3;
+	vertical-align:baseline; cursor:auto; opacity: .7;
 	position:relative; padding: 2px 6px 3px 6px; line-height:23px; font-weight:bold; 
 	-webkit-border-radius:3px; -khtml-border-radius:3px; border-radius:3px;
 	background-color: #008000; color: white; margin-right:15px; text-decoration: none;}
-.icon {position: absolute; font-weight: normal; color: white; width:30px; text-align:center; top:-1px; left:6px;}
-.lbl {padding-left: 16px;}
+.icon {padding-left:5px; padding-top:5px; width:15px; position: absolute; font-weight: normal; color: white; top:-1px; left:0px;}
+.lbl {padding-left: 20px;}
 
-section.buttons{ overflow: hidden; margin-top: 15px; border-radius: 10px 10px 10px 10px;}
+section.buttons{ overflow: hidden; margin-top: 15px; border-radius: 10px; }
 section.buttons>label {
 	display: block; float: left;
 
@@ -120,9 +120,10 @@ section.buttons>label {
 
 	background: #008000;
 	color: white;
+	
 }
 
-.item{ overflow: hidden; padding: 10px; border: 1px solid #008000; border-top: none;}
+.item{ overflow: hidden; padding: 10px; border: 1px solid #008000; border-top: none;  opacity: .8;}
 .thumbnail{float: left;}
 .thumbnail>img{width: 30px;}
 .description {float: left; margin-left: 10px; color: #ff4040;}
