@@ -82,12 +82,30 @@ li {}
 }
 #learning_section #create_class a {text-decoration:none; color:#fff;}
 
-#learning_section > article.learning_article {margin-bottom: 10px; padding: 20px; border: 1px solid silver; border-radius: 10px 10px 10px 10px;}
-#learning_section > article.learning_article > a:link {text-decoration: none; color: black;}
-#learning_section > article.learning_article > a:visited {text-decoration: none; color: black;}
-#title {color: #ff4040;}
+#learning_section > article.learning_article {width: 650px; height:160px; margin-bottom: 10px; padding: 20px; border: 1px solid silver; border-radius: 10px;}
+#learning_section > article.learning_article > #center > a:link {text-decoration: none; color: black;}
+#learning_section > article.learning_article > #center > a:visited {text-decoration: none; color: black;}
+#title {color: #ff4040; width: 200px;}
 
-#left {float: left; margin-right: 20px;}
+.art_f {float:left;}
+#left {width:160px; margin-left: 10px; margin-right: 20px;}
+#center {width: 270px;}
+#right {width: 100px; color:black; margin-left:50px; margin-top:30px; font-size: 25px;}
+
+#total_people_number {display:block; border-bottom:#CCC 2px solid; overflow:hidden; color:#777;
+			line-height:1; -webkit-border-radius:3px; -khtml-border-radius:3px; border-radius:3px;}
+#total_people_number > .total_number{background-color: #EEE; border-bottom:#CCC 1px solid; font-weight:bold; text-align:center;}
+#total_people_number > .enroll_number{font-weight:bold; text-align:center; background-color: #F8F8F8;}
+#cal-lbl {color:#777; font-size:11px; margin:6px 0 0; text-align: center; text-transform: uppercase;}
+.enroll_people_number {color:#777; font-size:11px; margin:6px 0 0; text-align: center; text-transform: uppercase;}
+
+.enroll_button {
+	vertical-align:baseline; cursor:auto; opacity: .3;
+	position:relative; padding: 2px 6px 3px 6px; line-height:23px; font-weight:bold; 
+	-webkit-border-radius:3px; -khtml-border-radius:3px; border-radius:3px;
+	background-color: #008000; color: white; margin-right:15px; text-decoration: none;}
+.icon {position: absolute; font-weight: normal; color: white; width:30px; text-align:center; top:-1px; left:6px;}
+.lbl {padding-left: 16px;}
 
 section.buttons{ overflow: hidden; margin-top: 15px; border-radius: 10px 10px 10px 10px;}
 section.buttons>label {
@@ -115,7 +133,7 @@ section.buttons>label {
 #content > #volunteer table, tr, td{font-size: 15px; margin: 0 auto; text-align: center;
 	width: 160px; height: 20px; }
 #content > #volunteer tr, th{ font-size: 20px; font-weight: bold; text-align: center;}
-#content > #volunteer h1{font-size: 35px; font-weight: bold; color: #ff4040;
+#content > #volunteer h1{font-size: 40px; font-weight: bold; color: #ff4040;
 	margin: 0 auto; text-align: center; margin-top: 20px; margin-bottom: 20px; }
 
 #learning_footer{ width: 960px; margin: 0 auto; margin-top:10px; margin-bottom: 10px; box-sizing; border-box; padding: 10px; border: 1px solid #dbdbdb; text-align: center; border-radius: 10px 10px 10px 10px;}
@@ -322,30 +340,3 @@ section.buttons>label {
 }
 /* Showing the submenu when the user is hovering the parent link */
 #cssmenu > ul li:hover>ul { top: 0px; opacity: 1; }
-
-
-/*	-- create_class_window -- 	*/
-.new_window {
-	background-color:rgba(255, 157, 157, .8);
-	border-radius: 25px 25px 25px 25px;
-	border:3px solid #000; display:inline-block;
-}
-#create_page {position:absolute; top:100px; left:230px; width:600px; height:700px;}
-
-.window_logo {
-	font-size:50px; padding:50px 0 80px 0; text-align:center;
-	font-family:impact;  font-style:italic; color:white;
-	position:relative;
-}
-.closebutton {position:absolute; top:15px; right:15px; width:40px; height:40px;}
-.window_button {position:absolute; bottom:25px; right:25px;}
-.window_button input {
-	width:90px; height:40px; font-size:25px; font-weight:bold;
-	background-color:#ff4040; border-radius:10px;
-	border-color:#ff4040; color:#fff;
-}
-
-.join_class div {float:left;}
-.join_class {clear:both;}
-.join_class .class_name {padding:0 30px 20px 20px; width:160px; font-size:20px; font-weight:bold; text-align:right;}
-.join_class .input_text {width:200px;  border:1px solid #000;}
