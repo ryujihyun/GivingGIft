@@ -50,253 +50,35 @@ li {}
 		-webkit-margin-before: 1em; -webkit-margin-after: 1em; -webkit-margin-start: 0px; -webkit-margin-end: 0px;}
 .class-info > h4{font-size: 13px; font-weight: bold; margin: 0 0 4px;}
 
+.right {width: 300px; float: right; }
+#buy-module {background: white; border: #DDD 1px solid;
+		border-radius: 3px; box-shadow: 0 1px 1px #DDD;}
+#top-action {padding: 15px 20px; height:50px; border-top-right-radius: 3px; border-top-left-radius: 3px; zoom:1;}
+.btn-enroll{width: 108px; line-height: normal; text-align: center; position: relative;
+		background: #68CD60; border-bottom-color: #3EAB36; color: white; border-width: 0; border-bottom-width: 2px;
+		font-size: 13px; display: table-cell; font-weight: bold; border-bottom-style: solid; padding: 10px 20px;
+		border-radius: 3px; text-decoration: none; float: left;}
+span.main-text {font-size: 16px; line-height: 34px; display: block; text-align:center; colot:white; font-weight: bold;}
+#Watchlist {width: 74px; padding: 0 8px; text-align: center; line-height: 54px; position: relative;
+		background: #DDD; border-bottom-color: #B7B7B7; color: #444; border-width: 0; border-bottom-width: 2px;
+		font-size: 13px; display: table-cell; font-weight: bold; border-bottom-style: solid;
+		border-radius: 3px; text-decoration: none; float:right; cursor: auto;}
+span.btn-text {padding-left:5px; text-align: center; line-height: 54px;}
+
+.datesection {border: #DDD 1px solid ; padding: 15px 20px; zoom:1;height: 30px;}
+.dateicon {margin-right: 15px; width: 25px; height: 20px; line-height: 20px; text-align: center; color: #777;
+		font-weight: bold; border: #EEE 1px solid; border-top: #C33737 5px solid; -webkit-box-shadow: 0 1px 1px #DDD;
+		box-shadow: 0 1px 1px #DDD;border-radius: 3px; float: left;}
+.dateinfo {float:left; display:block; }
+.datedate {font-weight: bold; line-height: 1; margin-bottom: 3px;}
+.datetime {line-height: 1; font-size: 11px; color: #777;}
+
 /*  --  body  --  */
 #wrap {
 	width:960px; margin:0 auto; position:relative;
 	background-image: url(); font-family: "留묒� 怨좊뵓", �대㉫�몄�泥� Candara;
 }
-
 #content { width: 960px; margin: 0 auto; overflow: hidden;}
-#content > #aside {float: left; width:200px;}
-#content > #learning_detail {width: 750px; margin-top: 150px; float: right;}
 
-#learning_detail > article.learning_person {margin-bottom: 10px; padding: 20px; border: 1px solid #b70000;}
-#learning_detail > #class_number {margin-bottom: 10px; padding: 20px; border: 1px solid #b70000;}
-
-#left {float: left; margin-right: 20px;}
-
-section.buttons{ overflow: hidden; margin-top: 15px; border-radius: 10px; }
-section.buttons>label {
-	display: block; float: left;
-
-	width: 200px; height: 30px;
-	line-height: 30px;
-	text-align: center;
-
-	box-sizing: border-box;
-	border: 1px solid white;
-
-	background: #008000;
-	color: white;
-	
-}
-
-.item{ overflow: hidden; padding: 10px; border: 1px solid #008000; border-top: none;  opacity: .8;}
-.thumbnail{float: left;}
-.thumbnail>img{width: 30px;}
-.description {float: left; margin-left: 10px; color: #ff4040;}
-.description >strong {display: #ff4040; width: 120px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
-
-#content > #volunteer { display: block; width:160px; margin-top: 30px;}
-#content > #volunteer { margin-bottom: 10px; padding: 20px; border: 1px solid #ff4040;}
-#content > #volunteer table, tr, td{font-size: 15px; margin: 0 auto; text-align: center;
-	width: 160px; height: 20px; }
-#content > #volunteer tr, th{ font-size: 20px; font-weight: bold; text-align: center;}
-#content > #volunteer h1{font-size: 40px; font-weight: bold; color: #ff4040;
-	margin: 0 auto; text-align: center; margin-top: 20px; margin-bottom: 20px; }
-
+.center-page {width: 930px; margin:0 auto; position:relative;}
 #learning_footer{ width: 960px; margin: 0 auto; margin-top:10px; margin-bottom: 10px; box-sizing; border-box; padding: 10px; border: 1px solid #dbdbdb; text-align: center; border-radius: 10px 10px 10px 10px;}
-
-
-/* Some stylesheet reset */
-#cssmenu > ul {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	vertical-align: baseline;
-	line-height: 1;
-}
-
-/* The container */
-#cssmenu > ul{
-	display: block;
-	position: relative;
-	width: 150px;
-}
-
-	/* The list elements which contain the links */
-	#cssmenu > ul li {
-		display: block;
-		position: relative;
-		margin: 0;
-		padding: 0;
-		width: 150px;	
-	}
-
-		/* General link styling */
-		#cssmenu > ul li a {
-			/* Layout */
-			display: block;
-			position: relative;
-			margin: 0;
-			border-top: 1px dotted #fff;
-			border-bottom: 1px dotted #d9d9d9;
-			padding: 11px 20px;
-			width: 110px;
-
-			/* Typography */
-			font-family:  Helvetica, Arial, sans-serif;
-			color: #e4433c;
-			text-decoration: none;
-			text-transform: uppercase;
-			text-shadow: 0 1px 0 #fff;
-			font-size: 13px;
-			font-weight: 300;
-
-			/* Background & effects */
-			background: #eaeaea;
-		}
-
-		/* Rounded corners for the first link of the menu/submenus */
-		#cssmenu > ul li:first-child>a {
-			border-top-left-radius: 4px;
-			border-top-right-radius: 4px;
-			border-top: 0;
-		}
-
-		/* Rounded corners for the last link of the menu/submenus */
-		#cssmenu > ul li:last-child>a {
-			border-bottom-left-radius: 4px;
-			border-bottom-right-radius: 4px;
-			border-bottom: 0;
-		}
-
-
-		/* The hover state of the menu/submenu links */
-		#cssmenu > ul li a:hover, #cssmenu > ul li:hover>a {
-			color: #fff;
-			text-shadow: 0 1px 0 rgba(0, 0, 0, .25);
-			background: #f23f37;
-			background: -webkit-linear-gradient(bottom, #f23f37, #f45d57);
-			background: -ms-linear-gradient(bottom, #f23f37, #f45d57); 
-			background: -moz-linear-gradient(bottom, #f23f37, #f45d57);
-			background: -o-linear-gradient(bottom, #f23f37, #f45d57);
-			border-color: transparent;
-		}
-
-		/* The arrow indicating a submenu */
-		#cssmenu > ul .has-sub >a::after {
-			content: '';
-			position: absolute;
-			top: 16px;
-			right: 10px;
-			width: 0px;
-			height: 0px;
-
-			/* Creating the arrow using borders */
-			border: 4px solid transparent;
-			border-left: 4px solid #e4433c; 
-		}
-
-		/* The same arrow, but with a darker color, to create the shadow effect */
-		#cssmenu > ul .has-sub >a::before {
-			content: '';
-			position: absolute;
-			top: 17px;
-			right: 10px;
-			width: 0px;
-			height: 0px;
-
-			/* Creating the arrow using borders */
-			border: 4px solid transparent;
-			border-left: 4px solid #fff;
-		}
-
-		/* Changing the color of the arrow on hover */
-		#cssmenu > ul li>a:hover::after, #cssmenu > ul li:hover>a::after {
-			border-left: 4px solid #fff;
-		}
-
-		#cssmenu > ul li>a:hover::before, #cssmenu > ul li:hover>a::before {
-			border-left: 4px solid rgba(0, 0, 0, .25);
-		}
-
-	
-		/* THE SUBMENUS */
-		#cssmenu > ul ul {
-			position: absolute;
-			left: 150px;
-			top: -9999px;
-			padding-left: 5px;
-			opacity: 0;
-			/* The fade effect, created using an opacity transition */
-			-webkit-transition: opacity .3s ease-in;
-			-moz-transition: opacity .3s ease-in;
-			-o-transition: opacity .3s ease-in;
-			-ms-transition: opacity .3s ease-in;
-		}
-
-		/* Showing the submenu when the user is hovering the parent link */
-		#cssmenu > ul li:hover>ul {
-			top: 0px;
-			opacity: 1;
-		}
-
-
-/* Some stylesheet reset */
-#cssmenu > ul {list-style: none; margin: 0; padding: 0; vertical-align: baseline; line-height: 1; margin-top: 10px; }
-/* The container */
-#cssmenu > ul{ display: block; position: relative; width: 150px;}
-/* The list elements which contain the links */
-#cssmenu > ul li {display: block; position: relative; margin: 0; padding: 0; width: 150px;}
-/* General link styling */
-#cssmenu > ul li a {
-			/* Layout */
-			display: block;
-			position: relative;
-			margin: 0;
-			border-top: 1px dotted #fff;
-			border-bottom: 1px dotted #d9d9d9;
-			padding: 11px 20px;
-			width: 160px;
-
-			/* Typography */
-			font-family:  Helvetica, Arial, sans-serif;
-			color: #ff4040;
-			text-decoration: none;
-			text-transform: uppercase;
-			text-shadow: 0 1px 0 #fff;
-			font-size: 13px;
-			font-weight: 300;
-
-			/* Background & effects */
-			background: #eaeaea;
-		}
-
-/* Rounded corners for the first link of the menu/submenus */
-#cssmenu > ul li:first-child>a {border-top-left-radius: 4px; border-top-right-radius: 4px; border-top: 0;}
-/* Rounded corners for the last link of the menu/submenus */
-#cssmenu > ul li:last-child>a { border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; border-bottom: 0;}
-/* The hover state of the menu/submenu links */
-#cssmenu > ul li a:hover, #cssmenu > ul li:hover>a {
-	color: #fff;
-	text-shadow: 0 1px 0 rgba(0, 0, 0, .25);
-	background: #ff4040;
-	background: -webkit-linear-gradient(bottom, #ff4040, #f45d57);
-	background: -ms-linear-gradient(bottom, #ff4040, #f45d57); 
-	background: -moz-linear-gradient(bottom, #ff4040, #f45d57);
-	background: -o-linear-gradient(bottom, #ff4040, #f45d57);
-	border-color: transparent;
-}
-/* The arrow indicating a submenu */
-#cssmenu > ul .has-sub >a::after { content: ''; position: absolute; top: 16px; right: 10px; width: 0px; height: 0px;
-	/* Creating the arrow using borders */
-	border: 4px solid transparent;
-	border-left: 4px solid #e4433c; }
-/* The same arrow, but with a darker color, to create the shadow effect */
-#cssmenu > ul .has-sub >a::before {	content: ''; position: absolute; top: 17px;	right: 10px; width: 0px; height: 0px;
-	/* Creating the arrow using borders */
-	border: 4px solid transparent; border-left: 4px solid #fff;}
-/* Changing the color of the arrow on hover */
-#cssmenu > ul li>a:hover::after, #cssmenu > ul li:hover>a::after {border-left: 4px solid #fff;}
-#cssmenu > ul li>a:hover::before, #cssmenu > ul li:hover>a::before {border-left: 4px solid rgba(0, 0, 0, .25);}
-/* THE SUBMENUS */
-#cssmenu > ul ul { position: absolute; left: 200px; top: -9999px; padding-left: 5px; opacity: 0;
-			/* The fade effect, created using an opacity transition */
-			-webkit-transition: opacity .3s ease-in;
-			-moz-transition: opacity .3s ease-in;
-			-o-transition: opacity .3s ease-in;
-			-ms-transition: opacity .3s ease-in;
-}
-/* Showing the submenu when the user is hovering the parent link */
-#cssmenu > ul li:hover>ul { top: 0px; opacity: 1; }

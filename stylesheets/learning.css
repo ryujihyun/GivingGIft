@@ -65,7 +65,7 @@ li {}
 	background-color:#FEEECD;
 	border-radius: 10px 10px 10px 10px;
 }
-#search {width:700px; height:40px; border:1px solid silver; font-size:20px; }
+#search {width:700px; height:40px; border:1px solid silver; font-size:20px; margin-top:10px;}
 #search_button {
 	padding:0; width:90px; height:40px; font-family:impact; font-size:15px; color: white; background-color:#FF4040; border:none;
 }
