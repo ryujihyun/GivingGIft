@@ -24,8 +24,9 @@
 	String Gnumber = request.getParameter("number");
 	int number = Integer.parseInt(Gnumber);
 	
-	String latitude =  request.getParameter("latitude");
-	String longtutude = request.getParameter("longtutude");
+	double latitude = Double.parseDouble(request.getParameter("latitude"));
+	double longtutude = Double.parseDouble(request.getParameter("longtutude"));
+	String address = request.getParameter("address");
 	String interest = request.getParameter("interest");
 			
 //		if(name == null || start_date == null || end_date == null)
@@ -44,13 +45,13 @@
 		stmt = conn.createStatement();
 		
 		String command = String.format("INSERT INTO class" +
-		"(teacher_id, name, content, number, latitude, longtutude, interest, start_date, end_date) VALUES" +
-		"('%s', '%s', '%s', '%d', '%s', '%s', '%s', '%s', '%s');",
+		"(teacher_id, name, content, number, latitude, longtutude, address, interest, start_date, end_date) VALUES" +
+		"('%s', '%s', '%s', '%d', '%f', '%f', '%s', '%s', '%s', '%s');",
 			teacher_id, name, content, number, latitude, longtutude, interest, start_date, end_date);
 		
 		int rowNum = stmt.executeUpdate(command);
 		if(rowNum < 1)
-				throw new Exception("데이터을 DB에 입렵못해");
+				throw new Exception("데이터을 DB에 입력못해");
 		}
 	
 	finally {
