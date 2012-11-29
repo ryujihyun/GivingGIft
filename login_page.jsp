@@ -40,5 +40,5 @@
 		}
 		catch (Exception ignored) {}
 	}
-	response.sendRedirect("index.jsp");
+	response.sendRedirect("Learning.jsp");
 %>
