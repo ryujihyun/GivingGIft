@@ -59,14 +59,15 @@
         		</div>
     		</div>
     	</div>
+		
+	</div>
+	<div id="content">
 		<div id="header_search">
 			<form action="">
 				<input type="text" name="search" id="search">
 				<input type="submit" value="| Search" id="search_button">
 			</form>
 		</div>
-	</div>
-	<div id="content">
 	<div id="introduction">
 		<img src="./images/learning_givinggift.png"></img>
 	</div>
