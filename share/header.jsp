@@ -5,7 +5,7 @@
 		<div id="top_left">
 			<ul>
 				<li><a href="index.jsp" id="top_logo">GivingGift</a></li>
-				<li><a href="learning.jsp">Learn</a></li>
+				<li><a href="Learning.jsp">Learn</a></li>
 				<li><div id="create_class"><a href="teaching.jsp" id="create_click">Teach</a></div></li>
 			</ul>
 		</div>
