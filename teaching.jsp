@@ -7,6 +7,8 @@
 	<title> Giving Gift Create Class </title>
 	<link href="stylesheets/teaching.css" rel="stylesheet" type="text/css">
 	<link href="stylesheets/jquery-ui-1.9.2.custom.min.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 	<script src='js/jquery-1.8.2.min.js'></script>
 	<script src="js/jquery-ui-1.9.2.custom.min.js"></script>
 </head>
@@ -75,19 +77,24 @@
 								</div>
 								<div class="date_class">
 									<div class="class_name">종료날짜</div>
-									<div><input id="to" class="input_date" type="text" name="end_date"></div>
+									<div><input id="to" class="input_date" type="text" name="end_date"></div><br>
 								</div>
 							</div>
 							
 							<div class="join_class">
 								<div class="class_name">수강인원</div><div><input class="input_text" type="text" name="number"></div>
 							</div>
-
 							<div class="join_class">
-								<div class="class_name">수강장소(위도)</div><div><input class="input_text" type="text" name="latitude"></div>
+								<div class="class_name"> 지도</div><div id="map_canvas" style="width: 460px; height: 380px;"></div>
 							</div>
 							<div class="join_class">
-								<div class="class_name">수강장소(경도)</div><div><input class="input_text" type="text" name="longtutude"></div>
+								<div class="class_name">수강장소(위도)</div><div><input type="text" id="lat" name="lat" style="width: 300px; height: 30px;"></div>
+							</div>
+							<div class="join_class">
+								<div class="class_name">수강장소(경도)</div><div><input type="text" id="lng" name="lng" style="width: 300px; height: 30px;"></div>
+							</div>
+							<div class="join_class">
+								<div class="class_name">주소</div><div><input type="text" id="address" name="address" style="width: 400px; height: 30px;"></div>
 							</div>							
 						</div>
 						<div id="content_button"><input type="submit" name="submit" value="join"></div>
@@ -132,4 +139,53 @@ $(function() {
         }
     });
 });
+
+$(document).ready(
+		function() {
+			var latlng = new google.maps.LatLng(37.513357,
+					127.10025999999993);
+
+			var myOptions = {
+				zoom : 10,
+				center : latlng,
+				mapTypeId : google.maps.MapTypeId.ROADMAP
+			}
+			var map = new google.maps.Map(document
+					.getElementById("map_canvas"), myOptions);
+			var marker = new google.maps.Marker({
+				position : latlng,
+				map : map
+			});
+
+			var geocoder = new google.maps.Geocoder();
+
+			google.maps.event.addListener(map, 'click', function(event) {
+				var location = event.latLng;
+				geocoder.geocode({
+					'latLng' : location
+				}, function(results, status) {
+					if (status == google.maps.GeocoderStatus.OK) {
+						$('#address').attr("value", results[0].formatted_address);
+						$('#lat').attr("value", results[0].geometry.location.lat());
+						$('#lng').attr("value", results[0].geometry.location.lng());
+					} else {
+						alert("Geocoder failed due to: " + status);
+					}
+				});
+				if (!marker) {
+					marker = new google.maps.Marker({
+						position : location,
+						map : map
+					});
+				} else {
+					marker.setMap(null);
+					marker = new google.maps.Marker({
+						position : location,
+						map : map
+					});
+				}
+				map.setCenter(location);
+				map.enableGoogleBar();
+			});
+		});
 </script>
