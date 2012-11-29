@@ -24,8 +24,12 @@
 	String Gnumber = request.getParameter("number");
 	int number = Integer.parseInt(Gnumber);
 	
-	double latitude = Double.parseDouble(request.getParameter("latitude"));
-	double longtutude = Double.parseDouble(request.getParameter("longtutude"));
+	String latitude = request.getParameter("lat");
+	String longtutude = request.getParameter("lng");
+/*
+	double latitude = Double.valueOf(S_latitude).doubleValue();
+	double longtutude = Double.valueOf(S_longtutude).doubleValue();
+*/	
 	String address = request.getParameter("address");
 	String interest = request.getParameter("interest");
 			
@@ -46,8 +50,8 @@
 		
 		String command = String.format("INSERT INTO class" +
 		"(teacher_id, name, content, number, latitude, longtutude, address, interest, start_date, end_date) VALUES" +
-		"('%s', '%s', '%s', '%d', '%f', '%f', '%s', '%s', '%s', '%s');",
-			teacher_id, name, content, number, latitude, longtutude, interest, start_date, end_date);
+		"('%s', '%s', '%s', '%d', '%s', '%s', '%s', '%s', '%s', '%s');",
+			teacher_id, name, content, number, latitude, longtutude, address, interest, start_date, end_date);
 		
 		int rowNum = stmt.executeUpdate(command);
 		if(rowNum < 1)

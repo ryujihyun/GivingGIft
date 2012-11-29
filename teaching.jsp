@@ -13,24 +13,7 @@
 	<script src="js/jquery-ui-1.9.2.custom.min.js"></script>
 </head>
 <body>
-	<div id="top">
-		<div id="top_container">
-			<div id="top_left">
-				<ul>
-					<li><a href="index.html" id="top_logo">GivingGift</a></li>
-					<li><a href="learning.html">Learn</a></li>
-					<li><div id="create_class"><a href="#" id="create_click">Teach</a></div></li>
-				</ul>
-			</div>
-			<div id="top_right">
-				<ul>
-					<li><a href="mypage.html"> My Page </a></li>
-					<li><a href="board.html"> Help </a></li>
-					<li><a href="#"> Log out </a></li>
-				</ul>			
-			</div>
-		</div>
-	</div>
+	<jsp:include page="share/header.jsp"></jsp:include>
 	<div id="wrap">
 		<div id="header"><!--
 			<div id="header_p">
