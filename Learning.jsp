@@ -5,7 +5,6 @@
 <%@page import="java.sql.Connection"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -62,18 +61,15 @@
 		
 	</div>
 	<div id="content">
-		<div id="content_header">
-			<div id="introduction">
-				<img src="./images/learning_givinggift.png"></img>
-			</div>
-			<div id="content_search">
-				<form action="">
-					<input type="text" name="search" id="search">
-					<input type="submit" value="| Search" id="search_button">
-				</form>
-			</div>
+		<div id="header_search">
+			<form action="">
+				<input type="text" name="search" id="search">
+				<input type="submit" value="| Search" id="search_button">
+			</form>
 		</div>
-		
+	<div id="introduction">
+		<img src="./images/learning_givinggift.png"></img>
+	</div>
 		<jsp:include page="share/side.jsp"></jsp:include>
 			<section id="learning_section">
 					<%try{
@@ -99,7 +95,6 @@
 							<input type="text" name="class_ID" value="${CLASSID}" style="visibility: hidden;">
 							
 						<!-- 유빈아 여기 인풋 타입에 value에다가 class table 값을 넣어서 러닝 디테일로 전송하는 거야 그래서 엔롤 버튼을 인풋 서브밋으로 바꿨어 -->
-						
 						
 						<% if(rs.getString("interest").equals("language")){%>
 							<img src="./images/language.png"></img>
@@ -138,16 +133,14 @@
 							content : <% out.print(rs.getString("content"));%> <br>
 							teacher : <% out.print(rs.getString("teacher_id"));%> <br>
 							date: <% out.print(rs.getDate("start_date"));%> ~ <%out.print(rs.getDate("end_date")); %> <br><br>
-						
 							<div id="enroll_button"><input type="submit" value="Enroll"></div>
-						
 						</p>
 					</div>
 					<div id ="right"  class="art_f">
 						<p id="cal-lbl"> Total number</p>
 						<div id="total_people_number">
 							<div class="total_number"><% out.print(rs.getString("number"));%></div>
-							<div class="enroll_number">2</div>
+							<div class="enroll_number"><% out.print(rs.getString("enroll_num"));%></div>
 						</div>
 						<div class="enroll_people_number">Enroll people</div>
 					</div>
