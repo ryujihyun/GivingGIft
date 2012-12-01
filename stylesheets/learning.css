@@ -1,5 +1,5 @@
 
-html{color:#000; background:#fff no-repeat; margin:0 auto; font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;}
+html{color:#444; background:#fff no-repeat; margin:0 auto; font-family: "맑은 고딕";}
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}
 table{border-collapse:collapse;border-spacing:0;}
 fieldset,img{border:0;}
@@ -12,7 +12,7 @@ q:before,q:after{content:'';}
 abbr,acronym{border:0;font-variant:normal;}
 sup{vertical-align:baseline;}
 sub{vertical-align:baseline;}
-legend{color:#000;}
+legend{color:#444;}
 input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit;}
 input,button,textarea,select{font-size:100%;}
 
@@ -34,6 +34,9 @@ li {}
 #top_right {float:right; padding:0;}
 #top_right ul li {float:left;}
 #top_right ul li a {border-left:2px solid #ddd;}
+#top_right ul li a:link {color:#444;}
+#top_right ul li a:visited {color:#444;}
+#top_right ul li a:hover {color:#444;}
 
 /*  --  body  --  */
 #wrap {
@@ -48,7 +51,7 @@ li {}
     
 /* Slider Text Panel */
 .slider_text_panel { position:absolute; top:110px; left:50px; }
-.slider_text { position:absolute; width:330px; height:150px; font-size: 30px;}
+.slider_text {color: #444; position:absolute; width:330px; height:150px; font-size: 30px;}
     
 /* Control Panel */
 .control_panel  {position:absolute; top:300px; left:400px; height:13px; overflow:hidden;}
@@ -66,21 +69,18 @@ li {}
 	width: 960px; margin: 0 auto; padding-bottom:10px; padding-top:25px;
 	position:relative; overflow: hidden; border: 1px solid silver; border-radius: 10px 10px 10px 10px;
 	}
-
-#content_header div {float:left;}
-#introduction img {width:200px; height:50px; margin-top:15px;  margin-left:20px;}
-
-#content_search {
-	display:inline-block; width:600px; margin-left:30px; margin-bottom:20px; padding:20px;
+	
+#header_search {
+	display:inline-block; width:800px; margin-left:80px; margin-bottom:30px; padding:20px;
 	background-color:#FEEECD;
 	border-radius: 10px 10px 10px 10px;
 }
-#search {width:500px; height:40px; border:1px solid silver; font-size:20px; }
+#search {width:700px; height:40px; border:1px solid silver; font-size:20px; margin-top:10px;}
 #search_button {
 	padding:0; width:90px; height:40px; font-family:impact; font-size:15px; color: white; background-color:#FF4040; border:none;
 }
 
-
+#content > #introduction {width: 30px; margin-top: 15px; margin-left: -10px; margin-bottom: 10px;}
 #content > #aside {float: left; width:200px; margin-left: 15px;}
 #content > #learning_section {width: 700px; margin-top: 10px; float: right; margin-right: 15px;}
 
@@ -91,14 +91,14 @@ li {}
 #learning_section #create_class a {text-decoration:none; color:#fff;}
 
 #learning_section > article.learning_article {width: 650px; height:160px; margin-bottom: 10px; padding: 20px; border: 1px solid silver; border-radius: 10px;}
-#learning_section > article.learning_article > #center > a:link {text-decoration: none; color: black;}
-#learning_section > article.learning_article > #center > a:visited {text-decoration: none; color: black;}
+#learning_section > article.learning_article > #center > a:link {text-decoration: none; color: #444;}
+#learning_section > article.learning_article > #center > a:visited {text-decoration: none; color: #444;}
 #title {color: #ff4040; width: 200px;}
 
 .art_f {float:left;}
 #left {width:160px; margin-left: 10px; margin-right: 20px;}
 #center {width: 270px;}
-#right {width: 100px; color:black; margin-left:50px; margin-top:30px; font-size: 25px;}
+#right {width: 100px; color:#444; margin-left:50px; margin-top:30px; font-size: 25px;}
 
 #total_people_number {display:block; border-bottom:#CCC 2px solid; overflow:hidden; color:#777;
 			line-height:1; -webkit-border-radius:3px; -khtml-border-radius:3px; border-radius:3px;}
@@ -107,13 +107,13 @@ li {}
 #cal-lbl {color:#777; font-size:11px; margin:6px 0 0; text-align: center; text-transform: uppercase;}
 .enroll_people_number {color:#777; font-size:11px; margin:6px 0 0; text-align: center; text-transform: uppercase;}
 
-.enroll_button {
-	vertical-align:baseline; cursor:auto; opacity: .7;
-	position:relative; padding: 2px 6px 3px 6px; line-height:23px; font-weight:bold; 
-	-webkit-border-radius:3px; -khtml-border-radius:3px; border-radius:3px;
-	background-color: #008000; color: white; margin-right:15px; text-decoration: none;}
-.icon {padding-left:5px; padding-top:5px; width:15px; position: absolute; font-weight: normal; color: white; top:-1px; left:0px;}
-.lbl {padding-left: 20px;}
+#enroll_button {vertical-align:baseline; cursor:auto;}
+#enroll_button input {
+	width:80px; height:25px; font-size:15px; font-weight:bold;
+	background-color:#FEEECD; border-radius:7px;
+	border-color:#ff4040; color:#ff4040;
+	margin-top:-8px;
+}
 
 section.buttons{ overflow: hidden; margin-top: 15px; border-radius: 10px; }
 section.buttons>label {
@@ -126,12 +126,13 @@ section.buttons>label {
 	box-sizing: border-box;
 	border: 1px solid white;
 
-	background: #008000;
-	color: white;
+	background: #FEEECD;
+	color: #ff4040;
+
 	
 }
 
-.item{ overflow: hidden; padding: 10px; border: 1px solid #008000; border-top: none;  opacity: .8;}
+.item{ overflow: hidden; padding: 10px; border: 1px solid #CCC; border-top: none;  opacity: .8;}
 .thumbnail{float: left;}
 .thumbnail>img{width: 30px;}
 .description {float: left; margin-left: 10px; color: #ff4040;}
@@ -349,11 +350,3 @@ section.buttons>label {
 }
 /* Showing the submenu when the user is hovering the parent link */
 #cssmenu > ul li:hover>ul { top: 0px; opacity: 1; }
-
-
-#enroll_button {float:right; margin-right:20px;}
-#enroll_button input {
-	width:120px; height:30px; font-size:20px; font-weight:bold;
-	background-color:#FF4040; border-radius:10px;
-	border-color:#FF4040; color:#fff;
-}
