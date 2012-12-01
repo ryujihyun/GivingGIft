@@ -65,7 +65,7 @@ li {}
 	background-color:#FEEECD;
 	border-radius: 10px 10px 10px 10px;
 }
-#search {width:700px; height:40px; border:1px solid silver; font-size:20px; margin-top:10px;}
+#search {width:700px; height:40px; border:1px solid silver; font-size:20px; }
 #search_button {
 	padding:0; width:90px; height:40px; font-family:impact; font-size:15px; color: white; background-color:#FF4040; border:none;
 }
@@ -344,3 +344,11 @@ section.buttons>label {
 }
 /* Showing the submenu when the user is hovering the parent link */
 #cssmenu > ul li:hover>ul { top: 0px; opacity: 1; }
+
+
+#enroll_button {float:right; margin-right:20px;}
+#enroll_button input {
+	width:120px; height:30px; font-size:20px; font-weight:bold;
+	background-color:#FF4040; border-radius:10px;
+	border-color:#FF4040; color:#fff;
+}
