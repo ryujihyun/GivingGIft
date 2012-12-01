@@ -2,7 +2,8 @@
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.Connection"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"
+	import="java.sql.*"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -26,12 +27,6 @@
 	String dbUser = "root";
 	String dbPassword = "tiger";
 %>
-
-<%
-	String class_ID = request.getParameter("class_ID");
-	out.println(class_ID);
-%>
-
 	<jsp:include page="share/header.jsp"></jsp:include>
 	<div id="listing_header">
 		<div id="center_page">
@@ -70,6 +65,44 @@
 	</div>
 	<div id="content">
 		<div class="center-page">
+		<%
+			String class_ID = request.getParameter("class_ID");
+			out.println(class_ID);
+			
+			try {
+				Class.forName("com.mysql.jdbc.Driver");
+				conn = DriverManager.getConnection(
+						"jdbc:mysql://localhost:3306/givinggift", "root", "tiger");
+				if(conn == null)
+					throw new Exception("Connect DB fail");
+				
+				stmt = conn.createStatement();
+				rs = stmt.executeQuery("select * from class;");
+
+				while(rs.next()) {
+					if(class_ID.equals(rs.getString("id")))
+					{
+						String DBname = rs.getString("name");
+						String DBcontnet = rs.getString("content");
+						
+						out.println(DBname);
+						out.println(DBcontnet);
+					}
+				}
+				
+			}
+			finally {
+				try {
+					stmt.close();
+				}
+				catch (Exception ignored) {}
+				
+				try {
+					conn.close();
+				}
+				catch (Exception ignored) {}
+			}
+		%>
 		</div>
 	</div>
 	<jsp:include page="share/footer.jsp"></jsp:include>
