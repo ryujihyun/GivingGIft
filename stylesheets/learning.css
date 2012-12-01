@@ -60,22 +60,27 @@ li {}
 #header {text-align:center; padding: 10px 50px 15px 50px;}
 #header span {font-family:"筌띾쵐占��⑥쥓逾�,占쎈��ワ옙紐꾬옙筌ｏ옙 Candara; font-size:80px;}
 
-#header_search {
-	display:inline-block; width:800px; margin-left:80px; margin-bottom:30px; padding:20px;
-	background-color:#FEEECD;
-	border-radius: 10px 10px 10px 10px;
-}
-#search {width:700px; height:40px; border:1px solid silver; font-size:20px; }
-#search_button {
-	padding:0; width:90px; height:40px; font-family:impact; font-size:15px; color: white; background-color:#FF4040; border:none;
-}
 
 /*  --  Content  --  */
 #content {
 	width: 960px; margin: 0 auto; padding-bottom:10px; padding-top:25px;
 	position:relative; overflow: hidden; border: 1px solid silver; border-radius: 10px 10px 10px 10px;
 	}
-#content > #introduction {width: 30px; margin-top: 15px; margin-left: -10px; margin-bottom: 10px;}
+
+#content_header div {float:left;}
+#introduction img {width:200px; height:50px; margin-top:15px;  margin-left:20px;}
+
+#content_search {
+	display:inline-block; width:600px; margin-left:30px; margin-bottom:20px; padding:20px;
+	background-color:#FEEECD;
+	border-radius: 10px 10px 10px 10px;
+}
+#search {width:500px; height:40px; border:1px solid silver; font-size:20px; }
+#search_button {
+	padding:0; width:90px; height:40px; font-family:impact; font-size:15px; color: white; background-color:#FF4040; border:none;
+}
+
+
 #content > #aside {float: left; width:200px; margin-left: 15px;}
 #content > #learning_section {width: 700px; margin-top: 10px; float: right; margin-right: 15px;}
 
