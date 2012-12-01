@@ -27,26 +27,24 @@
 	String dbUser = "root";
 	String dbPassword = "tiger";
 
-	
-	String email	 = "";
+	String email="";
+
 	String phone = "";
 	String name = "";
 	String address = "";
-	
 		try{
 			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
 
 	 		// 질의 준비
-			stmt = conn.prepareStatement("SELECT * FROM MEMBER");
-
+			stmt = conn.prepareStatement("SELECT * from MEMBER");
 			
 			// 수행
 	 		rs = stmt.executeQuery();
 			
 			if (rs.next()) {
 				name=rs.getString("name");
-				email=rs.getString("email");
+				email=(String) session.getAttribute("SID");
 				phone=rs.getString("phone");
 				address=rs.getString("address");
 				}
@@ -59,12 +57,12 @@
 			if (stmt != null) try{stmt.close();} catch(SQLException e) {}
 			if (conn != null) try{conn.close();} catch(SQLException e) {}
 		}
-
+	
 %>   
 	<div id="wrap">
 		<div id="content">
 			<jsp:include page="share/header.jsp"></jsp:include>
-			<jsp:include page="share/side.jsp"></jsp:include>
+			
 			<section id="teaching_section1">
 				<article	class="teaching_article1">
 				<div id="left">
@@ -73,10 +71,10 @@
 				<h1>학생 정보</h1>
 				<p>
 					<ol>
-						<li>아이디 :<%=name%></li>
+					<li>email :<%=email%></li>
+						<li>이름 :<%=name%></li>
 						<li>폰번호 :<%=phone%></li>
 						<li>주소 :<%=address%></li>
-						<li>이메일:<%=email%></li>
 						<br> date: 2012.11.22 ~ 2012.12.25
 						<br> week: Mon, Wen, Fri
 						<br> Number: 5
@@ -110,11 +108,6 @@
 										<p style="font-size: 9pt; color: red;">주소를 입략해주세여.</p></td>
 								</tr>
 								<tr>
-									<th><label for="h">이메일</label></th>
-									<td><input type="text" NAME=email value="<%=email%>" />
-									<p style="font-size: 9pt; color: red;">이메일꼭입력해주세요</p></td>
-								</tr>
-								<tr>
 									<th class="button" colspan="2"></th>
 									<td><input type="submit" value="수정"onclick="history.back()"/></td>
 								</tr>
@@ -129,9 +122,57 @@
 								</form>
 				</article>
 			</section>
-		</div>
-		<jsp:include page="share/footer.jsp"></jsp:include>
-	</div>
+	
+	
+			
+			<section id="teaching_section2"> <article	class="teaching_article2">
+			
+					<%
+		
+		conn = null;
+	stmt = null;
+	rs = null;
+	Statement stm = null;
+	try{
+						Class.forName("com.mysql.jdbc.Driver");
+						conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/GivingGift", "root", "tiger");
+
+						stm = conn.createStatement();
+						rs = stm.executeQuery("SElECT * FROM class ORDER BY created_at desc");
+		
+						if(rs.next()){
+					%>
+			
+				
+					<a href="Learning_detail.jsp">
+						<img src="./images/piano.png"></img>
+					
+					<div id="title">
+						<h1> Giving Gift Piano Gift </h1><br>
+					
+				
+						name: <% out.print(rs.getString("name"));%><br>
+						content : <% out.print(rs.getString("content"));%> <br>
+						teacher : <% out.print(rs.getString("teacher_id"));%> <br>
+						date: <% out.print(rs.getDate("start_date"));%>~ <%out.print(rs.getDate("end_date")); %> <br>
+						<form action="class_delete.jsp" method="post">
+					<tr>
+									<th class="button" colspan="2"></th>
+									<td><input type="submit" value="강좌삭제"onclick="history.back()"/></td>
+								</tr>
+								</form>
+					
+				<%} %>
+		
+<%		} catch(SQLException ex) {
+			%>
+			<% }finally {
+				if(rs != null) try {rs.close();} catch(SQLException ex){}
+				if(conn != null) try {conn.close();} catch(SQLException ex){}
+				if(stmt != null) try {stmt.close();} catch(SQLException ex){}
+			}%>
+				</div>
+			</article> </section>
 </body>
 </html>
 <script type="text/javascript">
