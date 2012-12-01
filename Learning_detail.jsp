@@ -84,9 +84,11 @@
 					{
 						String DBname = rs.getString("name");
 						String DBcontnet = rs.getString("content");
+						String DBaddress = rs.getString("address");
 						
 						out.println(DBname);
 						out.println(DBcontnet);
+						out.println(DBaddress);
 					}
 				}
 				
