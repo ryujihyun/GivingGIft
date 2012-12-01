@@ -15,7 +15,7 @@
 			throw new Exception("Connect DB fail");
 		
 		stmt = conn.createStatement();
-		ResultSet rs = stmt.executeQuery("select * from member member;");
+		ResultSet rs = stmt.executeQuery("select * from member;");
 
 		while(rs.next()) {
 			if(email.equals(rs.getString("email")) && password.equals(rs.getString("password")))
