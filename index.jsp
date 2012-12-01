@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="java.sql.*"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
+<%@ taglib prefix="x" uri="http://java.sun.com/jsp/jstl/xml" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,33 +19,38 @@
 				<div id="top_logo">
 					<a href="index.html" id="logo">GivingGift</a>
 				</div>
-				<div id="top_nav">
-					<ul>
-						<li><a href="#" id="login_click">Log In</a></li>
-						<li><a href="#" id="join_click">Join</a></li>
-						<li><a href="#">help</a></li>
-						<li><a href="Learning.jsp">둘러보기</a></li>
-					</ul>
-				</div>
 			</div>
 			<div id="top_right">
-				<form action="">
-					<input type="text" name="search" id="search">
-					<input type="submit" value="| Search" id="search_button">
-				</form>
+				<ul>
+					<li><a href="Learning.jsp">둘러보기</a></li>
+				</ul>
 			</div>
 		</div>
 		<div id="header">
 			<h1><span>Show your gift to ungifted people!</span></h1>
 		</div>
 		<div id="content">
-			<ul>
-				<a href="#" id="login_click"><li class="main_nav"><span id="login">Log In</span></li></a>
-				<a href="#" id="join_click"><li class="main_nav"><span id="join">Join</span></li></a>
-			</ul>
-			<div id="facebook_login">
-				<a href="#"><img src="images/facebookicon.png">facebook ID로 로그인하기</a>
-			</div>
+			<c:choose>
+				<c:when test="${sessionScope.SID == null}">
+				<ul>
+					<a href="#" class="login_click"><li class="main_nav"><span id="login">Log In</span></li></a>
+					<a href="#" class="join_click"><li class="main_nav"><span id="join">Join</span></li></a>
+				</ul>
+				<div id="facebook_login">
+					<a href="#"><img src="images/facebookicon.png">facebook ID로 로그인하기</a>
+				</div>
+				</c:when>
+				<c:otherwise>
+					<div id="logout">
+						<div>
+							안녕하세요 <%out.print((String) session.getAttribute("Sname"));%>님 오늘도 좋은 하루 되세요
+						</div>
+						<div>
+							logout
+						</div>
+					</div>
+				</c:otherwise>
+			</c:choose>
 		</div>
 		<div id="footer">
 			<p>사이트맵 | 고객센터</p>
@@ -119,24 +128,17 @@
 $("#login_page").hide();
 $("#join_page").hide();
 
-$(function() {
-	$("#wrap").find("#login_click").click(function() {
+	$(".login_click").click(function() {
 		$("#login_page").show();
-	});
-	$("#content>ul").find("#login_click").click(function() {
-		$("#login_page").show();
+		
 	});
 
-	$("#wrap").find("#join_click").click(function() {
-		$("#join_page").show();
-	});
-	$("#content>ul").find("#join_click").click(function() {
+	$(".join_click").click(function() {
 		$("#join_page").show();
 	});
 
 	$(".closebutton").click(function() {
 		$(this).parent().parent().hide();
 	});
-});
 
 </script>
