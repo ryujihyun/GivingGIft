@@ -95,15 +95,25 @@ create table estimation (
 	foreign key(class) references class(id)
 );
 
-create table post (
-	id varchar(100) not null,
+create table post ( <--X
+	id int not null auto_increment,
 	name varchar(100),
 	content varchar(500),
 	writer varchar(100),
-	parent_id varchar(100),
+	parent_id int,
 	created_at timestamp DEFAULT CURRENT_TIMESTAMP,
 	primary key(id),	
 	foreign key(writer) references member(email)
+);
+
+create table post (
+	id int not null auto_increment,
+	name varchar(100),
+	content varchar(500),
+	writer varchar(100),
+	parent_id int,
+	created_at timestamp DEFAULT CURRENT_TIMESTAMP,
+	primary key(id)
 );
 
 // insert table
