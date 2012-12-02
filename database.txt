@@ -62,6 +62,7 @@ create table class (
 	address varchar(100),
 	teacher_id varchar(100) not null,
 	interest varchar(100),
+	enroll_num int(100),
 	created_at timestamp DEFAULT CURRENT_TIMESTAMP,
 	primary key(id)
 );
