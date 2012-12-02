@@ -31,16 +31,16 @@
 		</div>
 
 		<div id="content">
-			<div class="new_window" id="join_page">
+			<div class="new_window" id="notice_page">
 			<div class="window_logo">GivingGift</div>
 			<a href="#"><img class="closebutton" src="images/fileclose.png"></a>
 			<form action="board_notice.jsp" method="post">
 				<div>
 					<div class="join_class">
-						<div class="class_name">이름</div><div><input class="input_text" type="text" name="name"></div>
+						<div class="class_name">제목</div><div><input class="input_text" type="text" name="name"></div>
 					</div>
-					<div class="join_class">
-						<div class="class_name">E-Mail</div><div><input class="input_text" type="text" name="ID"></div>
+					<div id="notice_text">
+						<div><textarea cols="40" row="10" name="content" placeholder="내용을 쓰세요"></textarea></div>
 					</div>
 				</div>
 				<div class="window_button"><input id="join_button" type="submit" name="submit" value="join"></div>
@@ -181,10 +181,10 @@ $(function() {
 	
 
 	
-	$("#join_page").hide();
+	$("#notice_page").hide();
 
 	$("#notice_create_button>a").click(function() {
-		$("#join_page").show();
+		$("#notice_page").show();
 	});
 
 	$(".closebutton").click(function() {
