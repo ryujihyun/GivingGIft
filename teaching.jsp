@@ -68,14 +68,10 @@
 								<div class="class_name">수강인원</div><div><input class="input_text" type="text" name="number"></div>
 							</div>
 							<div class="join_class">
-								<div class="class_name"> 지도</div><div id="map_canvas" style="width: 460px; height: 380px;"></div>
+								<div class="class_name"> 지도</div><div id="map_canvas" style="width: 500px; height: 380px;"></div>
 							</div>
-							<div class="join_class">
-								<div class="class_name">수강장소(위도)</div><div><input type="text" id="lat" name="lat" style="width: 300px; height: 30px;"></div>
-							</div>
-							<div class="join_class">
-								<div class="class_name">수강장소(경도)</div><div><input type="text" id="lng" name="lng" style="width: 300px; height: 30px;"></div>
-							</div>
+					<input type="text" id="lat" name="lat" style="visibility: hidden;">
+					<input type="text" id="lng" name="lng" style="visibility: hidden;">
 							<div class="join_class">
 								<div class="class_name">주소</div><div><input type="text" id="address" name="address" style="width: 400px; height: 30px;"></div>
 							</div>							
