@@ -80,7 +80,8 @@ create table register_class (
 	member_id varchar(100) not null,
 	class_id varchar(100) not null,
 	created_at timestamp DEFAULT CURRENT_TIMESTAMP,
-	primary key(member, class)
+	primary key(member_id, class_id),
+	foreign key(class_id) references class(id)
 );
 
 create table estimation (
