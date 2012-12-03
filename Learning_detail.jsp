@@ -31,7 +31,6 @@
 		<div id="center_page">
 			<%
 				String class_ID = request.getParameter("class_ID");
-				out.println(class_ID);
 
 				try {
 					Class.forName("com.mysql.jdbc.Driver");
@@ -49,7 +48,7 @@
 							String DBname = rs.getString("name");
 							String DBcontnet = rs.getString("content");
 							String DBaddress = rs.getString("address");
-							Date DBS_date = rs.getDate("start_date");
+							String DBS_date = rs.getString("start_date");
 							Date DBE_date = rs.getDate("end_date");
 							int DBenroll_num = rs.getInt("enroll_num");
 							String latitude = rs.getString("latitude");
@@ -63,6 +62,7 @@
 
 							out.println(DBname);
 							out.println(DBcontnet);
+							out.println(DBS_date);
 						}
 					}
 			%>
@@ -128,6 +128,9 @@
 						</ul>
 					</div></li>
 			</ul>
+		</div>
+		<div id="content_right">
+			<div id="map_canvas" style="width: 230px; height: 380px;"></div>
 		</div>
 	</div>
 	</div>
