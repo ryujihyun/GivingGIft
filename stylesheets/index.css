@@ -2,7 +2,7 @@
 html{color:#000;
 	/*background:#fff url("../images/background_ex1.jpg") no-repeat; padding:20px 0;*/
 	/*background:#fff url("../images/background_ex2.jpg") no-repeat center; background-size:100%;*/
-	font: 12px/18px "맑은 고딕", "Malgun Gothic", "굴림", "Gulim", Verdana, Arial, Tahoma;
+	font: 12px/18px "留묒� 怨좊뵓", "Malgun Gothic", "援대┝", "Gulim", Verdana, Arial, Tahoma;
 }
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}
 table{border-collapse:collapse;border-spacing:0;}
@@ -112,9 +112,7 @@ a {text-decoration:none;}
 }
 #content ul li span {display:inline-block; }
 
-#content #facebook_login {display:inline-block; padding:10px; position:absolute; bottom:5px; left:190px;}
-#content #facebook_login img {width:30px; height:30px;}
-#content #facebook_login a {color:#000; font-size:15px; padding-bottom:5px;}
+#content #facebook_login {display:inline-block; padding-left: 20px; margin-top:-30px; position:absolute; left:190px;}
 
 /* -- footer -- */
 #footer {clear:both; color:#000; text-align:center; padding: 20px;}
