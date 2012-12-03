@@ -97,8 +97,8 @@ li {}
 
 .art_f {float:left;}
 #left {width:160px; margin-left: 10px; margin-right: 20px;}
-#center {width: 270px;}
-#right {width: 100px; color:#444; margin-left:50px; margin-top:30px; font-size: 25px;}
+#center {width: 300px;}
+#right {width: 100px; color:#444; margin-left:30px; margin-top:30px; font-size: 25px;}
 
 #total_people_number {display:block; border-bottom:#CCC 2px solid; overflow:hidden; color:#777;
 			line-height:1; -webkit-border-radius:3px; -khtml-border-radius:3px; border-radius:3px;}
