@@ -17,7 +17,7 @@
 		<div id="top">
 			<div id="top_left">
 				<div id="top_logo">
-					<a href="index.html" id="logo">GivingGift</a>
+					<a href="index.jsp" id="logo">GivingGift</a>
 				</div>
 			</div>
 			<div id="top_right">
@@ -42,11 +42,12 @@
 				</c:when>
 				<c:otherwise>
 					<div id="logout">
-						<div>
-							안녕하세요 <%out.print((String) session.getAttribute("Sname"));%>님 오늘도 좋은 하루 되세요
+						<div id="logout_p">
+							<p>안녕하세요 <%out.print((String) session.getAttribute("Sname"));%>님</p>
+							<p>오늘도 좋은 하루 되세요</p>
 						</div>
-						<div>
-							logout
+						<div id="logout_button">
+							<a href="logout_page.jsp"><span>log out</span></a>							
 						</div>
 					</div>
 				</c:otherwise>
