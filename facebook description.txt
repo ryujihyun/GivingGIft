@@ -1,0 +1,7 @@
+
+
+1. GivingGift 프로젝트 -> Java Resources -> src파일 붙여넣기
+
+2. GivingGift 프로젝트 -> WebContent -> WEB-INF -> web.xml파일 붙여넣기
+
+3. GivingGift 프로젝트 -> WebContent -> WEB-INF -> lib -> jstl.jar 과 restfb-1.6.11.jar 과 standard.jar 붙여넣기
