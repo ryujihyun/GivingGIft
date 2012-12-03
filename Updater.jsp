@@ -16,6 +16,7 @@
 	String dbUrl = "jdbc:mysql://localhost:3306/GivingGift";
 	String dbUser = "root";
 	String dbPassword = "tiger";
+	
 	String email;
 
 	try {
@@ -30,6 +31,7 @@
 	}
 	request.setCharacterEncoding("utf-8");
 
+	
 	String name = request.getParameter("name");
 	String phone = request.getParameter("phone");
 	String address = request.getParameter("address");
@@ -54,11 +56,13 @@
 					dbPassword);
 			
 			stmt = conn.prepareStatement("UPDATE member "
-					+ "SET   name=?, phone=?, address=?");
+					+ "SET   name=?, phone=?, address=?" +
+					"WHERE email=?");
 			
 			stmt.setString(1, name);
 			stmt.setString(2, phone);
 			stmt.setString(3, address);
+			stmt.setString(4, email);
 			System.out.println(name);
 			System.out.println(phone);
 			System.out.println(address);

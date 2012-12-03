@@ -27,24 +27,39 @@
 	String dbUser = "root";
 	String dbPassword = "tiger";
 
-	String email="";
+	
 
+	
 	String phone = "";
 	String name = "";
 	String address = "";
+	String email=null;
+	String end_date = "";
+	String start_date = "";
+	String content="";
+	String teacher_id=null;
+	try {
+		if(session.getAttribute("SID") == null) {
+			email =null;
+		} else {
+			email = (String)session.getAttribute("SID");
+		}
+	} catch (Exception e) {
+		System.out.println(e);
+		email = null;
+	}
 		try{
 			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
 
 	 		// 질의 준비
-			stmt = conn.prepareStatement("SELECT * from MEMBER");
-			
+			stmt = conn.prepareStatement("SELECT name,phone,address from member where EMAIL=?");
+			stmt.setString(1, email);
 			// 수행
 	 		rs = stmt.executeQuery();
 			
 			if (rs.next()) {
 				name=rs.getString("name");
-				email=(String) session.getAttribute("SID");
 				phone=rs.getString("phone");
 				address=rs.getString("address");
 				}
@@ -62,12 +77,15 @@
 	<div id="wrap">
 		<div id="content">
 			<jsp:include page="share/header.jsp"></jsp:include>
-			
+		
 			<section id="teaching_section1">
 				<article	class="teaching_article1">
+				
 				<div id="left">
-					<a href="learning_detail.jsp"> <img src="./images/human.png"></img>
+					<a href=""> <img src="./images/human.png"></img>
+			
 				</div>
+				
 				<h1>학생 정보</h1>
 				<p>
 					<ol>
@@ -75,86 +93,74 @@
 						<li>이름 :<%=name%></li>
 						<li>폰번호 :<%=phone%></li>
 						<li>주소 :<%=address%></li>
-						<br> date: 2012.11.22 ~ 2012.12.25
-						<br> week: Mon, Wen, Fri
-						<br> Number: 5
+						<br> <form action="update2.jsp" method="post">
+					        <tr>
+									<th class="button" colspan="2"></th>
+									<td><input type="submit" value="회원정보수정"onclick="history.back()"/></td>
+								</tr>
+						</form>	</br>
 						<br>
+						
 					</ol>
+					
 				</p></a>
 				</article>
 			</section>
-			<section id="teaching_section2">
-				<article class="teaching_article2">
-					<h1>상품 수정정보를 입력하세요</h1>
-					<form action="Updater.jsp" method="post">
-						<table>
-							<tbody>
-								<tr>
-									<th colspan="2" class="title">
-										<label>기본 정보/변경 내용</label>
-									</th>
-								</tr>
-								<th><label for="h">이름</label></th>
-									<td><input type="text" NAME=name value="<%=name%>">
-								</tr>
-								<tr>
-									<th><label for="h">폰번호</label></th>
-									<td><input type="text" NAME=phone value="<%=phone%>">
-									<p style="font-size: 9pt; color: red;">*번호는 2~20자 이내여야 합니다.</p></td>
-								</tr>
-								<tr>
-									<th><label for="h">주소</label></th>
-									<td><input type="text" NAME=address value="<%=address%>" />
-										<p style="font-size: 9pt; color: red;">주소를 입략해주세여.</p></td>
-								</tr>
-								<tr>
-									<th class="button" colspan="2"></th>
-									<td><input type="submit" value="수정"onclick="history.back()"/></td>
-								</tr>
-							</form>
-						</tbody>
-					</table>
-					<form action="delete.jsp" method="post">
-					<tr>
-									<th class="button" colspan="2"></th>
-									<td><input type="submit" value="회원탈퇴"onclick="history.back()"/></td>
-								</tr>
-								</form>
-				</article>
-			</section>
-	
-	
 			
-			<section id="teaching_section2"> <article	class="teaching_article2">
-			
-					<%
-		
-		conn = null;
-	stmt = null;
-	rs = null;
-	Statement stm = null;
-	try{
-						Class.forName("com.mysql.jdbc.Driver");
-						conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/GivingGift", "root", "tiger");
+	    <section id="teaching_section1">
+				<article class="teaching_article1">
+		<%
+	  stmt = null;
+	  rs = null;
+	  
 
-						stm = conn.createStatement();
-						rs = stm.executeQuery("SElECT * FROM class ORDER BY created_at desc");
 		
-						if(rs.next()){
-					%>
-			
+		
+		try {
+			if(session.getAttribute("SID") == null) {
+				teacher_id = "";
+			} else {
+				teacher_id = (String)session.getAttribute("SID");
+			}
+		} catch (Exception e) {
+			System.out.println(e);
+			teacher_id = "";
+		}
+			try{
+				Class.forName("com.mysql.jdbc.Driver");
+				conn = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
+
+		 		// 질의 준
+				stmt = conn.prepareStatement("SELECT * from CLASS where teacher_id=?");
+				stmt.setString(1, teacher_id);
+				// 수행
+		 		rs = stmt.executeQuery();
 				
-					<a href="Learning_detail.jsp">
-						<img src="./images/piano.png"></img>
-					
-					<div id="title">
-						<h1> Giving Gift Piano Gift </h1><br>
-					
-				
-						name: <% out.print(rs.getString("name"));%><br>
-						content : <% out.print(rs.getString("content"));%> <br>
-						teacher : <% out.print(rs.getString("teacher_id"));%> <br>
-						date: <% out.print(rs.getDate("start_date"));%>~ <%out.print(rs.getDate("end_date")); %> <br>
+				if (rs.next()) {
+					name=rs.getString("namee");
+					content=rs.getString("content");
+					start_date=rs.getString("start_date");
+					end_date=rs.getString("end_date");
+							
+					}
+			}catch (SQLException e) {
+				errorMsg = "SQL 에러: " + e.getMessage();
+				System.out.println(errorMsg);
+			} finally {
+				// 무슨 일이 있어도 리소스를 제대로 종료
+				if (rs != null) try{rs.close();} catch(SQLException e) {}
+				if (stmt != null) try{stmt.close();} catch(SQLException e) {}
+				if (conn != null) try{conn.close();} catch(SQLException e) {}
+			}
+		
+	%>   
+	 
+	 <H1>내가 등록한 강좌</H1></BR>
+						name: <%=name%><br>
+						content : <%=content%> <br>
+						teacher : <%=teacher_id%> <br>
+						date: <%=start_date%>~ <%=end_date%> <br>
+						</br>
 						<form action="class_delete.jsp" method="post">
 					<tr>
 									<th class="button" colspan="2"></th>
@@ -162,49 +168,10 @@
 								</tr>
 								</form>
 					
-				<%} %>
-		
-<%		} catch(SQLException ex) {
-			%>
-			<% }finally {
-				if(rs != null) try {rs.close();} catch(SQLException ex){}
-				if(conn != null) try {conn.close();} catch(SQLException ex){}
-				if(stmt != null) try {stmt.close();} catch(SQLException ex){}
-			}%>
-				</div>
-			</article> </section>
+				</article>
+				</section>
 </body>
 </html>
-<script type="text/javascript">
-	$(function() {
-		$(document).ready(function() {
-			$(window).scroll(function() {
-				var scrollHeight = $(window).scrollTop() + $(window).height();
-				var documentHeight = $(document).height();
 
-				if (scrollHeight + 200 >= documentHeight) {
-					for ( var i = 0; i < 10; i++) {
-						$('<h1>Infinity Scroll<h1>').appendTo('body');
-					}
-				}
-			});
-		});
 
-		//mouse event
-		$("article.teaching_article1").mouseover(function() {
-			$(this).css("background", "#C4DEFF");
-			$(this).css("color", "#ffffff");
-		});
 
-		$("article.teaching_article1").mouseout(function() {
-			$(this).css("background", "#ffffff");
-		});
-		$("article.teaching_article2").mouseover(function() {
-			$(this).css("background", "#ffffff");
-		});
-		$("article.teaching_article3").mouseout(function() {
-			$(this).css("background", "#ffffff");
-		});
-
-	});
-</script>
