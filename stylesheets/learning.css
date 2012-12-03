@@ -41,7 +41,7 @@ li {}
 /*  --  body  --  */
 #wrap {
 	width:960px; margin:0 auto; position:relative;
-	background-image: url(); font-family: "筌띾쵐占��⑥쥓逾�, 占쎈��ワ옙紐꾬옙筌ｏ옙 Candara;
+	background-image: url(); font-family: "맑은 고딕";
 }
 .animation_canvas  { margin-top:0px; overflow:hidden; position:relative; width:900px; height:320px; }
 
@@ -61,7 +61,7 @@ li {}
 
 /*  --  Header  --  */
 #header {text-align:center; padding: 10px 50px 15px 50px;}
-#header span {font-family:"筌띾쵐占��⑥쥓逾�,占쎈��ワ옙紐꾬옙筌ｏ옙 Candara; font-size:80px;}
+#header span {font-family:"맑은 고딕"; font-size:80px;}
 
 
 /*  --  Content  --  */
