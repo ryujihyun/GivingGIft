@@ -79,6 +79,8 @@
 						stmt = conn.createStatement();
 						rs = stmt.executeQuery("SElECT * FROM class ORDER BY created_at desc");
 		
+						String teacher_name = (String) session.getAttribute("Sname");
+						
 						while(rs.next()){
 							
 					%>
@@ -129,9 +131,9 @@
 							 Gift </h1><br>
 						</div>
 						<p>
-							name: <% out.print(rs.getString("name"));%><br>
-							content : <% out.print(rs.getString("content"));%> <br>
-							teacher : <% out.print(rs.getString("teacher_id"));%> <br>
+							class: <% out.print(rs.getString("name"));%><br>
+							name : <%out.print((String) session.getAttribute("Sname"));%> <br>
+							email : <% out.print(rs.getString("teacher_id"));%> <br>
 							date: <% out.print(rs.getDate("start_date"));%> ~ <%out.print(rs.getDate("end_date")); %> <br><br>
 							<div id="enroll_button"><input type="submit" value="Enroll"></div>
 						</p>
