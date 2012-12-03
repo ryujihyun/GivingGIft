@@ -77,11 +77,10 @@ create table interest (
 );
 
 create table register_class (
-	member varchar(100) not null,
-	class varchar(100) not null,
+	member_id varchar(100) not null,
+	class_id varchar(100) not null,
 	created_at timestamp DEFAULT CURRENT_TIMESTAMP,
-	primary key(member, class),
-	foreign key(member) references member(email)
+	primary key(member, class)
 );
 
 create table estimation (

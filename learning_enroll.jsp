@@ -7,6 +7,8 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%
+	String member_id = (String) session.getAttribute("SID");
+
 	int DBenroll_num = Integer.parseInt(request.getParameter("DBenroll_num"));
 	System.out.println(DBenroll_num);
 	
@@ -32,6 +34,16 @@
 		stmt.setString(2, id);
 		stmt.executeUpdate();
 		
+		
+		stmt = conn.prepareStatement(
+			"INSERT INTO register_class"+
+			"(member_id, class_id) VALUES(?, ?)"
+			);
+		
+		stmt.setString(1, member_id);
+		stmt.setString(2, id);
+		stmt.executeUpdate();
+					
 		session.removeAttribute("ID");
 		} catch(SQLException ex){
 		}

@@ -42,7 +42,7 @@
 
 					stmt = conn.createStatement();
 					rs = stmt.executeQuery("SELECT * FROM class;");
-
+					
 					while (rs.next()) {
 						if (class_ID.equals(rs.getString("id"))) {
 							String DBname = rs.getString("name");
@@ -85,8 +85,7 @@
 					<div id="top-action">
 						<div id="enroll_form">
 							<form action="learning_enroll.jsp" method="post">
-								<input type="text" name="DBenroll_num" value="${ENROLL}"
-									style="visibility: hidden;">
+								<input type="text" name="DBenroll_num" value="${ENROLL}" style="visibility: hidden;">
 								<div id="btn-enroll">
 									<input type="submit" value="Click the Enroll!">
 								</div>
