@@ -132,6 +132,9 @@ section.buttons>label {
 	
 }
 
+#content > #aside > #person_information { display: block; width:160px; margin-top:15px;}
+#content > #aside > #person_information { margin-bottom: 10px; padding: 20px; border: 1px solid #CCC;}
+
 .item{ overflow: hidden; padding: 10px; border: 1px solid #CCC; border-top: none;  opacity: .8;}
 .thumbnail{float: left;}
 .thumbnail>img{width: 30px;}
@@ -148,6 +151,7 @@ section.buttons>label {
 
 #learning_footer{ width: 960px; margin: 0 auto; margin-top:10px; margin-bottom: 10px; box-sizing; border-box; padding: 10px; border: 1px solid #dbdbdb; text-align: center; border-radius: 10px 10px 10px 10px;}
 
+#cssmenu {margin-top:20px;}
 /* Some stylesheet reset */
 #cssmenu > ul {
 	list-style: none;
