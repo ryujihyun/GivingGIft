@@ -45,6 +45,8 @@ StringBuffer dateResult = new StringBuffer();
 dateFormat.format(DtodayDate, dateResult, new FieldPosition(1));
 String todayDate = dateResult.toString();
 
+int ItodayDate = Integer.parseInt(todayDate); 
+
 try {
 	Class.forName("com.mysql.jdbc.Driver");
 	conn = DriverManager.getConnection(
@@ -59,7 +61,14 @@ try {
 				<ul>
 					<li><a href="#"><span>진행중인 강좌</span></a>
 						<div>
-							<div>
+							<div class="class_nav">
+								<ul>
+									<li>강좌 제목</li>
+									<li>수강인원</li>
+									<li>카테고리</li>
+									<li>종료날짜</li>
+								</ul>
+							</div>
 <%
 if(!rs.next())	{
 	out.println("개설 강좌가 없습니다.");
@@ -75,28 +84,35 @@ else	{
 		String end_date = dateResult.toString();
 		
 		int Iend_date = Integer.parseInt(end_date); 
-		int ItodayDate = Integer.parseInt(todayDate); 
 		
-		if(Iend_date <= ItodayDate)	{
+		if(Iend_date >= ItodayDate)	{
 			%>
-			<div>
-			진행중인 강좌
-			<%
-			out.println(DBname);
-			out.println(end_date);
-			out.println(todayDate);
-			%>
+			<div class="class_content_nav">
+				<ul>
+					<li><%out.println(DBname);%></li>
+					<li><%out.println(rs.getInt("enroll_num"));%> / <%out.println(rs.getInt("number"));%></li>
+					<li><%out.println(rs.getString("interest"));%></li>
+					<li><%out.println(end_date);%></li>
+					<li><form action=""><input type="submit" name="" value="상세보기"></form></li>
+				</ul>
 			</div>
 			<%
 		}
 	}
 }
-%>							
-							</div>
+%>
 						</div>
 					</li>
 					<li><a href="#"><span>완료된 강좌</span></a>
 						<div>
+							<div class="class_nav">
+								<ul>
+									<li>강좌 제목</li>
+									<li>수강인원</li>
+									<li>카테고리</li>
+									<li>종료날짜</li>
+								</ul>
+							</div>
 <%
 rs = stmt.executeQuery("select * from class where teacher_id = '"+member_id+"';");
 if(!rs.next())	{
@@ -113,17 +129,17 @@ else	{
 		String end_date = dateResult.toString();
 		
 		int Iend_date = Integer.parseInt(end_date); 
-		int ItodayDate = Integer.parseInt(todayDate); 
 		
-		if(Iend_date > ItodayDate)	{
+		if(Iend_date < ItodayDate)	{
 			%>
-			<div>
-			완료된 강좌
-			<%
-			out.println(DBname);
-			out.println(end_date);
-			out.println(todayDate);
-			%>
+			<div class="class_content_nav">
+				<ul>
+					<li><%out.println(DBname);%></li>
+					<li><%out.println(rs.getInt("enroll_num"));%> / <%out.println(rs.getInt("number"));%></li>
+					<li><%out.println(rs.getString("interest"));%></li>
+					<li><%out.println(end_date);%></li>
+					<li><form action=""><input type="submit" name="" value="상세보기"></form></li>
+				</ul>
 			</div>
 			<%	
 		}
@@ -142,10 +158,16 @@ else	{
 				<ul>
 					<li><a href="#"><span>진행중인 강좌</span></a>
 						<div>
-							<ul>
-								<div>
+							<div class="class_nav">
+								<ul>
+									<li>강좌 제목</li>
+									<li>강사아이디</li>
+									<li>카테고리</li>
+									<li>종료날짜</li>
+								</ul>
+							</div>
 <%
-rs = stmt.executeQuery("select * from register_class, class where teacher_id = '"+member_id+"';");
+rs = stmt.executeQuery("select * from register_class, class where member_id = '"+member_id+"';");
 
 if(!rs.next())	{
 	out.println("개설 강좌가 없습니다.");
@@ -153,24 +175,81 @@ if(!rs.next())	{
 else	{
 	while(rs.next())	{
 		if(rs.getString("class_id").equals(rs.getString("id")))	{
-			%>
-			<div>
-			<%
-				out.println(rs.getString("name"));
-			%>
-			</div>
-			<%
+			
+			dateResult = new StringBuffer();
+			
+			java.util.Date DBend_date = rs.getDate("end_date");
+			
+			dateFormat.format(DBend_date, dateResult, new FieldPosition(1));
+			String end_date = dateResult.toString();
+			
+			int Iend_date = Integer.parseInt(end_date); 
+			
+			if(Iend_date >= ItodayDate)	{
+				%>
+				<div class="class_content_nav">
+					<ul>
+						<li><%out.println(rs.getString("name"));%></li>
+						<li><%out.println(rs.getInt("enroll_num"));%> / <%out.println(rs.getInt("number"));%></li>
+						<li><%out.println(rs.getString("interest"));%></li>
+						<li><%out.println(end_date);%></li>
+						<li><form action=""><input type="submit" name="" value="상세보기"></form></li>
+					</ul>
+				</div>
+				<%	
+			}
 		}
 	}
 }
 %>
-								</div>
-							</ul>
 						</div>
 					</li>
 					<li><a href="#"><span>완료된 강좌</span></a>
 						<div>
-							내가 신청한 강좌 목록 
+							<div class="class_nav">
+								<ul>
+									<li>강좌 제목</li>
+									<li>수가인원</li>
+									<li>카테고리</li>
+									<li>종료날짜</li>
+								</ul>
+							</div>
+<%
+rs = stmt.executeQuery("select * from register_class, class where member_id = '"+member_id+"';");
+
+if(!rs.next())	{
+	out.println("개설 강좌가 없습니다.");
+}
+else	{
+	while(rs.next())	{
+		if(rs.getString("class_id").equals(rs.getString("id")))	{
+			
+			dateResult = new StringBuffer();
+			
+			java.util.Date DBend_date = rs.getDate("end_date");
+			
+			dateFormat.format(DBend_date, dateResult, new FieldPosition(1));
+			String end_date = dateResult.toString();
+			
+			int Iend_date = Integer.parseInt(end_date); 
+			
+			if(Iend_date < ItodayDate)	{
+				%>
+				<div class="class_content_nav">
+					<ul>
+						<li><%out.println(rs.getString("name"));%></li>
+						<li><%out.println(rs.getInt("enroll_num"));%> / <%out.println(rs.getInt("number"));%></li>
+						<li><%out.println(rs.getString("interest"));%></li>
+						<li><%out.println(end_date);%></li>
+						<li><form action=""><input type="submit" name="" value="상세보기"></form></li>
+					</ul>
+				</div>
+				<%	
+			}
+		}
+	}
+}
+%>
 						</div>
 					</li>
 				</ul>
