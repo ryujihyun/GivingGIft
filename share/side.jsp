@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 			<div id ="aside">
+				<div id = person_information>
+					<h1>| <%out.print((String) session.getAttribute("Sname"));%> |</h1><br>
+					Thank you visiting our homepage!
+				</div>
 				<aside id="category">
 					<div id='cssmenu'>
 						<ul>

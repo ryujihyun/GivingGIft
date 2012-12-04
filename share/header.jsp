@@ -6,39 +6,28 @@
 <%@ taglib prefix="x" uri="http://java.sun.com/jsp/jstl/xml" %>
 <div id="top">
 	<div id="top_container">
-		<c:choose>
-			<c:when test="${sessionScope.SID == null}">
-				<div id="top_left">
-					<ul>
-						<li><a href="index.jsp" id="top_logo">GivingGift</a></li>
-						<li><a href="Learning.jsp">Learn</a></li>
-					</ul>
-				</div>
-				<div id="top_right">
-					<ul>
+		<div id="top_left">
+			<ul>
+				<li><a href="Learning.jsp" id="top_logo">GivingGift</a></li>
+				<li><a href="Learning.jsp">Learn</a></li>
+				<li><div id="create_class"><a href="teaching.jsp" id="create_click">Teach</a></div></li>
+			</ul>
+		</div>
+		<div id="top_right">
+			<ul>
+				<c:choose>
+					<c:when test="${sessionScope.SID == null}">
 						<li><a href="#" class="login_click"> Log In </a></li>
 						<li><a href="#" class="join_click"> Join </a></li>
-						<li><a href="board.jsp"> Help </a></li>
-					</ul>			
-				</div>
-			</c:when>
-			<c:otherwise>
-				<div id="top_left">
-					<ul>
-						<li><a href="index.jsp" id="top_logo">GivingGift</a></li>
-						<li><a href="Learning.jsp">Learn</a></li>
-						<li><div id="create_class"><a href="teaching.jsp" id="create_click">Teach</a></div></li>
-					</ul>
-				</div>
-				<div id="top_right">
-					<ul>
+					</c:when>
+					<c:otherwise>
 						<li><a href="mypage.jsp"> My Page </a></li>
 						<li><a href="logout_page.jsp"> Log out </a></li>
-						<li><a href="board.jsp"> Help </a></li>
-					</ul>			
-				</div>
-			</c:otherwise>
-		</c:choose>
+					</c:otherwise>
+				</c:choose>
+				<li><a href="board.jsp"> Help </a></li>
+			</ul>			
+		</div>
 	</div>
 </div>
 
