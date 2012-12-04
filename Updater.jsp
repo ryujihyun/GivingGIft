@@ -120,6 +120,6 @@
 		<b><%=name%></b> 님 수정되었습니다.
 	</div>
 	<div>
-		<a href="mypage2.jsp">목록으로</a>
+		<a href="mypage.jsp">목록으로</a>
 </body>
 </html>
