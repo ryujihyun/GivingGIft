@@ -96,8 +96,6 @@
 						
 							<input type="text" name="class_ID" value="${CLASSID}" style="visibility: hidden;">
 							
-						<!-- 유빈아 여기 인풋 타입에 value에다가 class table 값을 넣어서 러닝 디테일로 전송하는 거야 그래서 엔롤 버튼을 인풋 서브밋으로 바꿨어 -->
-						
 						<% if(rs.getString("interest").equals("language")){%>
 							<img src="./images/language.png"></img>
 						<% } else if(rs.getString("interest").equals("sociology")) {%>
