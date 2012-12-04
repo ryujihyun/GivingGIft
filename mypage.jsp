@@ -20,21 +20,6 @@
 	
 	String member_id = (String) session.getAttribute("SID");
 %>
-	<jsp:include page="share/header.jsp"></jsp:include>
-	<div id="header_p">
-		<div>
-			<h1>My page</h1>
-		</div>
-	</div>
-	<div id="header">
-		<div id="header_content">
-			<h2>안녕하세요 ??님</h2>
-			<a href="#">회원 정보 수정</a>
-		</div>	
-	</div>
-	<div id="content">
-		<div id="present">
-			<h1>내가 개설한 강좌</h1>
 <% 
 java.util.Date DtodayDate = new java.util.Date();	
 
@@ -46,7 +31,9 @@ dateFormat.format(DtodayDate, dateResult, new FieldPosition(1));
 String todayDate = dateResult.toString();
 
 int ItodayDate = Integer.parseInt(todayDate); 
+%>
 
+<%
 try {
 	Class.forName("com.mysql.jdbc.Driver");
 	conn = DriverManager.getConnection(
@@ -55,8 +42,20 @@ try {
 		throw new Exception("Connect DB fail");
 	
 	stmt = conn.createStatement();
+%>
+	<jsp:include page="share/header.jsp"></jsp:include>
+	<div id="header">
+		<div id="header_content">
+			<h1><%out.println(member_id);%>님의 My page</h1>
+			<a href="member_Edit.jsp" id="member_edit_button">회원 정보 수정</a>
+		</div>	
+	</div>
+	<div id="content">
+<%
 	rs = stmt.executeQuery("select * from class where teacher_id = '"+member_id+"';");
 %>
+		<div id="present">
+			<h1>내가 개설한 강좌</h1>
 			<div class="present_tab">
 				<ul>
 					<li><a href="#"><span>진행중인 강좌</span></a>
@@ -69,6 +68,7 @@ try {
 									<li>종료날짜</li>
 								</ul>
 							</div>
+							<div class="flow">
 <%
 if(!rs.next())	{
 	out.println("개설 강좌가 없습니다.");
@@ -101,6 +101,7 @@ else	{
 	}
 }
 %>
+							</div>
 						</div>
 					</li>
 					<li><a href="#"><span>완료된 강좌</span></a>
@@ -113,6 +114,7 @@ else	{
 									<li>종료날짜</li>
 								</ul>
 							</div>
+							<div class="flow">
 <%
 rs = stmt.executeQuery("select * from class where teacher_id = '"+member_id+"';");
 if(!rs.next())	{
@@ -147,6 +149,7 @@ else	{
 	}
 }
 %>
+							</div>
 						</div>
 					</li>
 				</ul>
@@ -161,11 +164,12 @@ else	{
 							<div class="class_nav">
 								<ul>
 									<li>강좌 제목</li>
-									<li>강사아이디</li>
+									<li>수강인원</li>
 									<li>카테고리</li>
 									<li>종료날짜</li>
 								</ul>
 							</div>
+							<div class="flow">
 <%
 rs = stmt.executeQuery("select * from register_class, class where member_id = '"+member_id+"';");
 
@@ -202,6 +206,7 @@ else	{
 	}
 }
 %>
+							</div>
 						</div>
 					</li>
 					<li><a href="#"><span>완료된 강좌</span></a>
@@ -209,11 +214,12 @@ else	{
 							<div class="class_nav">
 								<ul>
 									<li>강좌 제목</li>
-									<li>수가인원</li>
+									<li>수강인원</li>
 									<li>카테고리</li>
 									<li>종료날짜</li>
 								</ul>
 							</div>
+							<div class="flow">
 <%
 rs = stmt.executeQuery("select * from register_class, class where member_id = '"+member_id+"';");
 
@@ -250,6 +256,7 @@ else	{
 	}
 }
 %>
+							</div>
 						</div>
 					</li>
 				</ul>
