@@ -42,7 +42,7 @@
 	try {
 		Class.forName("com.mysql.jdbc.Driver");
 		conn = DriverManager.getConnection(
-				"jdbc:mysql://localhost:3306/givinggift", "root", "tiger");
+				"jdbc:mysql://localhost:3306/givinggift?chracterEncoding=utf8", "root", "tiger");
 		if(conn == null)
 			throw new Exception("데이터베이스 연결 실패");
 		

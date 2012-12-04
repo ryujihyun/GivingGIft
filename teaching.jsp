@@ -39,7 +39,7 @@
 
 							<div class="join_class">
 								<div class="class_name">Choose a Category</div>
-								<select id="select_box" name="interest">
+								<select class="select_box" name="interest">
 									<option value="language">언어</option>
 									<option value="sociology">사회</option>
 									<option value="science">과학</option>
@@ -65,7 +65,15 @@
 							</div>
 							
 							<div class="join_class">
-								<div class="class_name">수강인원</div><div><input class="input_text" type="text" name="number"></div>
+								<div class="class_name">수강인원</div>
+								<select class="select_box" name="number">
+									<option value="10">10</option>
+									<option value="15">15</option>
+									<option value="20">20</option>
+									<option value="25">25</option>
+									<option value="30">30</option>
+									<option value="40">40</option>
+								</select>
 							</div>
 							<div class="join_class">
 								<div class="class_name"> 지도</div><div id="map_canvas" style="width: 500px; height: 380px;"></div>
@@ -76,7 +84,7 @@
 								<div class="class_name">주소</div><div><input type="text" id="address" name="address" style="width: 400px; height: 30px;"></div>
 							</div>							
 						</div>
-						<div id="content_button"><input type="submit" name="submit" value="join"></div>
+						<div id="content_button"><input type="submit" name="submit" value="Create"></div>
 					</form>
 				</div>
 			</div>
