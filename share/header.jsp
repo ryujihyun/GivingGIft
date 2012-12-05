@@ -6,28 +6,39 @@
 <%@ taglib prefix="x" uri="http://java.sun.com/jsp/jstl/xml" %>
 <div id="top">
 	<div id="top_container">
-		<div id="top_left">
-			<ul>
-				<li><a href="Learning.jsp" id="top_logo">GivingGift</a></li>
-				<li><a href="Learning.jsp">Learn</a></li>
-				<li><div id="create_class"><a href="teaching.jsp" id="create_click">Teach</a></div></li>
-			</ul>
-		</div>
-		<div id="top_right">
-			<ul>
-				<c:choose>
-					<c:when test="${sessionScope.SID == null}">
+		<c:choose>
+			<c:when test="${sessionScope.SID == null}">
+				<div id="top_left">
+					<ul>
+						<li><a href="index.jsp" id="top_logo">GivingGift</a></li>
+						<li><a href="Learning.jsp">Learn</a></li>
+					</ul>
+				</div>
+				<div id="top_right">
+					<ul>
 						<li><a href="#" class="login_click"> Log In </a></li>
 						<li><a href="#" class="join_click"> Join </a></li>
-					</c:when>
-					<c:otherwise>
+						<li><a href="board.jsp"> Help </a></li>
+					</ul>			
+				</div>
+			</c:when>
+			<c:otherwise>
+				<div id="top_left">
+					<ul>
+						<li><a href="index.jsp" id="top_logo">GivingGift</a></li>
+						<li><a href="Learning.jsp">Learn</a></li>
+						<li><div id="create_class"><a href="teaching.jsp" id="create_click">Teach</a></div></li>
+					</ul>
+				</div>
+				<div id="top_right">
+					<ul>
 						<li><a href="mypage.jsp"> My Page </a></li>
 						<li><a href="logout_page.jsp"> Log out </a></li>
-					</c:otherwise>
-				</c:choose>
-				<li><a href="board.jsp"> Help </a></li>
-			</ul>			
-		</div>
+						<li><a href="board.jsp"> Help </a></li>
+					</ul>			
+				</div>
+			</c:otherwise>
+		</c:choose>
 	</div>
 </div>
 
@@ -60,7 +71,7 @@
 			<div class="join_class">
 				<div class="class_name">Password</div><div><input class="input_text" type="password" name="password"></div>
 			</div>
-			
+
 			<div class="join_class">
 				<div class="class_name">전화번호</div><div><input class="input_text" type="text" name="phone"></div>
 			</div>
@@ -101,7 +112,7 @@ $("#join_page").hide();
 
 	$(".login_click").click(function() {
 		$("#login_page").show();
-		
+
 	});
 
 	$(".join_click").click(function() {
