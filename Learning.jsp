@@ -3,8 +3,12 @@
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.Connection"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
+<%@ taglib prefix="x" uri="http://java.sun.com/jsp/jstl/xml" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -88,7 +92,6 @@
 				<article class="learning_article">
 					<div id ="left" class="art_f">
 						<form action="Learning_detail.jsp" method="post">
-					
 					<%	
 						String class_ID = rs.getString("id");
 						request.setAttribute("CLASSID", new String (class_ID));
@@ -96,6 +99,8 @@
 						
 							<input type="text" name="class_ID" value="${CLASSID}" style="visibility: hidden;">
 							
+						<!-- 유빈아 여기 인풋 타입에 value에다가 class table 값을 넣어서 러닝 디테일로 전송하는 거야 그래서 엔롤 버튼을 인풋 서브밋으로 바꿨어 -->
+						
 						<% if(rs.getString("interest").equals("language")){%>
 							<img src="./images/language.png"></img>
 						<% } else if(rs.getString("interest").equals("sociology")) {%>
@@ -133,7 +138,13 @@
 							name : <%out.print((String) session.getAttribute("Sname"));%> <br>
 							email : <% out.print(rs.getString("teacher_id"));%> <br>
 							date: <% out.print(rs.getDate("start_date"));%> ~ <%out.print(rs.getDate("end_date")); %> <br><br>
-							<div id="enroll_button"><input type="submit" value="Enroll"></div>
+								<c:choose>
+									<c:when test="${sessionScope.SID == null}">
+									</c:when>
+									<c:otherwise>
+										<div id="enroll_button"><input type="submit" value="Enroll"></div>
+									</c:otherwise>			
+								</c:choose>
 						</p>
 					</div>
 					<div id ="right"  class="art_f">
