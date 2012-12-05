@@ -80,7 +80,7 @@ span.btn-text {padding-left:5px; text-align: center; line-height: 54px;}
 	position:relative; overflow: hidden;
  z-index:1;}
 
-#content_left { float:left; margin:0px; float:left; width:650px; height: 500px;
+#content_left { float:left; margin:0px; width:650px; height: 650px;
 position:relative; border:1px solid #DDD; border:none;}
 #content_left ul {}
 #content_left ul li {
@@ -94,9 +94,9 @@ position:relative; border:1px solid #DDD; border:none;}
 
 #content_left #notice {position:absolute; top:32px; left:0px; width:600px; margin: 0 auto; border:1px solid #BDBDBD; border-radius: 5px;}
 #content_left #location {position:absolute; top:32px; left:0px; width:600px; margin: 0 auto; border:1px solid #BDBDBD; border-radius: 5px;}
-#content_left #abc {position:absolute; top:32px; left:0px; width:600px; margin: 0 auto; border:1px solid #BDBDBD; border-radius: 5px;}
+#content_left #teacher {position:absolute; top:32px; left:0px; width:600px; margin: 0 auto; border:1px solid #BDBDBD; border-radius: 5px;}
 
-#content_right {float: right;}
+#content_right {margin:0px; }
 
 #notice {font-size: 20px; padding:20px;}
 
