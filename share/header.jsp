@@ -40,7 +40,6 @@
 			</c:otherwise>
 		</c:choose>
 	</div>
-</div>
 
 <div class="new_window" id="login_page">
 	<div class="window_logo">GivingGift</div>
@@ -104,6 +103,10 @@
 		<div class="window_button"><input id="join_button" type="submit" name="submit" value="join"></div>
 	</form>
 </div>
+
+</div>
+
+
 
 <script type="text/javascript">
 
