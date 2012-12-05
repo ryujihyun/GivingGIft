@@ -106,7 +106,40 @@
 
 </div>
 
+<style type="text/css">
+		/* -- new window -- */
+.new_window {
+	background-color:rgba(255, 157, 157, .8);
+	border-radius: 25px 25px 25px 25px;
+	border:3px solid #000; display:inline-block;
+	z-index:4;
+}
+#login_page {position:absolute; top:170px; left:230px; width:500px; height:350px;}
+#join_page {position:absolute; top:20px; left:230px; width:500px; height:580px;}
 
+.window_logo {
+	font-size:50px; padding:50px 0 80px 0; text-align:center;
+	font-family:impact;  font-style:italic; color:white;
+	position:relative;
+}
+.closebutton {position:absolute; top:15px; right:15px; width:40px; height:40px;}
+.window_button {position:absolute; bottom:25px; right:25px;}
+.window_button input {
+	width:90px; height:40px; font-size:25px; font-weight:bold;
+	background-color:#FF4040; border-radius:10px;
+	border-color:#FF4040; color:#fff;
+}
+
+.login_class div {float:left;}
+.login_class {clear:both;}
+.login_class .class_name {padding:0 30px 60px 10px; width:150px; font-size:25px; font-weight:bold; text-align:right;}
+.login_class .input_text {font-size:18px; width:250px; border:1px solid #000;}
+
+.join_class div {float:left;}
+.join_class {clear:both;}
+.join_class .class_name {padding:0 30px 20px 20px; width:160px; font-size:20px; font-weight:bold; text-align:right;}
+.join_class .input_text {width:200px;  border:1px solid #000;}
+</style>
 
 <script type="text/javascript">
 
