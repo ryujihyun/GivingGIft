@@ -16,7 +16,7 @@
 	src="http://maps.google.com/maps/api/js?sensor=false"></script>
 <script src='js/jquery-1.8.2.min.js'></script>
 </head>
-<body>
+<body onlead="access">
 	<%
 		Connection conn = null;
 		Statement stmt = null;
@@ -49,22 +49,23 @@
 							String DBcontnet = rs.getString("content");
 							String DBaddress = rs.getString("address");
 							String DBS_date = rs.getString("start_date");
-							Date DBE_date = rs.getDate("end_date");
+							String DBE_date = rs.getString("end_date");
 							int DBenroll_num = rs.getInt("enroll_num");
-							String latitude = rs.getString("latitude");
-							String longtutude = rs.getString("longtutude");
+							//String latitude = rs.getString("latitude");
+							double latitude = rs.getDouble("latitude");
+							double longtutude= rs.getDouble("longtutude");
 
 							request.setAttribute("ENROLL",
 									new Integer(DBenroll_num));
 							request.setAttribute("ID", new String(class_ID));
 
+							request.setAttribute("latitude", "latitude");
+							request.setAttribute("longtutude", "longtutude");
+							
 							session.setAttribute("id", class_ID);
-
-							out.println(DBname);
-							out.println(DBcontnet);
-							out.println(DBS_date);
+							
+							out.println(latitude);
 							%>
-		
 			<div class="left">
 				<div class="class-overview">
 					<div class="teacher-image">
@@ -105,18 +106,27 @@
 	<div id="content">
 		<div id="content_left">
 			<ul>
-				<li><a href="#"><h1>Contents</h1></a>
+				<li><a href="#"><h1>About Class</h1></a>
 					<div class="board_content" id="notice">
 						<ul>
-							<% out.println(DBcontnet); %>
+							<h1>Class</h1> <% out.println(DBname); %><br><br>
+							<h1>Address</h1> <% out.println(DBaddress); %><br><br>
+							<h1>Period</h1> <% out.println(DBS_date); %> ~ <%out.println(DBE_date);%><br><br>
+							<h1>Current Enroll_num</h1> <%out.println(DBenroll_num); %><br><br>
+							<h1>Contents</h1> <% out.println(DBcontnet); %>><br><br><br><br>
 						</ul>
 					</div></li>
+						<%
+						}
+					}
+			%>
 				<li><a href="#"><h1>Location</h1></a>
 					<div class="board_content" id="location">
 						<div id="map_canvas" style="width: 460px; height: 380px;"></div>
-					</div></li>
-				<li><a href="#"><h1>abc</h1></a>
-					<div class="board_content" id="abc">
+					</div>
+				</li>
+				<li><a href="#"><h1>Teacher</h1></a>
+					<div class="board_content" id="teacher">
 						<ul>
 							<li>007</li>
 							<li>008</li>
@@ -126,14 +136,9 @@
 			</ul>
 		</div>
 		<div id="content_right">
-			<div id="map_canvas" style="width: 230px; height: 380px;"></div>
 		</div>
 	</div>
 	</div>
-						<%
-						}
-					}
-			%>
 	<%
 		} catch (SQLException ex) {
 
@@ -172,9 +177,9 @@
 		});
 	});
 	$(document).ready(
-			function() {
-				var latlng = new google.maps.LatLng(37.513357,
-						127.10025999999993);
+			function access() {
+				var latlng = new google.maps.LatLng(127.000000000000000000000145,
+						128.1565132132123);
 
 				var myOptions = {
 					zoom : 10,
