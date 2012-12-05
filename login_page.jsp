@@ -47,10 +47,11 @@
 			if(password.equals(rs.getString("password")))	{
 				String DBemail = rs.getString("email");
 				String DBname = rs.getString("name");
+				Integer DBtype = rs.getInt("type");
 				
 				session.setAttribute("SID", DBemail);
 				session.setAttribute("Sname", DBname);
-				
+				session.setAttribute("STYPE", DBtype);
 				%>	
 				<jsp:forward page = "Learning.jsp"/>
 				<%	
