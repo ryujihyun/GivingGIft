@@ -98,6 +98,8 @@ position:relative; border:1px solid #DDD; border:none;}
 
 #content_right {float: right;}
 
+#notice {font-size: 20px; padding:20px;}
+
 #map_canvas {margin: 20px;}
 
 #learning_footer{ width: 960px; margin: 0 auto; margin-top:10px; margin-bottom: 10px; box-sizing; border-box; padding: 10px; border: 1px solid #dbdbdb; text-align: center; border-radius: 10px 10px 10px 10px;}
