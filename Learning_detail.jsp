@@ -63,19 +63,18 @@
 							out.println(DBname);
 							out.println(DBcontnet);
 							out.println(DBS_date);
-						}
-					}
-			%>
+							%>
+		
 			<div class="left">
 				<div class="class-overview">
 					<div class="teacher-image">
 						<img src="images/youbin.png">
 					</div>
 					<div class="class-info">
-						<h3>Music givinggift - piano gift</h3>
+						<h3><%out.println(DBname);%> givinggift - <%out.println(DBname);%> gift</h3>
 						<h4>
-							"youbin Jeon" <span class="middot">·</span> <span
-								class="headline">university students</span>
+							<%out.print((String) session.getAttribute("Sname"));%><span class="middot">·</span> <span
+								class="headline"><%out.print((String) session.getAttribute("SID")); %></span>
 						</h4>
 					</div>
 				</div>
@@ -106,12 +105,10 @@
 	<div id="content">
 		<div id="content_left">
 			<ul>
-				<li><a href="#"><h1>board</h1></a>
+				<li><a href="#"><h1>Contents</h1></a>
 					<div class="board_content" id="notice">
 						<ul>
-							<li>001</li>
-							<li>002</li>
-							<li>003</li>
+							<% out.println(DBcontnet); %>
 						</ul>
 					</div></li>
 				<li><a href="#"><h1>Location</h1></a>
@@ -133,6 +130,10 @@
 		</div>
 	</div>
 	</div>
+						<%
+						}
+					}
+			%>
 	<%
 		} catch (SQLException ex) {
 
