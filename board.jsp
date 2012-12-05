@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="java.sql.*"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
+<%@ taglib prefix="x" uri="http://java.sun.com/jsp/jstl/xml" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,19 +25,19 @@
 
 		<div id="content">
 		
-			<div class="new_window" id="notice_page">
-				<div class="window_logo">GivingGift</div>
-				<a href="#"><img class="closebutton" src="images/fileclose.png"></a>
+			<div id="notice_page">
+				<div class="notice_logo">GivingGift</div>
+				<a href="#"><img class="notice_closebutton" src="images/fileclose.png"></a>
 				<form action="board_notice.jsp" method="post">
 					<div>
-						<div class="join_class">
-							<div class="class_name">제목</div><div><input class="input_text" type="text" name="name"></div>
+						<div class="notice_class">
+							<div class="class_name">제목</div><input class="input_text" type="text" name="name">
 						</div>
 						<div id="notice_text">
 							<div><textarea cols="40" row="10" name="content" placeholder="내용을 쓰세요"></textarea></div>
 						</div>
 					</div>
-					<div class="window_button"><input id="join_button" type="submit" name="submit" value="join"></div>
+					<div class="notice_button"><input type="submit" name="submit" value="join"></div>
 				</form>
 			</div>
 		
@@ -47,6 +51,7 @@
 							<div>제목</div>
 							<div>작성날짜</div>
 						</div>
+						<div class="scroll">
 <% 
 	Connection conn = null;
 	Statement stmt = null;
@@ -80,17 +85,20 @@
 							</div>		
 						</div>
 						<% } %>
-						<div id="notice_create_button">
-						<a href="#">
-						
-								글쓰기
-						</a>
 						</div>
+						<c:choose>
+							<c:when test="${sessionScope.STYPE != 1}"></c:when>
+							<c:otherwise>
+								<div id="notice_create_button">
+								<a href="#">
+										글쓰기
+								</a>
+								</div>
+							</c:otherwise>
+						</c:choose>
 					</div>
 				</div>	
-
-
-
+	
 				<div id="content_qna">
 					<h1>QnA</h1>
 					<div class="board_content" id="qna">
@@ -178,7 +186,7 @@
 		$("#notice_page").show();
 	});
 
-	$(".closebutton").click(function() {
+	$(".notice_closebutton").click(function() {
 		$(this).parent().parent().hide();
 	});
 
