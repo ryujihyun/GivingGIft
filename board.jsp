@@ -37,7 +37,7 @@
 							<div><textarea cols="40" row="10" name="content" placeholder="내용을 쓰세요"></textarea></div>
 						</div>
 					</div>
-					<div class="notice_button"><input type="submit" name="submit" value="join"></div>
+					<div class="notice_button"><input type="submit" name="submit" value="게시"></div>
 				</form>
 			</div>
 		
@@ -46,10 +46,10 @@
 				<div id="content_notice">			
 					<h1>공지사항</h1>
 					<div class="board_content" id="notice">
-						<div id="notice_nav">
-							<div>번호</div>
-							<div>제목</div>
-							<div>작성날짜</div>
+						<div class="notice_nav">
+							<li>번호</li>
+							<li>제목</li>
+							<li>작성날짜</li>
 						</div>
 						<div class="scroll">
 <% 
@@ -66,18 +66,12 @@
 
 	while(rs.next()){
 %>
-						<div id="content_name">
+						<div class="content_name">
 							<a href="#" id="slide">
-								<div id="title">
-									<div>
-									<% out.print(rs.getString("id"));%>
-									</div>
-									<div>
-									<% out.print(rs.getString("name"));%>
-									</div>
-									<div>
-									<% out.print(rs.getString("created_at"));%>
-									</div>
+								<div class="title">
+									<li class="a"><% out.print(rs.getString("id"));%></li>
+									<li class="b"><% out.print(rs.getString("name"));%></li>
+									<li class="c"><% out.print(rs.getString("created_at"));%></li>
 								</div>
 							</a>
 							<div class="section">
@@ -89,7 +83,7 @@
 						<c:choose>
 							<c:when test="${sessionScope.STYPE != 1}"></c:when>
 							<c:otherwise>
-								<div id="notice_create_button">
+								<div class="notice_create_button">
 								<a href="#">
 										글쓰기
 								</a>
@@ -100,22 +94,24 @@
 				</div>	
 	
 				<div id="content_qna">
-					<h1>QnA</h1>
+					<h1>강좌 요청하기 & QnA</h1>
 					<div class="board_content" id="qna">
-						<div>
-							번호 제목 작성자 작성날짜
+						<div class="notice_nav">
+							<li>작성자</li>
+							<li>제목</li>
+							<li>작성날짜</li>
 						</div>
+						<div class="scroll">
 <%
 	rs = stmt.executeQuery("SElECT * FROM post ORDER BY created_at desc");
 	while(rs.next()){
 %>
-						<div id="content_name">
+						<div class="content_name">
 							<a href="#" id="slide">
-							<div id="title">
-							<% out.print(rs.getString("id"));%>
-							<% out.print(rs.getString("name"));%>
-							<% out.print(rs.getString("writer"));%>
-							<% out.print(rs.getString("created_at"));%>
+							<div class="title">
+								<li class="a"><% out.print(rs.getString("writer"));%></li>
+								<li class="b"><% out.print(rs.getString("name"));%></li>
+								<li class="c"><% out.print(rs.getString("created_at"));%></li>
 							</div>
 							</a>
 							<div class="section">
@@ -123,6 +119,17 @@
 							</div>		
 						</div>
 						<% } %>
+						</div>
+						<c:choose>
+							<c:when test="${sessionScope.SID == null}"></c:when>
+							<c:otherwise>
+								<div class="notice_create_button">
+								<a href="#">
+										글쓰기
+								</a>
+								</div>
+							</c:otherwise>
+						</c:choose>
 					</div>
 				</div>	
 <%
@@ -172,17 +179,17 @@
 //	$("#content_left li>a:first").click();
 //});
 	
-	$("#content_name>a").click(function() {
+	$(".content_name>a").click(function() {
 		$(this).parent().find(".section").toggle(slide);
 	});
 	//$(".section").slideUp();
-	$("#content_name>a").click();
+	$(".content_name>a").click();
 	
 
 	
 	$("#notice_page").hide();
 
-	$("#notice_create_button>a").click(function() {
+	$(".notice_create_button>a").click(function() {
 		$("#notice_page").show();
 	});
 

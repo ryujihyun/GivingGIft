@@ -75,11 +75,18 @@ create table post (
 	name varchar(100),
 	content varchar(500),
 	writer varchar(100),
-	parent_id int,
 	created_at timestamp DEFAULT CURRENT_TIMESTAMP,
 	primary key(id)
 );
 
+create table post_qna (
+	id int not null auto_increment,
+	name varchar(100),
+	content varchar(500),
+	writer varchar(100),
+	created_at timestamp DEFAULT CURRENT_TIMESTAMP,
+	primary key(id)
+);
 // insert table
 insert into user (email, password, name, address, phone, gender, type) values ('jihye@gmail.com', 'jihye', 'choijh', 'mju', '010-5551-7432', 'womam', '2');
 
