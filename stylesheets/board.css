@@ -116,7 +116,7 @@ li {}
 
 
 /* -- new window -- */
-#notice_page {
+.notice_page {
 	position:absolute;
 	background-color:rgba(255, 157, 157, .8);
 	border-radius: 25px 25px 25px 25px;
@@ -142,7 +142,7 @@ li {}
 .notice_class div {padding:0 30px 20px 20px; width:100px; font-size:30px; font-weight:bold; text-align:right;}
 .notice_class .input_text {width:180px;  border:1px solid #000; font-size:25px;}
 
-#notice_page {position:absolute; top:20px; left:230px; width:400px; height:400px;}
+.notice_page {position:absolute; top:20px; left:230px; width:400px; height:400px;}
 
-#notice_text {margin-left:50px; clear:both;}
-#notice_text textarea {font-size:20px; width:300px; height:120px;}
+.notice_text {margin-left:50px; clear:both;}
+.notice_text textarea {font-size:20px; width:300px; height:120px;}

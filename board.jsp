@@ -25,7 +25,7 @@
 
 		<div id="content">
 		
-			<div id="notice_page">
+			<div class="notice_page" id="notice_page_a">
 				<div class="notice_logo">GivingGift</div>
 				<a href="#"><img class="notice_closebutton" src="images/fileclose.png"></a>
 				<form action="board_notice.jsp" method="post">
@@ -33,13 +33,30 @@
 						<div class="notice_class">
 							<div class="class_name">제목</div><input class="input_text" type="text" name="name">
 						</div>
-						<div id="notice_text">
+						<div class="notice_text">
 							<div><textarea cols="40" row="10" name="content" placeholder="내용을 쓰세요"></textarea></div>
 						</div>
 					</div>
 					<div class="notice_button"><input type="submit" name="submit" value="게시"></div>
 				</form>
 			</div>
+			
+			<div class="notice_page" id="notice_page_b">
+				<div class="notice_logo">GivingGift</div>
+				<a href="#"><img class="notice_closebutton" src="images/fileclose.png"></a>
+				<form action="board_notice.jsp" method="post">
+					<div>
+						<div class="notice_class">
+							<div class="class_name">제목</div><input class="input_text" type="text" name="name">
+						</div>
+						<div class="notice_text">
+							<div><textarea cols="40" row="10" name="content" placeholder="내용을 쓰세요"></textarea></div>
+						</div>
+					</div>
+					<div class="notice_button"><input type="submit" name="submit" value="게시"></div>
+				</form>
+			</div>
+			
 		
 			<div id="content_left">
 			
@@ -83,7 +100,7 @@
 						<c:choose>
 							<c:when test="${sessionScope.STYPE != 1}"></c:when>
 							<c:otherwise>
-								<div class="notice_create_button">
+								<div class="notice_create_button" id="button_a">
 								<a href="#">
 										글쓰기
 								</a>
@@ -123,7 +140,7 @@
 						<c:choose>
 							<c:when test="${sessionScope.SID == null}"></c:when>
 							<c:otherwise>
-								<div class="notice_create_button">
+								<div class="notice_create_button" id="button_b">
 								<a href="#">
 										글쓰기
 								</a>
@@ -168,31 +185,23 @@
 </html>
 
 <script type="text/javascript">
-//$(function() {
-//	var tab=$("#content_left");
-//	tab.find('li>a').click(function() {
-//		$("#content_left>ul>li").removeClass('selected');
-//		$("#content_left>ul>li>div").hide();
-//		$(this).parent().addClass('selected')
-//		$(this).parent().find("div").show();
-//	});
-//	$("#content_left li>a:first").click();
-//});
 	
 	$(".content_name>a").click(function() {
 		$(this).parent().find(".section").toggle(slide);
 	});
-	//$(".section").slideUp();
 	$(".content_name>a").click();
-	
 
 	
-	$("#notice_page").hide();
+	$(".notice_page").hide();
 
-	$(".notice_create_button>a").click(function() {
-		$("#notice_page").show();
+	$("#button_a>a").click(function() {
+		$("#notice_page_a").show();
 	});
 
+	$("#button_b>a").click(function() {
+		$("#notice_page_b").show();
+	});
+	
 	$(".notice_closebutton").click(function() {
 		$(this).parent().parent().hide();
 	});
