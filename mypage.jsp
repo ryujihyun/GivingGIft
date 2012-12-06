@@ -11,6 +11,7 @@
 	<title>Giving Gift Mypage</title>
 	<link href="stylesheets/mypageEdit.css" rel="stylesheet" type="text/css">
 	<script src='js/jquery-1.8.2.min.js'></script>
+	<script src="js/jquery-ui-1.9.2.custom.min.js"></script>
 </head>
 <body>
 <% 
