@@ -75,7 +75,7 @@
 				<div class="class_name">전화번호</div><div><input class="input_text" type="text" name="phone"></div>
 			</div>
 			<div class="join_class">
-				<div class="class_name">생년월일</div><div><input class="input_text" type="text" name="date" placeholder="주민번호앞자리"></div>
+				<div class="class_name">생년월일</div><div><input class="input_text" type="text" name="date"  id="datepicker" placeholder="주민번호앞자리"></div>
 			</div>
 			<div class="join_class">
 				<div class="class_name">성별</div>
@@ -118,7 +118,7 @@
 #join_page {position:absolute; top:20px; left:230px; width:500px; height:580px;}
 
 .window_logo {
-	font-size:50px; padding:50px 0 80px 0; text-align:center;
+	font-size:50px; padding:50px 0 60px 0; text-align:center;
 	font-family:impact;  font-style:italic; color:white;
 	position:relative;
 }
@@ -132,12 +132,12 @@
 
 .login_class div {float:left;}
 .login_class {clear:both;}
-.login_class .class_name {padding:0 30px 60px 10px; width:150px; font-size:25px; font-weight:bold; text-align:right;}
+.login_class .class_name {padding:0 30px 10px 10px; width:150px; font-size:25px; font-weight:bold; text-align:right;}
 .login_class .input_text {font-size:18px; width:250px; border:1px solid #000;}
 
 .join_class div {float:left;}
 .join_class {clear:both;}
-.join_class .class_name {padding:0 30px 20px 20px; width:160px; font-size:20px; font-weight:bold; text-align:right;}
+.join_class .class_name {padding:0 30px 0 0; width:160px; font-size:15px; font-weight:bold; text-align:right;}
 .join_class .input_text {width:200px;  border:1px solid #000;}
 </style>
 
@@ -158,5 +158,12 @@ $("#join_page").hide();
 	$(".closebutton").click(function() {
 		$(this).parent().parent().hide();
 	});
+	
+	$(function() {
+        $( "#datepicker" ).datepicker({
+            changeMonth: true,
+            changeYear: true
+        });
+    });
 
 </script>
