@@ -6,10 +6,10 @@
 	<meta charset=UTF-8">
 	<title> Giving Gift Create Class </title>
 	<link href="stylesheets/teaching.css" rel="stylesheet" type="text/css">
-	<link href="stylesheets/jquery-ui-1.9.2.custom.min.css" rel="stylesheet" type="text/css">
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
 	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 	<script src='js/jquery-1.8.2.min.js'></script>
+	<link href="stylesheets/jquery-ui-1.9.2.custom.min.css" rel="stylesheet" type="text/css">
 	<script src="js/jquery-ui-1.9.2.custom.min.js"></script>
 </head>
 <body>
@@ -27,17 +27,17 @@
 
 		<div id="content">
 
-			<div class="new_window" id="content_left">
+			<div id="content_left">
 				<div id="content_header"><h1>Create Your Class</h1></div>
 				<div id="content_form">
 					<form action="teaching_page.jsp" method="post">
 						<div>
-							<div class="join_class">
+							<div class="teaching_class">
 								<div class="class_name">Class Title</div>
 								<div><input class="input_text" type="text" name="name"></div>
 							</div>
 
-							<div class="join_class">
+							<div class="teaching_class">
 								<div class="class_name">Choose a Category</div>
 								<select class="select_box" name="interest">
 									<option value="language">언어</option>
@@ -49,11 +49,11 @@
 								</select>
 							</div>
 
-							<div class="join_class">
+							<div class="teaching_class">
 								<div class="class_name">강좌 내용</div>
 								<div><textarea cols="40" row="10" name="content"></textarea></div>
 							</div>
-							<div class="join_class" id="date">
+							<div class="teaching_class" id="date">
 								<div class="date_class">
 									<div class="class_name">시작날짜</div>
 									<div><input id="from" class="input_date" type="text" name="start_date"></div>
@@ -64,7 +64,7 @@
 								</div>
 							</div>
 							
-							<div class="join_class">
+							<div class="teaching_class">
 								<div class="class_name">수강인원</div>
 								<select class="select_box" name="number">
 									<option value="10">10</option>
@@ -75,12 +75,12 @@
 									<option value="40">40</option>
 								</select>
 							</div>
-							<div class="join_class">
+							<div class="teaching_class">
 								<div class="class_name"> 지도</div><div id="map_canvas" style="width: 500px; height: 380px;"></div>
 							</div>
 					<input type="text" id="lat" name="lat" style="visibility: hidden;">
 					<input type="text" id="lng" name="lng" style="visibility: hidden;">
-							<div class="join_class">
+							<div class="teaching_class">
 								<div class="class_name">주소</div><div><input type="text" id="address" name="address" style="width: 400px; height: 30px;"></div>
 							</div>							
 						</div>
