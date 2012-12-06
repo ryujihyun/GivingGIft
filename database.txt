@@ -83,6 +83,7 @@ create table post_qna (
 	id int not null auto_increment,
 	name varchar(100),
 	content varchar(500),
+	answer varchar(500),
 	writer varchar(100),
 	created_at timestamp DEFAULT CURRENT_TIMESTAMP,
 	primary key(id)
