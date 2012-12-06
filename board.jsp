@@ -132,7 +132,8 @@
 							</div>
 							</a>
 							<div class="section">
-							<% out.print(rs.getString("content")); %>
+								<li><% out.print(rs.getString("content")); %><li>
+								<li><% out.print(rs.getString("answer")); %></li>
 							<div><a href="#" class="answer">답하기</a></div>
 							</div>		
 						</div>
