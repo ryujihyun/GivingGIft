@@ -34,22 +34,6 @@ create table member (
 	primary key(email)
 );
 
-create table class (	<-- 이거 말고
-	id varchar(100) not null,
-	name varchar(100),
-	content varchar(300),	
-	start_date date,
-	end_date date,
-	number int,
-	latitude varchar(100),
-	longtutude varchar(100),
-	teacher_id varchar(100) not null,
-	interest varchar(100),
-	created_at timestamp DEFAULT CURRENT_TIMESTAMP,
-	primary key(id),
-	foreign key(teacher_id) references member(email)
-);
-
 create table class (
 	id int not null auto_increment,
 	name varchar(100),
@@ -65,15 +49,6 @@ create table class (
 	enroll_num int(100) DEFAULT 0,
 	created_at timestamp DEFAULT CURRENT_TIMESTAMP,
 	primary key(id)
-);
-
-
-create table interest (
-	member varchar(100) not null,
-	interest varchar(100) not null,
-	created_at timestamp DEFAULT CURRENT_TIMESTAMP,
-	primary key(member, interest),
-	foreign key(member) references member(email)
 );
 
 create table register_class (
@@ -93,17 +68,6 @@ create table estimation (
 	primary key(id),
 	foreign key(member) references member(email),
 	foreign key(class) references class(id)
-);
-
-create table post ( <--X
-	id int not null auto_increment,
-	name varchar(100),
-	content varchar(500),
-	writer varchar(100),
-	parent_id int,
-	created_at timestamp DEFAULT CURRENT_TIMESTAMP,
-	primary key(id),	
-	foreign key(writer) references member(email)
 );
 
 create table post (
