@@ -44,7 +44,7 @@
 			<div class="notice_page" id="notice_page_b">
 				<div class="notice_logo">GivingGift</div>
 				<a href="#"><img class="notice_closebutton" src="images/fileclose.png"></a>
-				<form action="board_notice.jsp" method="post">
+				<form action="board_qna.jsp" method="post">
 					<div>
 						<div class="notice_class">
 							<div class="class_name">제목</div><input class="input_text" type="text" name="name">
@@ -120,7 +120,7 @@
 						</div>
 						<div class="scroll">
 <%
-	rs = stmt.executeQuery("SElECT * FROM post ORDER BY created_at desc");
+	rs = stmt.executeQuery("SElECT * FROM post_qna ORDER BY created_at desc");
 	while(rs.next()){
 %>
 						<div class="content_name">
