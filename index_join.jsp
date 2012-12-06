@@ -1,14 +1,23 @@
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.text.DateFormat"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="java.sql.*" import="java.util.*"
     import="org.apache.commons.lang3.StringUtils"%>
 <!DOCTYPE html>
 <%
+	SimpleDateFormat stringtodate = new SimpleDateFormat ("mm/dd/yyyy");
+	SimpleDateFormat datetostring = new SimpleDateFormat ("yymmdd");
+
 	String name = request.getParameter("name");
 	String email = request.getParameter("ID");
 	String password = request.getParameter("password");
 	String address = request.getParameter("address");
 	String phone =  request.getParameter("phone");
-	String birthdate =  request.getParameter("date");
+	String S_birthdate =  request.getParameter("date");
+	
+	java.util.Date SS_birthdate = stringtodate.parse(S_birthdate);
+	String birthdate = datetostring.format(SS_birthdate);
+	
 	String gender =  request.getParameter("gender");
 	Integer type = 2;
 	String language = request.getParameter("language");
