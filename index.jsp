@@ -16,7 +16,12 @@
 	<script src="http://code.jquery.com/jquery-latest.js"></script>
 	<!-- Facebook 접속에 쓰일 js -->
 	<script src="//connect.facebook.net/en_US/all.js"></script>
-<script src='js/jquery-1.8.2.min.js'></script>
+
+	<script src='js/jquery-1.8.2.min.js'></script>
+
+	<link href="stylesheets/jquery-ui-1.9.2.custom.min.css" rel="stylesheet" type="text/css">
+	<script src="js/jquery-ui-1.9.2.custom.min.js"></script>
+        
 </head>
 <body>
 	<div id="wrap">
@@ -137,8 +142,8 @@
 					<div class="join_class">
 						<div class="class_name">생년월일</div>
 						<div>
-							<input class="input_text" type="text" name="date"
-								placeholder="주민번호앞자리">
+							<p><input class="input_text" type="text" name="date" id="datepicker"
+								placeholder="주민번호앞자리"></p>
 						</div>
 					</div>
 					<div class="join_class">
@@ -192,4 +197,11 @@
 	$(".closebutton").click(function() {
 		$(this).parent().parent().hide();
 	});
+	
+	$(function() {
+        $( "#datepicker" ).datepicker({
+            changeMonth: true,
+            changeYear: true
+        });
+    });
 </script>
