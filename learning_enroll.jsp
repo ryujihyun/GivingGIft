@@ -12,10 +12,8 @@
 	String member_id = (String) session.getAttribute("SID");
 
 	int DBenroll_num = Integer.parseInt(request.getParameter("DBenroll_num"));
-	System.out.println(DBenroll_num);
 	
 	String id = (String)session.getAttribute("id");
-	System.out.println(id);
 	
 	Connection conn = null;
 	PreparedStatement stmt = null;
@@ -28,7 +26,6 @@
 			throw new Exception("데이터베이스 연결 실패");
 		
 		DBenroll_num = DBenroll_num + 1;
-		System.out.println(DBenroll_num);
 		
 		String sql = "update class set enroll_num=? where id=?";
 		stmt = conn.prepareStatement(sql);
