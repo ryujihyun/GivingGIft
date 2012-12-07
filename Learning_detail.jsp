@@ -106,7 +106,7 @@
 				<h1>Address</h1> <% out.println(DBaddress); %><br><br>
 				<h1>Period</h1> <% out.println(DBS_date); %> ~ <%out.println(DBE_date);%><br><br>
 				<h1>Current Enroll_num</h1> <%out.println(DBenroll_num); %><br><br>
-				<h1>Contents</h1> <% out.println(DBcontnet); %>><br><br>
+				<h1>Contents</h1> <% out.println(DBcontnet); %><br><br>
 			</div>
 		<div id="content_right">
 			<div id= "contents">
