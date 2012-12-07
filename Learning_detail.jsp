@@ -8,13 +8,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Learning_detail</title>
-<link href="stylesheets/learning_detail.css" rel="stylesheet"
-	type="text/css">
-<script type="text/javascript"
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-<script type="text/javascript"
-	src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<link href="stylesheets/learning_detail.css" rel="stylesheet"	type="text/css">
+<script type="text/javascript"src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+<script type="text/javascript"src="http://maps.google.com/maps/api/js?sensor=false"></script>
 <script src='js/jquery-1.8.2.min.js'></script>
+<link href="stylesheets/jquery-ui-1.9.2.custom.min.css" rel="stylesheet" type="text/css">
+<script src="js/jquery-ui-1.9.2.custom.min.js"></script>
 </head>
 <body onlead="access">
 	<%
@@ -61,18 +60,10 @@
 									new Integer(DBenroll_num));
 							request.setAttribute("ID", new String(class_ID));
 
-							request.setAttribute("latitude", "latitude");
-							request.setAttribute("longtutude", "longtutude");
-							
 							session.setAttribute("id", class_ID);
-							
-							out.println(latitude);
 							%>
 			<div class="left">
 				<div class="class-overview">
-					<div class="teacher-image">
-						<img src="images/youbin.png">
-					</div>
 					<div class="class-info">
 						<h3><%out.println(DBname);%> givinggift - <%out.println(DBname);%> gift</h3>
 						<h4>
@@ -95,10 +86,9 @@
 						</form>
 					</div>
 					<div class="datesection">
-						<div class="dateicon">28</div>
 						<div class="dateinfo">
-							<p class="datedate">WEN,THU 2012-12-25</p>
-							<p class="datetime">6:00 pm – 8:30 pm EST</p>
+							<p class="datedate"><% out.println(DBS_date); %> ~ <% out.println(DBE_date); %></p>
+							<p class="datetime">current enroll_num: <%out.println(DBenroll_num);%></p>
 						</div>
 					</div>
 				</div>
@@ -107,39 +97,37 @@
 	</div>
 	<div id="content">
 		<div id="content_left">
-			<ul>
-				<li><a href="#"><h1>About Class</h1></a>
-					<div class="board_content" id="notice">
-						<ul>
-							<h1>Class</h1> <% out.println(DBname); %><br><br>
-							<h1>Address</h1> <% out.println(DBaddress); %><br><br>
-							<h1>Period</h1> <% out.println(DBS_date); %> ~ <%out.println(DBE_date);%><br><br>
-							<h1>Current Enroll_num</h1> <%out.println(DBenroll_num); %><br><br>
-							<h1>Contents</h1> <% out.println(DBcontnet); %>><br><br><br><br>
-						</ul>
-					</div></li>
-						<%
+			<div id= "contents">
+				Class Information<br>
+			</div>
+			<article class="detail_left1">
+			
+				<h1>Class</h1> <% out.println(DBname); %><br><br>
+				<h1>Address</h1> <% out.println(DBaddress); %><br><br>
+				<h1>Period</h1> <% out.println(DBS_date); %> ~ <%out.println(DBE_date);%><br><br>
+				<h1>Current Enroll_num</h1> <%out.println(DBenroll_num); %><br><br>
+				<h1>Contents</h1> <% out.println(DBcontnet); %>><br><br>
+			</div>
+		<div id="content_right">
+			<div id= "contents">
+				Class Map<br>
+			</div>
+			<div id="detail_right1">
+			<div id = "google_map">
+				<div id="map_canvas" style="width: 450px; height: 380px;"></div>
+			</div>
+			</div>
+			<div id="latitude" style="visibility: hidden;">
+				<%out.println(latitude); %>
+			</div>
+			<div id="longtutude" style="visibility: hidden;">
+				<% out.println(longtutude); %>
+			</div>
+		</div>
+							<%
 						}
 					}
 			%>
-				<li><a href="#"><h1>Location</h1></a>
-					<div class="board_content" id="location">
-						<div id="map_canvas" style="width: 460px; height: 380px;"></div>
-					</div>
-				</li>
-				<li><a href="#"><h1>Teacher</h1></a>
-					<div class="board_content" id="teacher">
-						<ul>
-							<li>007</li>
-							<li>008</li>
-							<li>009</li>
-						</ul>
-					</div></li>
-			</ul>
-		</div>
-		<div id="content_right">
-		</div>
-	</div>
 	</div>
 	<%
 		} catch (SQLException ex) {
@@ -164,27 +152,13 @@
 </body>
 </html>
 <script type="text/javascript">
-	$(function() {
-		var tab = $("#content_left");
-		tab.find('li>a').click(function() {
-			$("#content_left>ul>li").removeClass('selected');
-			$("#content_left>ul>li>div").hide();
-			$(this).parent().addClass('selected');
-			$(this).parent().find("div").show();
-		});
-		$("#content_left li>a:first").click();
-
-		$("#center_page").find("#btn-enroll").click(function() {
-			alert('enroll class');
-		});
-	});
 	$(document).ready(
-			function access() {
-				var latlng = new google.maps.LatLng(127.000000000000000000000145,
-						128.1565132132123);
+			function() {
+				var latlng = new google.maps.LatLng($("#latitude").text(),
+						$("#longtutude").text());
 
 				var myOptions = {
-					zoom : 10,
+					zoom : 15,
 					center : latlng,
 					mapTypeId : google.maps.MapTypeId.ROADMAP
 				}
@@ -203,9 +177,9 @@
 						'latLng' : location
 					}, function(results, status) {
 						if (status == google.maps.GeocoderStatus.OK) {
-							$('#address').attr("value", results[0].formatted_address);
-							$('#lat').attr("value", results[0].geometry.location.lat());
-							$('#lng').attr("value", results[0].geometry.location.lng());
+							$('#address').html(results[0].formatted_address);
+							$('#lat').html(results[0].geometry.location.lat());
+							$('#lng').html(results[0].geometry.location.lng());
 						} else {
 							alert("Geocoder failed due to: " + status);
 						}
