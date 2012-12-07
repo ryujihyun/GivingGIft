@@ -211,7 +211,7 @@ else	{
 						<li><%out.println(rs.getString("interest"));%></li>
 						<li><%out.println(end_date);%></li>
 						<li>
-							<form action="Learning_detail_create.jsp">
+							<form action="Learning_detail_enroll.jsp">
 								<input type="submit" name="" value="상세보기">
 								<input type="text" name="class_ID" value=<%out.println(rs.getInt("id"));%> style="visibility: hidden;">
 							</form>
