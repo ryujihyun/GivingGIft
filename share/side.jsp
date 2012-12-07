@@ -8,13 +8,13 @@
 				<aside id="category">
 					<div id='cssmenu'>
 						<ul>
-						   <li><a href='#'><span>Language</span></a></li>
-						  </li>
-						   <li><a href='#'><span>Society</span></a></li>
-						   <li><a href='#'><span>Science</span></a></li>
-						   <li><a href='#'><span>Technology</span></a></li>
-						   <li><a href='#'><span>Art</span></a></li>
-						   <li><a href='#'><span>Music</span></a></li>
+								<li><a href='Learning.jsp'><span>All</span></a></li>
+						   <li><a href='Language_class.jsp'><span>Language</span></a></li>
+						   <li><a href='Sociaty_class.jsp'><span>Society</span></a></li>
+						   <li><a href='Science_class.jsp'><span>Science</span></a></li>
+						   <li><a href='Skill_class.jsp'><span>Technology</span></a></li>
+						   <li><a href='Art_class.jsp'><span>Art</span></a></li>
+						   <li><a href='Music_class.jsp'><span>Music</span></a></li>
 						</ul>
 					</di>
 				</aside>
