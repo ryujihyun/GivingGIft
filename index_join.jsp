@@ -17,9 +17,6 @@
 	String phone =  request.getParameter("phone");
 	String S_birthdate =  request.getParameter("date");
 	
-	java.util.Date SS_birthdate = stringtodate.parse(S_birthdate);
-	String birthdate = datetostring.format(SS_birthdate);
-	
 	String gender =  request.getParameter("gender");
 	Integer type = 2;
 	String language = request.getParameter("language");
@@ -29,11 +26,14 @@
 	String art = request.getParameter("art");
 	String music = request.getParameter("music");
 	
-	if(name == null || name.trim().length() == 0 || email == null || email.trim().length() == 0 || password == null || password.trim().length() == 0)	{
+	if(name == null || name.trim().length() == 0 || email == null || email.trim().length() == 0 || password == null || password.trim().length() == 0 || S_birthdate == null || S_birthdate.trim().length() == 0)	{
 		%>
 			<jsp:forward page = "ErrorFile/join_error_page.jsp"/>
 		<%
 	}
+	
+	java.util.Date SS_birthdate = stringtodate.parse(S_birthdate);
+	String birthdate = datetostring.format(SS_birthdate);
 	
 	Connection conn = null;
 	PreparedStatement stmt = null;
