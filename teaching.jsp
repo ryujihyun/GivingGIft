@@ -92,8 +92,8 @@
 			<div id="content_right">
 				<h1>Create Class</h1>
 				<p>
-					If you need assistance with Vimeo, you've come to the right place.
-					We've made it easy to help yourself with our extensive FAQ, helpful guidelines, and supportive community forums.
+					당신의 재능을 남들과 나누세요!!!
+					다음의 사항들을 입력하여 강좌를 개설하세요
 				</p>
 			</div>
 
