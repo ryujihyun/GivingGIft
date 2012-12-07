@@ -68,15 +68,6 @@
 		
 	</div>
 	<div id="content">
-		<div id="header_search">
-			<form action="">
-				<input type="text" name="search" id="search">
-				<input type="submit" value="| Search" id="search_button">
-			</form>
-		</div>
-	<div id="introduction">
-		<img src="./images/learning_givinggift.png"></img>
-	</div>
 		<%try{
 						Class.forName("com.mysql.jdbc.Driver");
 						conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/GivingGift?chracterEncoding=utf8", "root", "tiger");
