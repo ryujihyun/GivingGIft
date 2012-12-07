@@ -68,19 +68,9 @@ li {}
 #content {
 	width: 960px; margin: 0 auto; padding-bottom:10px; padding-top:25px;
 	position:relative; overflow: hidden; border: 1px solid silver; border-radius: 10px 10px 10px 10px;
+	margin-top:20px;
 	}
 	
-#header_search {
-	display:inline-block; width:800px; margin-left:80px; margin-bottom:30px; padding:20px;
-	background-color:#FEEECD;
-	border-radius: 10px 10px 10px 10px;
-}
-#search {width:700px; height:40px; border:1px solid silver; font-size:20px; margin-top:10px;}
-#search_button {
-	padding:0; width:90px; height:40px; font-family:impact; font-size:15px; color: white; background-color:#FF4040; border:none;
-}
-
-#content > #introduction {width: 30px; margin-top: 15px; margin-left: -10px; margin-bottom: 10px;}
 #content > #aside {float: left; width:200px; margin-left: 15px;}
 #content > #learning_section {width: 700px; margin-top: 10px; float: right; margin-right: 15px;}
 
