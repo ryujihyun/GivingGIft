@@ -101,3 +101,6 @@ li {}
 
 /*  --  Footer  --  */
 #learning_footer{ width: 960px; margin: 0 auto; margin-bottom: 10px; padding: 10px; text-align: center;}
+
+
+.chidden {width:0;}
