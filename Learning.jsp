@@ -50,12 +50,12 @@
             		    <p>Just one click!</p>
             		</div>
            		<div class="slider_text">
-            		    <h1>재능을 나누고 싶으신가요?</h1>
-            		    <p>Teach를 통한 자신의 재능을 기부하세요!</p>
+            		    <h1>재능 기부를 통한 봉사!</h1>
+            		    <p>온라인으로 신청하세요</p>
            		 </div>
             		<div class="slider_text">
-            		    <h1>Quisque eleifend</h1>
-            		    <p>Quisque eleifend augue nec lacus lobortis porta.</p>
+            		    <h1>색다른 재능을 만나보세요.</h1>
+            		    <p>다양한 재능을 배울 수 있습니다</p>
             		</div>
         		</div>
         	<div class="control_panel">
@@ -77,9 +77,7 @@
 	<div id="introduction">
 		<img src="./images/learning_givinggift.png"></img>
 	</div>
-		<jsp:include page="share/side.jsp"></jsp:include>
-			<section id="learning_section">
-					<%try{
+		<%try{
 						Class.forName("com.mysql.jdbc.Driver");
 						conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/GivingGift?chracterEncoding=utf8", "root", "tiger");
 
@@ -87,10 +85,12 @@
 						rs = stmt.executeQuery("SElECT * FROM class ORDER BY created_at desc");
 		
 						String teacher_name = (String) session.getAttribute("Sname");
-						
+					%>
+		<jsp:include page="share/side.jsp"></jsp:include>
+			<section id="learning_section">
+			<%	
 						while(rs.next()){
 					%>
-			
 				<article class="learning_article">
 					<div id ="left" class="art_f">
 						<form action="Learning_detail.jsp" method="post">
@@ -156,9 +156,7 @@
 					</div>
 				</form>
 			</article>
-			
 				<%} %>
-				
 			</section>
 		</div>
 		
