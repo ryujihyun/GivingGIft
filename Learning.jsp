@@ -21,9 +21,12 @@
 	<script src='js/jquery-1.8.2.min.js'></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/jquery-ui-1.9.2.custom.min.js"></script>
+	
 </head>
 <body>
 <% 
+	request.setCharacterEncoding("utf-8");
+
 	Connection conn = null;
 	Statement stmt = null;
 	ResultSet rs = null;
@@ -78,7 +81,7 @@
 			<section id="learning_section">
 					<%try{
 						Class.forName("com.mysql.jdbc.Driver");
-						conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/GivingGift", "root", "tiger");
+						conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/GivingGift?chracterEncoding=utf8", "root", "tiger");
 
 						stmt = conn.createStatement();
 						rs = stmt.executeQuery("SElECT * FROM class ORDER BY created_at desc");

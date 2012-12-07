@@ -9,6 +9,8 @@
 	<script src='js/jquery-1.8.2.min.js'></script>
 </head>
 <% 
+	request.setCharacterEncoding("utf-8");
+
 	String email = request.getParameter("ID");
 	String password = request.getParameter("password");
 	
@@ -18,7 +20,7 @@
 	try {
 		Class.forName("com.mysql.jdbc.Driver");
 		conn = DriverManager.getConnection(
-				"jdbc:mysql://localhost:3306/givinggift", "root", "tiger");
+				"jdbc:mysql://localhost:3306/givinggift?chracterEncoding=utf8", "root", "tiger");
 		if(conn == null)
 			throw new Exception("Connect DB fail");
 		

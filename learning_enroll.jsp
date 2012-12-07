@@ -7,6 +7,8 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%
+	request.setCharacterEncoding("utf-8");
+
 	String member_id = (String) session.getAttribute("SID");
 
 	int DBenroll_num = Integer.parseInt(request.getParameter("DBenroll_num"));
@@ -21,7 +23,7 @@
 	try {
 		Class.forName("com.mysql.jdbc.Driver");
 		conn = DriverManager.getConnection(
-				"jdbc:mysql://localhost:3306/givinggift", "root", "tiger");
+				"jdbc:mysql://localhost:3306/givinggift?chracterEncoding=utf8", "root", "tiger");
 		if(conn == null)
 			throw new Exception("데이터베이스 연결 실패");
 		

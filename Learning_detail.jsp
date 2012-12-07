@@ -30,12 +30,14 @@
 	<div id="listing_header">
 		<div id="center_page">
 			<%
+				request.setCharacterEncoding("utf-8");
+				
 				String class_ID = request.getParameter("class_ID");
 
 				try {
 					Class.forName("com.mysql.jdbc.Driver");
 					conn = DriverManager.getConnection(
-							"jdbc:mysql://localhost:3306/givinggift", "root",
+							"jdbc:mysql://localhost:3306/givinggift?chracterEncoding=utf8", "root",
 							"tiger");
 					if (conn == null)
 						throw new Exception("Connect DB fail");

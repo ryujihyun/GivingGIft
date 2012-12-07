@@ -4,6 +4,8 @@
     pageEncoding="UTF-8" import="java.sql.*"%>
 <!DOCTYPE html>
 <%
+	request.setCharacterEncoding("utf-8");		
+
 	String teacher_id = (String) session.getAttribute("Sname");
 
 	String name = request.getParameter("name");	

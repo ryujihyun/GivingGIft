@@ -15,6 +15,8 @@
 </head>
 <body>
 <% 
+	request.setCharacterEncoding("utf-8");
+
 	Connection conn = null;
 	Statement stmt = null;
 	ResultSet rs = null;

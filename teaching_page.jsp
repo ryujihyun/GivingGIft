@@ -4,6 +4,8 @@
     pageEncoding="UTF-8" import="java.sql.*"%>
 <!DOCTYPE html>
 <%
+	request.setCharacterEncoding("utf-8");
+
 	SimpleDateFormat stringtodate = new SimpleDateFormat ("mm/dd/yyyy");
 	SimpleDateFormat datetostring = new SimpleDateFormat ("yymmdd");
 			

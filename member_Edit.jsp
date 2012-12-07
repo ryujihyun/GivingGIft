@@ -11,13 +11,15 @@
 <body>
 <jsp:include page="share/header.jsp"></jsp:include>
  <%
+ 	
+ 
 	String errorMsg=null;
  	String actionUrl;
 	Connection conn = null;
 	PreparedStatement stmt = null;
 	ResultSet rs = null;
 	
-	String dbUrl = "jdbc:mysql://localhost:3306/GivingGIft";
+	String dbUrl = "jdbc:mysql://localhost:3306/GivingGIft?chracterEncoding=utf8";
 	String dbUser = "root";
 	String dbPassword = "tiger";
 
