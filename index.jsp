@@ -56,10 +56,11 @@
 							<div style="margin-bottom: 20px;" class="center">
 
 								<!-- Facebook 접속 버튼 -->
+								<!--
 								<a class="fb_button fb_button_large" id="btnLogin"
 									href="FBAuthServlet.do" data-size="xlarge"> <span
 									class="fb_button_text"> Facebook Log In</span>
-								</a>
+								</a>  -->
 							</div>
 						</div>
 					</div>
