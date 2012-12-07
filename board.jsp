@@ -57,6 +57,21 @@
 				</form>
 			</div>
 			
+			<div id="content_right">
+				<div><li>Giving Gift Creater</li></div>				
+				<div>
+					<img src="images/jh.jpg">
+					유지현
+				</div>
+				<div>
+					<img src="images/yb.png">
+					전유빈
+				</div>
+				<div>
+					<img src="images/tm.jpg">
+					홍택민
+				</div>
+			</div>
 		
 			<div id="content_left">
 			
@@ -132,10 +147,23 @@
 							</div>
 							</a>
 							<div class="section">
-								<li><% out.print(rs.getString("content")); %><li>
-								<li><% out.print(rs.getString("answer")); %></li>
-							<div><a href="#" class="answer">답하기</a></div>
-							</div>		
+								<li>작성 글 : <% out.print(rs.getString("content")); %><li>
+								<li class="out_answer">answer : <% out.print(rs.getString("answer")); %></li>
+								
+								<c:choose>
+									<c:when test="${sessionScope.STYPE != 1}"></c:when>
+									<c:otherwise>
+								<div class="answer_form">
+									<form action="board_answer.jsp" method="post">
+<input type="text" name="board_id" value=<%out.println(rs.getInt("id")); %> style="visibility: hidden;">
+										<textarea rows="5" cols="60" name="content"></textarea>
+										<input type="submit" value="답하기">
+									</form>
+								</div>		
+									</c:otherwise>
+								</c:choose>
+							
+							</div>
 						</div>
 						<% } %>
 						</div>
@@ -149,7 +177,7 @@
 								</div>
 							</c:otherwise>
 						</c:choose>
-					</div>
+					
 				</div>	
 <%
 } catch(SQLException ex) {
@@ -164,25 +192,11 @@
 %>
 				
 			</div>
-			<div id="content_right">
-				<div><li>Giving Gift Creater</li></div>				
-				<div>
-					<img src="images/jh.jpg">
-					유지현
-				</div>
-				<div>
-					<img src="images/yb.png">
-					전유빈
-				</div>
-				<div>
-					<img src="images/tm.jpg">
-					홍택민
-				</div>
 			</div>
 		</div>
-
-			<jsp:include page="share/footer.jsp"></jsp:include>
 	</div>
+<jsp:include page="share/footer.jsp"></jsp:include>
+	
 </body>
 </html>
 
