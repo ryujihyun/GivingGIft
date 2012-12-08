@@ -80,9 +80,9 @@ li {}
 }
 #learning_section #create_class a {text-decoration:none; color:#fff;}
 
-#learning_section > article.learning_article {width: 650px; height:160px; margin-bottom: 10px; padding: 20px; border: 1px solid silver; border-radius: 10px;}
-#learning_section > article.learning_article > #center > a:link {text-decoration: none; color: #444;}
-#learning_section > article.learning_article > #center > a:visited {text-decoration: none; color: #444;}
+#learning_section > .learning_article {width: 650px; height:160px; margin-bottom: 10px; padding: 20px; border: 1px solid silver; border-radius: 10px;}
+#learning_section > .learning_article > #center > a:link {text-decoration: none; color: #444;}
+#learning_section > .learning_article > #center > a:visited {text-decoration: none; color: #444;}
 #title {color: #ff4040; width: 200px;}
 
 .art_f {float:left;}
