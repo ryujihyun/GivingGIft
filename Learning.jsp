@@ -34,18 +34,6 @@
 		String dbUrl = "jdbc:mysql://localhost:3306/GivingGift?chracterEncoding=utf8";
 		String dbUser = "root";
 		String dbPassword = "tiger";
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			conn = DriverManager
-					.getConnection(
-							"jdbc:mysql://localhost:3306/GivingGift?chracterEncoding=utf8",
-							"root", "tiger");
-
-			stmt = conn.createStatement();
-			rs = stmt
-					.executeQuery("SElECT * FROM class ORDER BY created_at desc");
-
-			String teacher_name = (String) session.getAttribute("Sname");
 	%>
 	<jsp:include page="share/header.jsp"></jsp:include>
 	<div id="wrap">
@@ -81,7 +69,20 @@
 	<div id="content">
 		<jsp:include page="share/side.jsp"></jsp:include>
 		<div id="learning_section">
-		 <%while (rs.next()) {%>
+		 <%
+			try {
+				Class.forName("com.mysql.jdbc.Driver");
+				conn = DriverManager
+						.getConnection(
+								"jdbc:mysql://localhost:3306/GivingGift?chracterEncoding=utf8",
+								"root", "tiger");
+
+				stmt = conn.createStatement();
+				rs = stmt
+						.executeQuery("SElECT * FROM class ORDER BY created_at desc");
+
+				String teacher_name = (String) session.getAttribute("Sname");
+		 while (rs.next()) {%>
 		 <div class="learning_article">
 		<div id="left" class="art_f">
 			<form action="Learning_detail.jsp" method="post">
@@ -160,19 +161,14 @@
 				class:
 				<%
 				out.print(rs.getString("name"));
-			%><br> name :
-				<%
-				out.print((String) session.getAttribute("Sname"));
-			%>
-				<br> email :
+			%><br> email :
 				<%
 					out.print(rs.getString("teacher_id"));
 				%>
-				<br> date:
+				<br> start date:
 				<%
 					out.print(rs.getDate("start_date"));
-				%>
-				~
+				%><br> end date:
 				<%
 					out.print(rs.getDate("end_date"));
 				%>
