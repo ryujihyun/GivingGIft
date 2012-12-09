@@ -95,9 +95,9 @@
 						</div>
 						<p>
 							class: <% out.print(rs.getString("name"));%><br>
-							name : <%out.print((String) session.getAttribute("Sname"));%> <br>
 							email : <% out.print(rs.getString("teacher_id"));%> <br>
-							date: <% out.print(rs.getDate("start_date"));%> ~ <%out.print(rs.getDate("end_date")); %> <br><br>
+							start date:	<%out.print(rs.getDate("start_date"));%><br>
+							end date:	<%out.print(rs.getDate("end_date"));%><br><br>
 								<c:choose>
 									<c:when test="${sessionScope.SID == null}">
 									</c:when>
