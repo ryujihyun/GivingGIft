@@ -31,7 +31,7 @@
 		Statement stmt = null;
 		ResultSet rs = null;
 
-		String dbUrl = "jdbc:mysql://localhost:3306/GivingGift?chracterEncoding=utf8";
+		String dbUrl = "jdbc:mysql://localhost:3306/givinggift?chracterEncoding=utf8";
 		String dbUser = "root";
 		String dbPassword = "tiger";
 	%>
@@ -74,7 +74,7 @@
 				Class.forName("com.mysql.jdbc.Driver");
 				conn = DriverManager
 						.getConnection(
-								"jdbc:mysql://localhost:3306/GivingGift?chracterEncoding=utf8",
+								"jdbc:mysql://localhost:3306/givinggift?chracterEncoding=utf8",
 								"root", "tiger");
 
 				stmt = conn.createStatement();

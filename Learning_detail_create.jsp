@@ -20,10 +20,6 @@
 		Connection conn = null;
 		Statement stmt = null;
 		ResultSet rs = null;
-
-		String dbUrl = "jdbc:mysql://localhost:3306/GivingGift";
-		String dbUser = "root";
-		String dbPassword = "tiger";
 	%>
 	<jsp:include page="share/header.jsp"></jsp:include>
 	<div id="listing_header">

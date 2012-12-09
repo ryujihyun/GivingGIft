@@ -19,7 +19,7 @@
 	PreparedStatement stmt = null;
 	ResultSet rs = null;
 	
-	String dbUrl = "jdbc:mysql://localhost:3306/GivingGIft?chracterEncoding=utf8";
+	String dbUrl = "jdbc:mysql://localhost:3306/givinggift?chracterEncoding=utf8";
 	String dbUser = "root";
 	String dbPassword = "tiger";
 

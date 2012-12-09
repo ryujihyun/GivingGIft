@@ -30,10 +30,6 @@
 	Connection conn = null;
 	Statement stmt = null;
 	ResultSet rs = null;
-	
-	String dbUrl = "jdbc:mysql://localhost:3306/GivingGift";
-	String dbUser = "root";
-	String dbPassword = "tiger";
 %>
 	<jsp:include page="share/header.jsp"></jsp:include>
 	<div id="wrap">
@@ -72,7 +68,7 @@
 			<section id="learning_section">
 					<%try{
 						Class.forName("com.mysql.jdbc.Driver");
-						conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/GivingGift?chracterEncoding=utf8", "root", "tiger");
+						conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/givinggift?chracterEncoding=utf8", "root", "tiger");
 
 						stmt = conn.createStatement();
 						rs = stmt.executeQuery("SElECT * FROM class ORDER BY created_at desc");

@@ -13,7 +13,7 @@
 	PreparedStatement stmt = null;
 	ResultSet rs = null;
 
-	String dbUrl = "jdbc:mysql://localhost:3306/GivingGift";
+	String dbUrl = "jdbc:mysql://localhost:3306/givinggift";
 	String dbUser = "root";
 	String dbPassword = "tiger";
 	

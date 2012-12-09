@@ -11,25 +11,21 @@
 	Connection conn = null;
 	Statement stmt = null;
 	ResultSet rs = null;
-	
-	String dbUrl = "jdbc:mysql://localhost:3306/GivingGift";
-	String dbUser = "root";
-	String dbPassword = "tiger";
 %>
-		<%try{
-						Class.forName("com.mysql.jdbc.Driver");
-						conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/GivingGift?chracterEncoding=utf8", "root", "tiger");
+<%
+	try{
+		Class.forName("com.mysql.jdbc.Driver");
+		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/givinggift?chracterEncoding=utf8", "root", "tiger");
 
-						stmt = conn.createStatement();
-						
-						int randomNumber = (int)(Math.random() * 10)+1;
-						String Number = Integer.toString(randomNumber);
-						
-						rs = stmt.executeQuery("SElECT * FROM class where id ="+randomNumber+";");
+		stmt = conn.createStatement();
 		
-						String teacher_name = (String) session.getAttribute("Sname");
-						
-					%>
+		int randomNumber = (int)(Math.random() * 10)+1;
+		String Number = Integer.toString(randomNumber);
+		
+		rs = stmt.executeQuery("SElECT * FROM class where id ="+randomNumber+";");
+
+		String teacher_name = (String) session.getAttribute("Sname");
+%>
 			<div id ="aside">
 				<div id = person_information>
 					<h1>| <%out.print((String) session.getAttribute("Sname"));%> |</h1><br>
@@ -50,26 +46,26 @@
 				</aside>
 
 				<aside id ="learning_aside">
-									<%
-				while(rs.next()){
-					if(Number.equals(rs.getString("id"))){
-						String DBname = rs.getString("name");
-						String DBcontnet = rs.getString("content");
-						String DBaddress = rs.getString("address");
-						String DBS_date = rs.getString("start_date");
-						String DBE_date = rs.getString("end_date");
-						int DBenroll_num = rs.getInt("enroll_num");
-				%>
+<%
+while(rs.next()){
+	if(Number.equals(rs.getString("id"))){
+		String DBname = rs.getString("name");
+		String DBcontnet = rs.getString("content");
+		String DBaddress = rs.getString("address");
+		String DBS_date = rs.getString("start_date");
+		String DBE_date = rs.getString("end_date");
+		int DBenroll_num = rs.getInt("enroll_num");
+%>
 					<section class="buttons">
 						<label for="first">Best Class</label>
 					</section>
 					<div class="tab_item">
 						<ul>
 								<form action="Learning_detail.jsp" method="post">
-									<%	
-						String class_ID = rs.getString("id");
-						request.setAttribute("CLASSID", new String (class_ID));
-					%>
+<%	
+		String class_ID = rs.getString("id");
+		request.setAttribute("CLASSID", new String (class_ID));
+%>
 							<input type="text" name="class_ID" value="${CLASSID}" style="visibility: hidden;">
 					
 							<li class="item"><a href="Learning_detail.jsp">
@@ -100,13 +96,13 @@
 					</div>
 				</aside>
 				
-				<%}%>
-				<%		} catch(SQLException ex) {
-			%>
-			에러발생
-			<% }finally {
-				if(rs != null) try {rs.close();} catch(SQLException ex){}
-				if(conn != null) try {conn.close();} catch(SQLException ex){}
-				if(stmt != null) try {stmt.close();} catch(SQLException ex){}
-			}%>
+<%}%>
+<%		} catch(SQLException ex) {
+%>
+에러발생
+<% }finally {
+	if(rs != null) try {rs.close();} catch(SQLException ex){}
+	if(conn != null) try {conn.close();} catch(SQLException ex){}
+	if(stmt != null) try {stmt.close();} catch(SQLException ex){}
+}%>
 </div>

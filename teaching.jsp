@@ -15,14 +15,7 @@
 <body>
 	<jsp:include page="share/header.jsp"></jsp:include>
 	<div id="wrap">
-		<div id="header"><!--
-			<div id="header_p">
-				<h1>Create Class</h1>
-				<p>
-					If you need assistance with Vimeo, you've come to the right place.
-					We've made it easy to help yourself with our extensive FAQ, helpful guidelines, and supportive community forums.
-				</p>
-			</div>-->
+		<div id="header">
 		</div>
 
 		<div id="content">
